@@ -26,7 +26,7 @@ namespace Data
             }
         }
 
-        private static SqlConnection ConecctionString()
+       public static SqlConnection ConecctionString()
         {
             return Conexion;
         }
