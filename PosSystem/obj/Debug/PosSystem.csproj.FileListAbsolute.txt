@@ -1,0 +1,9 @@
+D:\mono-romana-project\PosSystem\bin\Debug\PosSystem.exe.config
+D:\mono-romana-project\PosSystem\bin\Debug\PosSystem.exe
+D:\mono-romana-project\PosSystem\bin\Debug\PosSystem.pdb
+D:\mono-romana-project\PosSystem\obj\Debug\PosSystem.csprojAssemblyReference.cache
+D:\mono-romana-project\PosSystem\obj\Debug\PosSystem.Properties.Resources.resources
+D:\mono-romana-project\PosSystem\obj\Debug\PosSystem.TrabajadorForm.resources
+D:\mono-romana-project\PosSystem\obj\Debug\PosSystem.csproj.GenerateResource.cache
+D:\mono-romana-project\PosSystem\obj\Debug\PosSystem.exe
+D:\mono-romana-project\PosSystem\obj\Debug\PosSystem.pdb
