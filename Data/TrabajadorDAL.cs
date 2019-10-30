@@ -11,7 +11,7 @@ namespace Data
 {
     public class TrabajadorDAL
     {
-     
+
         public static void InsertTrabajador(Trabajador nuevo)
         {
             using (SqlConnection conexion = ConectionDAL.ConecctionString())
@@ -20,7 +20,7 @@ namespace Data
                 {
                     using (SqlCommand comando = new SqlCommand("proc_TrabajadorInsert", conexion))
                     {
-                        comando.CommandType = System.Data.CommandType.StoredProcedure;
+                        comando.CommandType = CommandType.StoredProcedure;
                         comando.Parameters.AddWithValue("@IDTrabajador", nuevo.IDTrabajador);
                         comando.Parameters.AddWithValue("@Nombre", nuevo.Nombre);
                         comando.Parameters.AddWithValue("@Apellido", nuevo.Apellido);
@@ -43,7 +43,7 @@ namespace Data
                 {
                     throw;
                 }
-              
+
             }
         }
 
@@ -69,7 +69,65 @@ namespace Data
                     throw;
                 }
             }
+
+
         }
 
+        public static void UpdateTrabajador(Trabajador modifica)
+        {
+            using (SqlConnection conexion = ConectionDAL.ConecctionString())
+            {
+                try
+                {
+                    using (SqlCommand comando = new SqlCommand("proc_TrabajadorUpdate", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@IDTrabajador", modifica.IDTrabajador);
+                        comando.Parameters.AddWithValue("@Nombre", modifica.Nombre);
+                        comando.Parameters.AddWithValue("@Apellido", modifica.Apellido);
+                        comando.Parameters.AddWithValue("@Sexo", modifica.Sexo);
+                        comando.Parameters.AddWithValue("@Fecha_Nacimiento", modifica.Fecha_Nacimiento);
+                        comando.Parameters.AddWithValue("@Cedula", modifica.Cedula);
+                        comando.Parameters.AddWithValue("@Direccion", modifica.Direccion);
+                        comando.Parameters.AddWithValue("@Telefono", modifica.Telefono);
+                        comando.Parameters.AddWithValue("@Email", modifica.Email);
+                        comando.Parameters.AddWithValue("@Salario", modifica.Salario);
+                        comando.Parameters.AddWithValue("@Regla", modifica.Regla);
+                        comando.Parameters.AddWithValue("@Usuario", modifica.Usuario);
+                        comando.Parameters.AddWithValue("@Password", modifica.Password);
+                        comando.Parameters.AddWithValue("@Cargo", modifica.Cargo);
+                        comando.Parameters.AddWithValue("@Estatus", modifica.Estatus);
+                        comando.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public static void DeleteTrabajador(int id)
+        {
+            using (SqlConnection conexion = ConectionDAL.ConecctionString())
+            {
+                try
+                {
+                    using (SqlCommand comando = new SqlCommand("proc_TrabajadorDelete", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@IDTrabajador", id);
+                        comando.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+            }
+        }
     }
 }
