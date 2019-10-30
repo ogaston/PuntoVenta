@@ -16,5 +16,7 @@ namespace PosSystem
         {
             InitializeComponent();
         }
+
+       
     }
 }
