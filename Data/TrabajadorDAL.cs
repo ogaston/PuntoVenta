@@ -95,7 +95,7 @@ namespace Data
                     comando.Parameters.AddWithValue("@Nombre", modifica.Nombre);
                     comando.Parameters.AddWithValue("@Apellido", modifica.Apellido);
                     comando.Parameters.AddWithValue("@Sexo", modifica.Sexo);
-                    comando.Parameters.AddWithValue("@Fecha_Nacimiento", modifica.Fecha_Nacimiento);
+                    comando.Parameters.AddWithValue("@FechaNacimiento", modifica.Fecha_Nacimiento);
                     comando.Parameters.AddWithValue("@Cedula", modifica.Cedula);
                     comando.Parameters.AddWithValue("@Direccion", modifica.Direccion);
                     comando.Parameters.AddWithValue("@Telefono", modifica.Telefono);
@@ -105,7 +105,7 @@ namespace Data
                     comando.Parameters.AddWithValue("@Usuario", modifica.Usuario);
                     comando.Parameters.AddWithValue("@Password", modifica.Password);
                     comando.Parameters.AddWithValue("@Cargo", modifica.Cargo);
-                    comando.Parameters.AddWithValue("@Estatus", modifica.Estatus);
+                    comando.Parameters.AddWithValue("@Estatus", 1);
                     comando.ExecuteNonQuery();
                 }
             }
