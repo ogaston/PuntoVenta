@@ -1,0 +1,8 @@
+D:\mono-romana-project\Data\bin\Debug\Data.dll
+D:\mono-romana-project\Data\bin\Debug\Data.pdb
+D:\mono-romana-project\Data\bin\Debug\Entity.dll
+D:\mono-romana-project\Data\bin\Debug\Entity.pdb
+D:\mono-romana-project\Data\obj\Debug\Data.csprojAssemblyReference.cache
+D:\mono-romana-project\Data\obj\Debug\Data.csproj.CopyComplete
+D:\mono-romana-project\Data\obj\Debug\Data.dll
+D:\mono-romana-project\Data\obj\Debug\Data.pdb

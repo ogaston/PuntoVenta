@@ -11,123 +11,139 @@ namespace Data
 {
     public class TrabajadorDAL
     {
+        private ConectionDAL conexion;
 
-        public static void InsertTrabajador(Trabajador nuevo)
+        public TrabajadorDAL()
         {
-            using (SqlConnection conexion = ConectionDAL.ConecctionString())
-            {
-                try
-                {
-                    using (SqlCommand comando = new SqlCommand("proc_TrabajadorInsert", conexion))
-                    {
-                        comando.CommandType = CommandType.StoredProcedure;
-                        comando.Parameters.AddWithValue("@IDTrabajador", nuevo.IDTrabajador);
-                        comando.Parameters.AddWithValue("@Nombre", nuevo.Nombre);
-                        comando.Parameters.AddWithValue("@Apellido", nuevo.Apellido);
-                        comando.Parameters.AddWithValue("@Sexo", nuevo.Sexo);
-                        comando.Parameters.AddWithValue("@Fecha_Nacimiento", nuevo.Fecha_Nacimiento);
-                        comando.Parameters.AddWithValue("@Cedula", nuevo.Cedula);
-                        comando.Parameters.AddWithValue("@Direccion", nuevo.Direccion);
-                        comando.Parameters.AddWithValue("@Telefono", nuevo.Telefono);
-                        comando.Parameters.AddWithValue("@Email", nuevo.Email);
-                        comando.Parameters.AddWithValue("@Salario", nuevo.Salario);
-                        comando.Parameters.AddWithValue("@Regla", nuevo.Regla);
-                        comando.Parameters.AddWithValue("@Usuario", nuevo.Usuario);
-                        comando.Parameters.AddWithValue("@Password", nuevo.Password);
-                        comando.Parameters.AddWithValue("@Cargo", nuevo.Cargo);
-                        comando.Parameters.AddWithValue("@Estatus", nuevo.Estatus);
-                        comando.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-
-            }
+            conexion = new ConectionDAL();
         }
-
-        public static DataTable SelectAllTrabajador()
+        public void InsertTrabajador(Trabajador nuevo)
         {
-            using (SqlConnection conexion = ConectionDAL.ConecctionString())
+            try
             {
-                try
+                conexion.ConecctionString().Open();
+                using (SqlCommand comando = new SqlCommand("proc_TrabajadorInsert", conexion.ConecctionString()))
                 {
-                    DataTable dataTable = new DataTable();
-                    using (SqlCommand comando = new SqlCommand("proc_TrabajadorLoadAll", conexion))
-                    {
-                        using (SqlDataReader reader = comando.ExecuteReader(CommandBehavior.CloseConnection))
-                        {
-                            dataTable.Load(reader);
-                        }
-                    }
-                    return dataTable;
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@Nombre", nuevo.Nombre);
+                    comando.Parameters.AddWithValue("@Apellido", nuevo.Apellido);
+                    comando.Parameters.AddWithValue("@Sexo", nuevo.Sexo);
+                    comando.Parameters.AddWithValue("@FechaNacimiento", nuevo.Fecha_Nacimiento);
+                    comando.Parameters.AddWithValue("@Cedula", nuevo.Cedula);
+                    comando.Parameters.AddWithValue("@Direccion", nuevo.Direccion);
+                    comando.Parameters.AddWithValue("@Telefono", nuevo.Telefono);
+                    comando.Parameters.AddWithValue("@Email", nuevo.Email);
+                    comando.Parameters.AddWithValue("@Salario", nuevo.Salario);
+                    comando.Parameters.AddWithValue("@Regla", nuevo.Regla);
+                    comando.Parameters.AddWithValue("@Usuario", nuevo.Usuario);
+                    comando.Parameters.AddWithValue("@Password", nuevo.Password);
+                    comando.Parameters.AddWithValue("@Cargo", nuevo.Cargo);
+                    comando.Parameters.AddWithValue("@Estatus", 1);
+                    comando.ExecuteNonQuery();
                 }
-                catch (Exception)
-                {
-
-                    throw;
-                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.ConecctionString().Close();
             }
 
 
         }
 
-        public static void UpdateTrabajador(Trabajador modifica)
+        public DataTable SelectAllTrabajador()
         {
-            using (SqlConnection conexion = ConectionDAL.ConecctionString())
+            try
             {
-                try
+                conexion.ConecctionString().Open();
+
+                DataTable dataTable = new DataTable();
+                using (SqlCommand comando = new SqlCommand("proc_TrabajadorLoadAll", conexion.ConecctionString()))
                 {
-                    using (SqlCommand comando = new SqlCommand("proc_TrabajadorUpdate", conexion))
+                    using (SqlDataReader reader = comando.ExecuteReader(CommandBehavior.CloseConnection))
                     {
-                        comando.CommandType = CommandType.StoredProcedure;
-                        comando.Parameters.AddWithValue("@IDTrabajador", modifica.IDTrabajador);
-                        comando.Parameters.AddWithValue("@Nombre", modifica.Nombre);
-                        comando.Parameters.AddWithValue("@Apellido", modifica.Apellido);
-                        comando.Parameters.AddWithValue("@Sexo", modifica.Sexo);
-                        comando.Parameters.AddWithValue("@Fecha_Nacimiento", modifica.Fecha_Nacimiento);
-                        comando.Parameters.AddWithValue("@Cedula", modifica.Cedula);
-                        comando.Parameters.AddWithValue("@Direccion", modifica.Direccion);
-                        comando.Parameters.AddWithValue("@Telefono", modifica.Telefono);
-                        comando.Parameters.AddWithValue("@Email", modifica.Email);
-                        comando.Parameters.AddWithValue("@Salario", modifica.Salario);
-                        comando.Parameters.AddWithValue("@Regla", modifica.Regla);
-                        comando.Parameters.AddWithValue("@Usuario", modifica.Usuario);
-                        comando.Parameters.AddWithValue("@Password", modifica.Password);
-                        comando.Parameters.AddWithValue("@Cargo", modifica.Cargo);
-                        comando.Parameters.AddWithValue("@Estatus", modifica.Estatus);
-                        comando.ExecuteNonQuery();
+                        dataTable.Load(reader);
                     }
                 }
-                catch (Exception)
-                {
-
-                    throw;
-                }
+                return dataTable;
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.ConecctionString().Close();
+            }
+
+
         }
 
-        public static void DeleteTrabajador(int id)
+        public void UpdateTrabajador(Trabajador modifica)
         {
-            using (SqlConnection conexion = ConectionDAL.ConecctionString())
+            try
             {
-                try
+                conexion.ConecctionString().Open();
+                using (SqlCommand comando = new SqlCommand("proc_TrabajadorUpdate", conexion.ConecctionString()))
                 {
-                    using (SqlCommand comando = new SqlCommand("proc_TrabajadorDelete", conexion))
-                    {
-                        comando.CommandType = CommandType.StoredProcedure;
-                        comando.Parameters.AddWithValue("@IDTrabajador", id);
-                        comando.ExecuteNonQuery();
-                    }
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@IDTrabajador", modifica.IDTrabajador);
+                    comando.Parameters.AddWithValue("@Nombre", modifica.Nombre);
+                    comando.Parameters.AddWithValue("@Apellido", modifica.Apellido);
+                    comando.Parameters.AddWithValue("@Sexo", modifica.Sexo);
+                    comando.Parameters.AddWithValue("@Fecha_Nacimiento", modifica.Fecha_Nacimiento);
+                    comando.Parameters.AddWithValue("@Cedula", modifica.Cedula);
+                    comando.Parameters.AddWithValue("@Direccion", modifica.Direccion);
+                    comando.Parameters.AddWithValue("@Telefono", modifica.Telefono);
+                    comando.Parameters.AddWithValue("@Email", modifica.Email);
+                    comando.Parameters.AddWithValue("@Salario", modifica.Salario);
+                    comando.Parameters.AddWithValue("@Regla", modifica.Regla);
+                    comando.Parameters.AddWithValue("@Usuario", modifica.Usuario);
+                    comando.Parameters.AddWithValue("@Password", modifica.Password);
+                    comando.Parameters.AddWithValue("@Cargo", modifica.Cargo);
+                    comando.Parameters.AddWithValue("@Estatus", modifica.Estatus);
+                    comando.ExecuteNonQuery();
                 }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.ConecctionString().Close();
+            }
+
+        }
+
+        public void DeleteTrabajador(int id)
+        {
+            try
+            {
+                conexion.ConecctionString().Open();
+                using (SqlCommand comando = new SqlCommand("proc_TrabajadorDelete", conexion.ConecctionString()))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@IDTrabajador", id);
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.ConecctionString().Close();
+            }
+
+
         }
     }
 }

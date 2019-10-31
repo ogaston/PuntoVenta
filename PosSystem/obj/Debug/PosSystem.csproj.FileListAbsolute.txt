@@ -7,3 +7,10 @@ D:\mono-romana-project\PosSystem\obj\Debug\PosSystem.TrabajadorForm.resources
 D:\mono-romana-project\PosSystem\obj\Debug\PosSystem.csproj.GenerateResource.cache
 D:\mono-romana-project\PosSystem\obj\Debug\PosSystem.exe
 D:\mono-romana-project\PosSystem\obj\Debug\PosSystem.pdb
+D:\mono-romana-project\PosSystem\bin\Debug\BusinessLogic.dll
+D:\mono-romana-project\PosSystem\bin\Debug\Entity.dll
+D:\mono-romana-project\PosSystem\bin\Debug\Data.dll
+D:\mono-romana-project\PosSystem\bin\Debug\BusinessLogic.pdb
+D:\mono-romana-project\PosSystem\bin\Debug\Entity.pdb
+D:\mono-romana-project\PosSystem\bin\Debug\Data.pdb
+D:\mono-romana-project\PosSystem\obj\Debug\PosSystem.csproj.CopyComplete

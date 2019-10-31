@@ -13,22 +13,26 @@ namespace BusinessLogic
     {
         public static void InsertTrabajador(Trabajador insertNew)
         {
-            TrabajadorDAL.InsertTrabajador(insertNew);
+            TrabajadorDAL trabajador = new TrabajadorDAL();
+               trabajador.InsertTrabajador(insertNew);
         }
 
         public static void UpdateTrabajador(Trabajador update)
         {
-            TrabajadorDAL.UpdateTrabajador(update);
+            TrabajadorDAL trabajador = new TrabajadorDAL();
+            trabajador.UpdateTrabajador(update);
         }
 
         public static void DeleteTrabajador(int id)
         {
-            TrabajadorDAL.DeleteTrabajador(id);
+            TrabajadorDAL trabajador = new TrabajadorDAL();
+                trabajador.DeleteTrabajador(id);
         }
 
         public static DataTable SelectAllTrabajador()
         {
-            return TrabajadorDAL.SelectAllTrabajador();
+            TrabajadorDAL trabajador = new TrabajadorDAL();
+            return trabajador.SelectAllTrabajador();
         }
     }
 }

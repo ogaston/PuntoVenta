@@ -15,13 +15,13 @@ namespace Entity
         public DateTime Fecha_Nacimiento { get; set; }
         public string Cedula { get; set; }
         public string Direccion { get; set; }
-        public string Telefono { get; set; }
+        public double Telefono { get; set; }
         public string Email { get; set; }
         public double Salario { get; set; }
         public string Regla { get; set; }
         public string Usuario { get; set; }
         public string Password { get; set; }
         public string Cargo { get; set; }
-        public int Estatus { get; set; }
+        public int Estatus { get { return 1; }}
     }
 }

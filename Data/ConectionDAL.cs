@@ -12,7 +12,7 @@ namespace Data
 {
    public class ConectionDAL
     {
-        private static SqlConnection Conexion;
+        private SqlConnection Conexion;
         public ConectionDAL()
         {
             Conexion = new SqlConnection(GetConection);
@@ -26,7 +26,7 @@ namespace Data
             }
         }
 
-       public static SqlConnection ConecctionString()
+       public SqlConnection ConecctionString()
         {
             return Conexion;
         }

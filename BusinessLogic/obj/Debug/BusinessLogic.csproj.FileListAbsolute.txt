@@ -1,0 +1,12 @@
+D:\mono-romana-project\BusinessLogic\bin\Debug\BusinessLogic.dll
+D:\mono-romana-project\BusinessLogic\bin\Debug\BusinessLogic.pdb
+D:\mono-romana-project\BusinessLogic\bin\Debug\Data.dll
+D:\mono-romana-project\BusinessLogic\bin\Debug\Entity.dll
+D:\mono-romana-project\BusinessLogic\bin\Debug\Data.pdb
+D:\mono-romana-project\BusinessLogic\bin\Debug\Entity.pdb
+D:\mono-romana-project\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyReference.cache
+D:\mono-romana-project\BusinessLogic\obj\Debug\BusinessLogic.UserControl1.resources
+D:\mono-romana-project\BusinessLogic\obj\Debug\BusinessLogic.csproj.GenerateResource.cache
+D:\mono-romana-project\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+D:\mono-romana-project\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\mono-romana-project\BusinessLogic\obj\Debug\BusinessLogic.pdb
