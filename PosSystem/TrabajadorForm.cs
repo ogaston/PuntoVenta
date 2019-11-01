@@ -94,7 +94,7 @@ namespace PosSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "Error Al Agregar Trabajador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " Error Al Agregar Trabajador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -205,7 +205,7 @@ namespace PosSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "Error del DataGrid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " Error del DataGrid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -246,7 +246,7 @@ namespace PosSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "Error Al Modificar Trabajador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " Error Al Modificar Trabajador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -272,7 +272,7 @@ namespace PosSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "Error Al Eliminar","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " Error Al Eliminar","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -289,7 +289,7 @@ namespace PosSystem
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + "Error Al Consultar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " Error Al Consultar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -303,7 +303,7 @@ namespace PosSystem
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + "Error Al Consultar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " Error Al Consultar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

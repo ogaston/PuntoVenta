@@ -224,5 +224,65 @@ namespace PosSystem
                 MessageBox.Show(ex.Message + "Error del DataGrid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Validar())
+                {
+                    Articulo modifica = new Articulo();
+                    modifica.IDArticulo = ID;
+                    modifica.Codido_Articulo = txtCodigo.Text;
+                    modifica.IDCategoria = cbCategoria.SelectedIndex + 1;
+                    modifica.IDPresentacion = cbPresentacion.SelectedIndex + 1;
+                    modifica.Nombre = txtNombre.Text;
+                    modifica.Descripcion = txtDescripcion.Text;
+                    modifica.Imagen = pbImagen;
+                    ArticuloBL.UpdateArticulo(modifica);
+                    dataGridView1.Update();
+                    llenarGrid();
+                    MessageBox.Show("Articulo Modificado Exitosamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar(txtNombre, txtDescripcion, txtCodigo);
+                    btnGuardar.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    btnAgregar.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Debe llenar todos los Campos Requeridos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Error Al Modificar Articulo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult resultado = MessageBox.Show("Realmente desea eliminar el Articulo: " + txtNombre.Text + "?",
+                                   "¿Desea eliminar?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (resultado == DialogResult.Yes)
+                {
+                    ArticuloBL.DeleteArticulo(ID);
+                    MessageBox.Show("Articulo Eliminado.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar(txtNombre, txtDescripcion, txtCodigo);
+                    dataGridView1.Update();
+                    llenarGrid();
+                    btnGuardar.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    btnAgregar.Enabled = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Error Al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
