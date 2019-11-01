@@ -105,7 +105,7 @@ namespace PosSystem
 
         }
 
-        private void Focus()
+        private void FocusTextBox()
         {
             if (tabControl1.SelectedIndex == 0)
             {
@@ -318,7 +318,7 @@ namespace PosSystem
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Focus();
+            FocusTextBox();
         }
     }
 }

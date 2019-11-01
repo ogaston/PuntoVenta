@@ -52,6 +52,11 @@
     <Compile Include="ArticuloForm.Designer.cs">
       <DependentUpon>ArticuloForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSetCombo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCombo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +86,17 @@
     <EmbeddedResource Include="TrabajadorForm.resx">
       <DependentUpon>TrabajadorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSetCombo.xsc">
+      <DependentUpon>DataSetCombo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCombo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCombo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetCombo.xss">
+      <DependentUpon>DataSetCombo.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

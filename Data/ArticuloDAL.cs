@@ -23,12 +23,16 @@ namespace Data
             using (SqlCommand comando = new SqlCommand("proc_ArticuloInsert", conexion.ConecctionString()))
             {
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@Codigo_Articulo", nuevo.Codido_Articulo);
                 comando.Parameters.AddWithValue("@IDCategoria", nuevo.IDCategoria);
                 comando.Parameters.AddWithValue("@IDPresentacion", nuevo.IDPresentacion);
+                comando.Parameters.AddWithValue("@Codigo_Articulo", nuevo.Codido_Articulo);
                 comando.Parameters.AddWithValue("@Nombre", nuevo.Nombre);
                 comando.Parameters.AddWithValue("@Descripcion", nuevo.Descripcion);
-                comando.Parameters.AddWithValue("@Imagen", nuevo.Imagen);
+
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                nuevo.Imagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+               
+                comando.Parameters.AddWithValue("@Imagen", ms.GetBuffer());
                 comando.Parameters.AddWithValue("@Estatus", 1);
                 comando.ExecuteNonQuery();
             }
@@ -84,7 +88,11 @@ namespace Data
                 comando.Parameters.AddWithValue("@IDPresentacion", modifica.IDPresentacion);
                 comando.Parameters.AddWithValue("@Nombre", modifica.Nombre);
                 comando.Parameters.AddWithValue("@Descripcion", modifica.Descripcion);
-                comando.Parameters.AddWithValue("@Imagen", modifica.Imagen);
+
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                modifica.Imagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                comando.Parameters.AddWithValue("@Imagen", ms.GetBuffer());
                 comando.Parameters.AddWithValue("@Estatus", 1);
                 comando.ExecuteNonQuery();
             }
