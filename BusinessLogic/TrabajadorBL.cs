@@ -34,5 +34,11 @@ namespace BusinessLogic
             TrabajadorDAL trabajador = new TrabajadorDAL();
             return trabajador.SelectAllTrabajador();
         }
+
+        public static DataTable SelectNameTrabajador(string nombre)
+        {
+            TrabajadorDAL trabajador = new TrabajadorDAL();
+            return trabajador.SelectNameTrabajador(nombre);
+        }
     }
 }
