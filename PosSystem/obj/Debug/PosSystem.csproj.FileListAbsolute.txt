@@ -14,3 +14,4 @@ D:\mono-romana-project\PosSystem\bin\Debug\BusinessLogic.pdb
 D:\mono-romana-project\PosSystem\bin\Debug\Entity.pdb
 D:\mono-romana-project\PosSystem\bin\Debug\Data.pdb
 D:\mono-romana-project\PosSystem\obj\Debug\PosSystem.csproj.CopyComplete
+D:\mono-romana-project\PosSystem\obj\Debug\PosSystem.ArticuloForm.resources
