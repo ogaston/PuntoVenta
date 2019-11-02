@@ -176,6 +176,9 @@ namespace PosSystem
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpiar(txtNombre, txtDescripcion, txtCodigo);
+            btnGuardar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnAgregar.Enabled = true;
 
         }
 
