@@ -226,14 +226,26 @@ CREATE TABLE [dbo].[Trabajador](
 	[Telefono] [numeric](18, 0) NOT NULL,
 	[Email] [varchar](20) NULL,
 	[Salario] [numeric](14, 2) NOT NULL,
-	[Regla] [varchar](2) NULL,
-	[Usuario] [varchar](10) NOT NULL,
-	[Password] [varchar](10) NOT NULL,
+	[Usuario] [varchar](10) NULL,
+	[Password] [varchar](10) NULL,
+	[Rango] [varchar](20) NULL,
 	[Cargo] [varchar](50) NOT NULL,
 	[Estatus] [int] NOT NULL,
  CONSTRAINT [PK_Trabajador] PRIMARY KEY CLUSTERED 
 (
 	[IDTrabajador] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+CREATE TABLE [dbo].[Privilegio](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](20) NOT NULL,
+ CONSTRAINT [PK_Usuario] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -1967,9 +1979,9 @@ CREATE PROCEDURE [dbo].[proc_TrabajadorInsert]
 	@Telefono numeric(18,0) = NULL, 
 	@Email varchar(20) = NULL, 
 	@Salario numeric(14,2) = NULL, 
-	@Regla varchar(2) = NULL, 
 	@Usuario varchar(10), 
 	@Password varchar(10), 
+	@Rango varchar(10),
 	@Cargo varchar(50) = NULL, 
 	@Estatus int = NULL
 )
@@ -1979,8 +1991,6 @@ BEGIN
 	SET NOCOUNT OFF
 	DECLARE @Err int
 
-	
-	
 	INSERT
 	INTO [Trabajador]
 	(
@@ -1993,9 +2003,9 @@ BEGIN
 		[Telefono], 
 		[Email], 
 		[Salario], 
-		[Regla], 
 		[Usuario], 
-		[Password], 
+		[Password],
+		[Rango], 
 		[Cargo], 
 		[Estatus]
 	)
@@ -2011,19 +2021,14 @@ BEGIN
 		@Telefono, 
 		@Email, 
 		@Salario, 
-		@Regla, 
 		@Usuario, 
 		@Password, 
+		@Rango,
 		@Cargo, 
 		@Estatus
 	)
 
-
 	SET @Err = @@Error
-
-
-
-	
 
 	RETURN @Err
 END
@@ -2052,11 +2057,12 @@ BEGIN
 		[Direccion], 
 		[Telefono], 
 		[Email], 
-		[Salario], 
-		[Regla], 
+		[Salario],
+		[Cargo],
 		[Usuario], 
 		[Password],
-		[Cargo]
+		[Rango]
+		
 	FROM [dbo].[Trabajador] where Estatus = 1
 
 	SET @Err = @@Error
@@ -2090,10 +2096,11 @@ SET NOCOUNT ON
 		[Direccion], 
 		[Telefono], 
 		[Email], 
-		[Salario], 
+		[Salario],
+		[Cargo],
 		[Usuario], 
 		[Password],
-		[Cargo]
+		[Rango]
 	FROM [dbo].[Trabajador]
 	WHERE
 		Nombre like @Nombre+'%' and Estatus = 1
@@ -2102,6 +2109,8 @@ SET NOCOUNT ON
 
 	RETURN @Err
 END
+
+
 
 GO
 /****** Object:  StoredProcedure [dbo].[proc_TrabajadorUpdate]    Script Date: 11/2/2019 4:20:33 PM ******/
@@ -2122,7 +2131,7 @@ CREATE PROCEDURE [dbo].[proc_TrabajadorUpdate]
 	@Telefono numeric(18,0) = NULL, 
 	@Email varchar(20) = NULL, 
 	@Salario numeric(14,2) = NULL, 
-	@Regla varchar(2) = NULL, 
+	@Rango varchar(10) = NULL, 
 	@Usuario varchar(10), 
 	@Password varchar(10), 
 	@Cargo varchar(50) = NULL, 
@@ -2148,7 +2157,7 @@ BEGIN
 		[Telefono] = @Telefono, 
 		[Email] = @Email, 
 		[Salario] = @Salario, 
-		[Regla] = @Regla, 
+		[Rango] = @Rango, 
 		[Usuario] = @Usuario, 
 		[Password] = @Password, 
 		[Cargo] = @Cargo, 
