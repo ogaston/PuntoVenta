@@ -32,9 +32,9 @@ namespace Data
                 comando.Parameters.AddWithValue("@Telefono", nuevo.Telefono);
                 comando.Parameters.AddWithValue("@Email", nuevo.Email);
                 comando.Parameters.AddWithValue("@Salario", nuevo.Salario);
-                comando.Parameters.AddWithValue("@Regla", nuevo.Regla);
                 comando.Parameters.AddWithValue("@Usuario", nuevo.Usuario);
                 comando.Parameters.AddWithValue("@Password",nuevo.Password);
+                comando.Parameters.AddWithValue("@Rango", nuevo.Rango);
                 comando.Parameters.AddWithValue("@Cargo", nuevo.Cargo);
                 comando.Parameters.AddWithValue("@Estatus", 1);
                 comando.ExecuteNonQuery();
@@ -95,7 +95,7 @@ namespace Data
                 comando.Parameters.AddWithValue("@Telefono", modifica.Telefono);
                 comando.Parameters.AddWithValue("@Email", modifica.Email);
                 comando.Parameters.AddWithValue("@Salario", modifica.Salario);
-                comando.Parameters.AddWithValue("@Regla", modifica.Regla);
+                comando.Parameters.AddWithValue("@Rango", modifica.Rango);
                 comando.Parameters.AddWithValue("@Usuario", modifica.Usuario);
                 comando.Parameters.AddWithValue("@Password",modifica.Password);
                 comando.Parameters.AddWithValue("@Cargo", modifica.Cargo);

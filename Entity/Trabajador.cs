@@ -18,10 +18,10 @@ namespace Entity
         public double Telefono { get; set; }
         public string Email { get; set; }
         public double Salario { get; set; }
-        public string Regla { get; set; }
         public string Usuario { get; set; }
         public string Password { get; set; }
         public string Cargo { get; set; }
         public int Estatus { get { return 1; }}
+        public string Rango { get; set; }
     }
 }

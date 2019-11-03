@@ -16,10 +16,10 @@ namespace PosSystem
     public partial class ArticuloForm : Form
     {
 
-        DataSetCombo dtCombo = new DataSetCombo();
+        DataSetCombox dtCombo = new DataSetCombox();
 
-        DataSetComboTableAdapters.CategoriaTableAdapter categoria = new DataSetComboTableAdapters.CategoriaTableAdapter();
-        DataSetComboTableAdapters.PresentacionTableAdapter presentacion = new DataSetComboTableAdapters.PresentacionTableAdapter();
+        DataSetComboxTableAdapters.CategoriaTableAdapter categoria = new DataSetComboxTableAdapters.CategoriaTableAdapter();
+        DataSetComboxTableAdapters.PresentacionTableAdapter presentacion = new DataSetComboxTableAdapters.PresentacionTableAdapter();
         
         public ArticuloForm()
         {

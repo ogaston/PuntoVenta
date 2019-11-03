@@ -14,6 +14,9 @@ namespace PosSystem
 {
     public partial class TrabajadorForm : Form
     {
+        DataSetCombox dtCombo = new DataSetCombox();
+        DataSetComboxTableAdapters.PrivilegioTableAdapter privilegio = new DataSetComboxTableAdapters.PrivilegioTableAdapter();
+
         private static TrabajadorForm trabajadorForm = null;
         private int ID;
         public static TrabajadorForm Instance()
@@ -81,6 +84,7 @@ namespace PosSystem
                     nuevo.Usuario = txtUsuario.Text;
                     nuevo.Password = txtPaswword.Text;
                     nuevo.Cargo = txtCargo.Text;
+                    nuevo.Rango = cbPrivilegios.Text;
                     TrabajadorBL.InsertTrabajador(nuevo);
                     dataGridView1.Update();
                     llenarGrid();
@@ -121,7 +125,18 @@ namespace PosSystem
             llenarGrid();
             btnGuardar.Enabled = false;
             btnEliminar.Enabled = false;
-            
+            try
+            {
+               
+                privilegio.Fill(dtCombo.Privilegio);
+                cbPrivilegios.DataSource = dtCombo.Privilegio;
+                cbPrivilegios.DisplayMember = "nombre";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al llenar el ComboBox Categoria || Presentacion");
+            }
+
         }
 
         private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
@@ -187,6 +202,7 @@ namespace PosSystem
                 txtSalario.Text = dataGridView1.Rows[fila].Cells["Salario"].Value.ToString();
                 txtUsuario.Text = dataGridView1.Rows[fila].Cells["Usuario"].Value.ToString();
                 txtPaswword.Text = dataGridView1.Rows[fila].Cells["Password"].Value.ToString();
+                cbPrivilegios.Text = dataGridView1.Rows[fila].Cells["Rango"].Value.ToString();
                 txtCargo.Text = dataGridView1.Rows[fila].Cells["Cargo"].Value.ToString();
 
             }
@@ -229,6 +245,7 @@ namespace PosSystem
                     modifica.Usuario = txtUsuario.Text;
                     modifica.Password = txtPaswword.Text;
                     modifica.Cargo = txtCargo.Text;
+                    modifica.Rango = cbPrivilegios.Text;
                     TrabajadorBL.UpdateTrabajador(modifica);
                     dataGridView1.Update();
                     llenarGrid();
@@ -320,5 +337,7 @@ namespace PosSystem
         {
             FocusTextBox();
         }
+
+        
     }
 }
