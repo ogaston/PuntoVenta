@@ -63,8 +63,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrincipalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrincipalForm.Designer.cs">
+      <DependentUpon>PrincipalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TrabajadorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,15 +85,14 @@
     <EmbeddedResource Include="ArticuloForm.resx">
       <DependentUpon>ArticuloForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrincipalForm.resx">
+      <DependentUpon>PrincipalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="TrabajadorForm.resx">
       <DependentUpon>TrabajadorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +107,7 @@
     <None Include="DataSetCombox.xss">
       <DependentUpon>DataSetCombox.xsd</DependentUpon>
     </None>
+    <None Include="Imagenes\cashier_.png" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -119,6 +130,24 @@
       <Project>{845d6b1a-f687-41de-a86d-81fa84baa7d6}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\pregunta.png" />
+    <None Include="Resources\salida.png" />
+    <None Include="Resources\finalizar.png" />
+    <None Include="Resources\trabajador.png" />
+    <None Include="Resources\presentacion.png" />
+    <None Include="Resources\categoria.png" />
+    <None Include="Resources\articulo.png" />
+    <None Include="Resources\cliente.png" />
+    <None Include="Resources\facturacion.png" />
+    <None Include="Resources\fabricar.png" />
+    <None Include="Resources\mayores-ingresos.png" />
+    <None Include="Resources\mantenimiento.png" />
+    <None Include="Resources\camion.png" />
+    <None Include="Resources\carrito-de-compras.png" />
+    <None Include="Resources\almacen-de-fabrica.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

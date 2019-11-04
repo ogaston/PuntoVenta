@@ -28,16 +28,16 @@ namespace PosSystem
 
         private static ArticuloForm articuloForm = null;
         private int ID;
-        public static ArticuloForm Instance()
-        {
-            if (((articuloForm == null)
-                        || (articuloForm.IsDisposed == true)))
-            {
-                articuloForm = new ArticuloForm();
-            }
-            articuloForm.BringToFront();
-            return articuloForm;
-        }
+        //public static ArticuloForm Instance()
+        //{
+        //    if (((articuloForm == null)
+        //                || (articuloForm.IsDisposed == true)))
+        //    {
+        //        articuloForm = new ArticuloForm();
+        //    }
+        //    articuloForm.BringToFront();
+        //    return articuloForm;
+        //}
         public bool Validar()
         {
             bool valor = false;
