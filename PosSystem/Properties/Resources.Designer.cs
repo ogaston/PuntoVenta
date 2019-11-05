@@ -63,6 +63,16 @@ namespace PosSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Agregar {
+            get {
+                object obj = ResourceManager.GetObject("Agregar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap almacen_de_fabrica {
             get {
                 object obj = ResourceManager.GetObject("almacen-de-fabrica", resourceCulture);
@@ -76,6 +86,16 @@ namespace PosSystem.Properties {
         internal static System.Drawing.Bitmap articulo {
             get {
                 object obj = ResourceManager.GetObject("articulo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bloquear {
+            get {
+                object obj = ResourceManager.GetObject("bloquear", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,6 +153,16 @@ namespace PosSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Create {
+            get {
+                object obj = ResourceManager.GetObject("Create", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fabricar {
             get {
                 object obj = ResourceManager.GetObject("fabricar", resourceCulture);
@@ -173,6 +203,16 @@ namespace PosSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mas {
+            get {
+                object obj = ResourceManager.GetObject("mas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mayores_ingresos {
             get {
                 object obj = ResourceManager.GetObject("mayores-ingresos", resourceCulture);
@@ -206,6 +246,16 @@ namespace PosSystem.Properties {
         internal static System.Drawing.Bitmap salida {
             get {
                 object obj = ResourceManager.GetObject("salida", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap silueta_de_usuario {
+            get {
+                object obj = ResourceManager.GetObject("silueta-de-usuario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

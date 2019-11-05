@@ -136,9 +136,6 @@
   <data name="pregunta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pregunta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="almacen-de-fabrica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\almacen-de-fabrica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="articulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\articulo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,8 +145,11 @@
   <data name="presentacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\presentacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="silueta-de-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\silueta-de-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Agregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="trabajador" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trabajador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,13 +157,28 @@
   <data name="camion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\camion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fabricar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fabricar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Create" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Create.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="carrito-de-compras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\carrito-de-compras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fabricar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fabricar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cashier_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagenes\cashier_.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="almacen-de-fabrica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\almacen-de-fabrica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bloquear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bloquear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -63,6 +63,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="ArticuloForm.resx">
       <DependentUpon>ArticuloForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrincipalForm.resx">
       <DependentUpon>PrincipalForm.cs</DependentUpon>
@@ -107,7 +116,6 @@
     <None Include="DataSetCombox.xss">
       <DependentUpon>DataSetCombox.xsd</DependentUpon>
     </None>
-    <None Include="Imagenes\cashier_.png" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,7 +139,9 @@
       <Name>Entity</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Agregar.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pregunta.png" />
     <None Include="Resources\salida.png" />
@@ -148,6 +158,18 @@
     <None Include="Resources\camion.png" />
     <None Include="Resources\carrito-de-compras.png" />
     <None Include="Resources\almacen-de-fabrica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\silueta-de-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bloquear.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,3 +2,4 @@ D:\mono-romana-project\Entity\bin\Debug\Entity.dll
 D:\mono-romana-project\Entity\bin\Debug\Entity.pdb
 D:\mono-romana-project\Entity\obj\Debug\Entity.dll
 D:\mono-romana-project\Entity\obj\Debug\Entity.pdb
+D:\mono-romana-project\Entity\obj\Debug\Entity.csprojAssemblyReference.cache

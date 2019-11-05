@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ArticuloDAL.cs" />
     <Compile Include="ConectionDAL.cs" />
+    <Compile Include="LoginDAL.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
