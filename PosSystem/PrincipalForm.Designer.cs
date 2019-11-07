@@ -152,7 +152,6 @@
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMenu.TabIndex = 0;
             this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // menuStrip1
             // 
@@ -173,6 +172,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(183, 551);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Click += new System.EventHandler(this.menuStrip1_Click);
             // 
             // blancoMenuItem
             // 
@@ -208,7 +208,7 @@
             this.articuloMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.articuloMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.articuloMenuItem.Name = "articuloMenuItem";
-            this.articuloMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.articuloMenuItem.Size = new System.Drawing.Size(182, 38);
             this.articuloMenuItem.Text = "Articulo";
             this.articuloMenuItem.Click += new System.EventHandler(this.articuloMenuItem_Click);
             // 
@@ -219,7 +219,7 @@
             this.CategoriaMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CategoriaMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.CategoriaMenuItem.Name = "CategoriaMenuItem";
-            this.CategoriaMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.CategoriaMenuItem.Size = new System.Drawing.Size(182, 38);
             this.CategoriaMenuItem.Text = "Categoria";
             // 
             // presentacionMenuItem
@@ -229,7 +229,7 @@
             this.presentacionMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.presentacionMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.presentacionMenuItem.Name = "presentacionMenuItem";
-            this.presentacionMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.presentacionMenuItem.Size = new System.Drawing.Size(182, 38);
             this.presentacionMenuItem.Text = "Presentacion";
             // 
             // ventaMenuItem
@@ -255,7 +255,7 @@
             this.facturacionMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.facturacionMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.facturacionMenuItem.Name = "facturacionMenuItem";
-            this.facturacionMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.facturacionMenuItem.Size = new System.Drawing.Size(173, 38);
             this.facturacionMenuItem.Text = "Facturacion";
             // 
             // clienteToolStripMenuItem
@@ -265,7 +265,7 @@
             this.clienteToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clienteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(173, 38);
             this.clienteToolStripMenuItem.Text = "Clientes";
             // 
             // comprasMenuItem
@@ -291,7 +291,7 @@
             this.ingresosMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ingresosMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ingresosMenuItem.Name = "ingresosMenuItem";
-            this.ingresosMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.ingresosMenuItem.Size = new System.Drawing.Size(180, 38);
             this.ingresosMenuItem.Text = "Ingresos";
             // 
             // proveedoresMenuItem
@@ -301,7 +301,7 @@
             this.proveedoresMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.proveedoresMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.proveedoresMenuItem.Name = "proveedoresMenuItem";
-            this.proveedoresMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.proveedoresMenuItem.Size = new System.Drawing.Size(180, 38);
             this.proveedoresMenuItem.Text = "Proveedores";
             // 
             // mantenimientoMenuItem
@@ -380,6 +380,7 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(858, 551);
             this.panelContenedor.TabIndex = 2;
+            this.panelContenedor.Click += new System.EventHandler(this.panelContenedor_Click);
             // 
             // PrincipalForm
             // 

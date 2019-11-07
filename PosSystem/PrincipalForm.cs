@@ -16,15 +16,33 @@ namespace PosSystem
         public PrincipalForm()
         {
             InitializeComponent();
+            UserAccess();
         }
-        private void btnMenu_Click(object sender, EventArgs e)
+        
+        private void UserAccess()
         {
-            //if (MenuVertical.Width == 250)
-            //{
-            //    MenuVertical.Width = 70;
-            //}
-            //else
-            //    MenuVertical.Width = 250;
+            if (Login.guardaRango == "Ventas")
+            {
+                almacenMenuItem.Visible = false;
+                comprasMenuItem.Visible = false;
+                mantenimientoMenuItem.Visible = false;
+
+            }else if (Login.guardaRango =="Almacen")
+            {
+                comprasMenuItem.Visible = false;
+                ventaMenuItem.Visible = false;
+                mantenimientoMenuItem.Visible = false;
+
+            }else if (Login.guardaRango =="Compras")
+            {
+                almacenMenuItem.Visible = false;
+                ventaMenuItem.Visible = false;
+                mantenimientoMenuItem.Visible = false;
+
+            }else if(Login.guardaRango == "Empleado")
+            {
+                mantenimientoMenuItem.Visible = false;
+            }
         }
 
         private void ReturnColor(string nameItem)
@@ -93,16 +111,16 @@ namespace PosSystem
                 ayudaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
                 cerrarSesionMenuItem.BackColor = Color.FromArgb(70, 179, 254);
             }
-            //else
-            //{
-            //    almacenMenuItem.BackColor = Color.FromArgb(70, 179, 254);
-            //    ventaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
-            //    comprasMenuItem.BackColor = Color.FromArgb(70, 179, 254);
-            //    mantenimientoMenuItem.BackColor = Color.FromArgb(70, 179, 254);
-            //    ayudaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
-            //    cerrarSesionMenuItem.BackColor = Color.FromArgb(70, 179, 254);
-            //    salirMenuItem.BackColor = Color.FromArgb(70, 179, 254);
-            //}
+            else if(nameItem =="")
+            {
+                almacenMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                ventaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                comprasMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                mantenimientoMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                ayudaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                cerrarSesionMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                salirMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            }
         }
 
         private void iconcerrar_Click(object sender, EventArgs e)
@@ -218,6 +236,20 @@ namespace PosSystem
         {
             cerrarSesionMenuItem.BackColor = Color.FromArgb(203, 215, 245);
             ReturnColor("CerrarSesion");
+              this.Hide();
+            Login abril = new Login();
+            abril.ShowDialog();
+        }
+
+
+        private void panelContenedor_Click(object sender, EventArgs e)
+        {
+            ReturnColor("");
+        }
+
+        private void menuStrip1_Click(object sender, EventArgs e)
+        {
+            ReturnColor("");
         }
     }
 }

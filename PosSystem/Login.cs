@@ -13,6 +13,7 @@ namespace PosSystem
 {
     public partial class Login : Form
     {
+        public static string guardaRango { get; set; }
         public Login()
         {
             InitializeComponent();
@@ -20,17 +21,16 @@ namespace PosSystem
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta Seguro que desea Salir?", "Informacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
                 Application.Exit();
-            }
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-           bool validate = LoginBL.ValidatedUsuario(txtUsuario.Text, txtClave.Text);
-            if (validate)
+           string validate = LoginBL.ValidatedUsuario(txtUsuario.Text, txtClave.Text);
+            if (validate.Length > 0)
             {
+                guardaRango = validate;
+                this.Hide();
                 PrincipalForm abril = new PrincipalForm();
                 abril.ShowDialog();
                 Application.Exit();

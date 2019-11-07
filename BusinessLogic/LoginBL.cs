@@ -9,7 +9,7 @@ namespace BusinessLogic
 {
     public class LoginBL
     {
-        public static bool ValidatedUsuario(string usuario,string clave)
+        public static string ValidatedUsuario(string usuario,string clave)
         {
             LoginDAL validate = new LoginDAL();
             return validate.ValidatedUsuario(usuario,clave);

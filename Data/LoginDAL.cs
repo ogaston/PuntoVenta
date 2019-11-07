@@ -17,10 +17,10 @@ namespace Data
             conexion = new ConectionDAL();
         }
 
-        public bool ValidatedUsuario(string usuario, string clave)
+        public string ValidatedUsuario(string usuario, string clave)
         {
-            bool existe = false;
-            int i = 0;
+            string existe ="";
+            
 
             conexion.ConecctionString().Open();
             using (SqlCommand comando = new SqlCommand("proc_ValidarUsuario", conexion.ConecctionString()))
@@ -34,11 +34,8 @@ namespace Data
                 {
                     while (reader.Read())
                     {
-                        i++;
+                        existe = reader["Rango"].ToString();
                     }
-
-                    if (i >= 1) { existe = true; }
-                    else { existe = false; }
 
                 }
 
