@@ -2234,6 +2234,26 @@ begin
 		where ID = @ID;
 end
 
+GO
+/****** Object:  StoredProcedure [dbo].[proc_ValidarUsuario]    Script Date: 11/7/2019 9:53:42 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[proc_ValidarUsuario]
+(
+ 	@Usuario varchar(10),
+ 	@Password varchar(10)
+)
+ as
+ begin
+	select Usuario, Password,Rango 
+	from Trabajador
+	where Usuario = @Usuario
+		and Password = @Password
+		and Estatus = 1
+	
+ end
 
 GO
 /****** Object:  StoredProcedure [dbo].[proc_VentaLoadAll]    Script Date: 11/2/2019 4:20:33 PM ******/
