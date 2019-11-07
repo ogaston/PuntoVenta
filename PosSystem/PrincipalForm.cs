@@ -27,6 +27,84 @@ namespace PosSystem
             //    MenuVertical.Width = 250;
         }
 
+        private void ReturnColor(string nameItem)
+        {
+            if (nameItem == "almacen")
+            {
+                ventaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                comprasMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                mantenimientoMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                ayudaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                cerrarSesionMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                salirMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+
+            }
+            else if(nameItem == "venta")
+            {
+                almacenMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                comprasMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                mantenimientoMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                ayudaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                cerrarSesionMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                salirMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            }
+            else if (nameItem == "compras")
+            {
+                almacenMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                ventaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                mantenimientoMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                ayudaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                cerrarSesionMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                salirMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            }
+            else if (nameItem == "mantenimiento")
+            {
+                almacenMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                ventaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                comprasMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                ayudaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                cerrarSesionMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                salirMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            }
+            else if (nameItem =="ayuda")
+            {
+                almacenMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                ventaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                comprasMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                mantenimientoMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                cerrarSesionMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                salirMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            }
+            else if (nameItem == "CerrarSesion")
+            {
+                almacenMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                ventaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                comprasMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                mantenimientoMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                ayudaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                salirMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            }
+            else if (nameItem == "salir")
+            {
+                almacenMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                ventaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                comprasMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                mantenimientoMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                ayudaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+                cerrarSesionMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            }
+            //else
+            //{
+            //    almacenMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            //    ventaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            //    comprasMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            //    mantenimientoMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            //    ayudaMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            //    cerrarSesionMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            //    salirMenuItem.BackColor = Color.FromArgb(70, 179, 254);
+            //}
+        }
+
         private void iconcerrar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Esta Seguro que desea Salir?", "Informacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
@@ -86,6 +164,8 @@ namespace PosSystem
 
         private void salirMenuItem_Click(object sender, EventArgs e)
         {
+            
+            ReturnColor("salir");
             if (MessageBox.Show("Esta Seguro que desea Salir?","Informacion",MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 Application.Exit();
@@ -101,6 +181,43 @@ namespace PosSystem
         private void trabajadorMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new TrabajadorForm());
+        }
+
+        private void almacenMenuItem_Click(object sender, EventArgs e)
+        {
+            almacenMenuItem.BackColor = Color.FromArgb(203, 215, 245);
+            ReturnColor("almacen");
+
+        }
+
+        private void ventaMenuItem_Click(object sender, EventArgs e)
+        {
+            ventaMenuItem.BackColor = Color.FromArgb(203, 215, 245);
+            ReturnColor("venta");
+        }
+
+        private void comprasMenuItem_Click(object sender, EventArgs e)
+        {
+            comprasMenuItem.BackColor = Color.FromArgb(203, 215, 245);
+            ReturnColor("compras");
+        }
+
+        private void mantenimientoMenuItem_Click(object sender, EventArgs e)
+        {
+            mantenimientoMenuItem.BackColor = Color.FromArgb(203, 215, 245);
+            ReturnColor("mantenimiento");
+        }
+
+        private void ayudaMenuItem_Click(object sender, EventArgs e)
+        {
+            ayudaMenuItem.BackColor = Color.FromArgb(203, 215, 245);
+            ReturnColor("ayuda");
+        }
+
+        private void cerrarSesionMenuItem_Click(object sender, EventArgs e)
+        {
+            cerrarSesionMenuItem.BackColor = Color.FromArgb(203, 215, 245);
+            ReturnColor("CerrarSesion");
         }
     }
 }
