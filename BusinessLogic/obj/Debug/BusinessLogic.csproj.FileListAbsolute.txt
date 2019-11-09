@@ -8,3 +8,13 @@ D:\mono-romana-project\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyRefer
 D:\mono-romana-project\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
 D:\mono-romana-project\BusinessLogic\obj\Debug\BusinessLogic.dll
 D:\mono-romana-project\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\test1\Source\Repos\PuntoVenta\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\test1\Source\Repos\PuntoVenta\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\test1\Source\Repos\PuntoVenta\BusinessLogic\bin\Debug\Data.dll
+C:\Users\test1\Source\Repos\PuntoVenta\BusinessLogic\bin\Debug\Entity.dll
+C:\Users\test1\Source\Repos\PuntoVenta\BusinessLogic\bin\Debug\Data.pdb
+C:\Users\test1\Source\Repos\PuntoVenta\BusinessLogic\bin\Debug\Entity.pdb
+C:\Users\test1\Source\Repos\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyReference.cache
+C:\Users\test1\Source\Repos\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+C:\Users\test1\Source\Repos\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\test1\Source\Repos\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.pdb

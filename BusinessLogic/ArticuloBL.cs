@@ -17,6 +17,8 @@ namespace BusinessLogic
             Articulo.InsertArticulo(insertNew);
         }
 
+
+        // Agregando mensaje de prueba
         public static void UpdateArticulo(Articulo update)
         {
             ArticuloDAL Articulo = new ArticuloDAL();
