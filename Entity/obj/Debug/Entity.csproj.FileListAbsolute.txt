@@ -3,3 +3,8 @@ D:\mono-romana-project\Entity\bin\Debug\Entity.pdb
 D:\mono-romana-project\Entity\obj\Debug\Entity.dll
 D:\mono-romana-project\Entity\obj\Debug\Entity.pdb
 D:\mono-romana-project\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+D:\Visual_Studio\ogaston\PuntoVenta\Entity\bin\Debug\Entity.dll
+D:\Visual_Studio\ogaston\PuntoVenta\Entity\bin\Debug\Entity.pdb
+D:\Visual_Studio\ogaston\PuntoVenta\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+D:\Visual_Studio\ogaston\PuntoVenta\Entity\obj\Debug\Entity.dll
+D:\Visual_Studio\ogaston\PuntoVenta\Entity\obj\Debug\Entity.pdb
