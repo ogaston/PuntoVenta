@@ -17,9 +17,10 @@ namespace Data
             conexion = new ConectionDAL();
         }
 
-        public string ValidatedUsuario(string usuario, string clave)
+        public string[] ValidatedUsuario(string usuario, string clave)
         {
-            string existe ="";
+            string[] existe=new string[2];
+            
             
 
             conexion.ConecctionString().Open();
@@ -34,7 +35,8 @@ namespace Data
                 {
                     while (reader.Read())
                     {
-                        existe = reader["Rango"].ToString();
+                        existe[0] = reader["Rango"].ToString();
+                        existe[1] = reader["IDTrabajador"].ToString();
                     }
 
                 }
