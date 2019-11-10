@@ -14,6 +14,5 @@ namespace BusinessLogic
             LoginDAL validate = new LoginDAL();
             return validate.ValidatedUsuario(usuario,clave);
         }
-        //resuelvan el problema bolsas
     }
 }
