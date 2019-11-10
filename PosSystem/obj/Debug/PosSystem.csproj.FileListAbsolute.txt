@@ -36,22 +36,6 @@ C:\Users\test1\Source\Repos\PuntoVenta\PosSystem\obj\Debug\PosSystem.csproj.Gene
 C:\Users\test1\Source\Repos\PuntoVenta\PosSystem\obj\Debug\PosSystem.csproj.CopyComplete
 C:\Users\test1\Source\Repos\PuntoVenta\PosSystem\obj\Debug\PosSystem.exe
 C:\Users\test1\Source\Repos\PuntoVenta\PosSystem\obj\Debug\PosSystem.pdb
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\bin\Debug\PosSystem.exe.config
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\bin\Debug\PosSystem.exe
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\bin\Debug\PosSystem.pdb
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\bin\Debug\BusinessLogic.dll
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\bin\Debug\Entity.dll
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\bin\Debug\Data.dll
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\bin\Debug\BusinessLogic.pdb
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\bin\Debug\Entity.pdb
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\bin\Debug\Data.pdb
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.csprojAssemblyReference.cache
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.ArticuloForm.resources
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.Login.resources
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.PrincipalForm.resources
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.Properties.Resources.resources
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.TrabajadorForm.resources
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.csproj.GenerateResource.cache
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.csproj.CopyComplete
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.exe
-D:\Visual_Studio\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.pdb
+D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\PosSystem\bin\Debug\PosSystem.exe.config
+D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.exe
+D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.pdb
