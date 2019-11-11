@@ -25,8 +25,11 @@ namespace Data
             
             try
             {
-                
-                SqlCon.Open();
+
+                if (SqlCon.State == ConnectionState.Closed)
+                {
+                    SqlCon.Open();
+                }
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
                 SqlCmd.CommandText = "proc_IngresoInsert";

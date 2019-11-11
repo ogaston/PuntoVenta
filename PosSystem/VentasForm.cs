@@ -41,10 +41,11 @@ namespace PosSystem
 
         }
 
-        public void setCliente(string idcliente, string nombre)
+        public void setCliente(string idcliente, string nombre, string documento)
         {
             this.txtIdcliente.Text = idcliente;
             this.txtCliente.Text = nombre;
+            
 
         }
 
@@ -404,7 +405,8 @@ namespace PosSystem
             this.txtStock_Actual.Text = string.Empty;
             this.txtPrecioCompra.Text = string.Empty;
             this.txtPrecioVenta.Text = string.Empty;
-
+            this.txtDescuento.Text = "0";
+            this.txtCantidad.Text = "1";
 
         }
         // Habilitar controles del formulario
@@ -453,6 +455,7 @@ namespace PosSystem
         {
             this.dtDetalle = new DataTable("Detalle");
             this.dtDetalle.Columns.Add("iddetalle_ingreso", System.Type.GetType("System.Int32"));
+            this.dtDetalle.Columns.Add("idventa", System.Type.GetType("System.Int32"));
             this.dtDetalle.Columns.Add("articulo", System.Type.GetType("System.String"));
             this.dtDetalle.Columns.Add("cantidad", System.Type.GetType("System.Int32"));
             this.dtDetalle.Columns.Add("precio_venta", System.Type.GetType("System.Decimal"));
@@ -462,6 +465,8 @@ namespace PosSystem
             //Relacionar datagridview con datatable
             this.dataListadoDetalle.DataSource = dtDetalle;
         }
+
+
 
         #region Consultas a Base de Datos
         // Metodo para ocultar Colummnas
@@ -475,7 +480,7 @@ namespace PosSystem
         //Metodo Mostrar
         private void Mostrar()
         {
-            this.dataListado.DataSource = IngresoBL.Mostrar();
+            this.dataListado.DataSource = VentaBL.Mostrar();
             this.OcultarColumnas();
             lblTotal.Text = "Total De Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -483,7 +488,7 @@ namespace PosSystem
         //metodo mostrar los detalles
         private void MostrarDetalle()
         {
-            this.dataListadoDetalle.DataSource = IngresoBL.MostrarDetalle(this.txtIdventa.Text);
+            this.dataListadoDetalle.DataSource = VentaBL.MostrarDetalle(this.txtIdventa.Text);
         }
         // Metodo BuscarFechas
         //private void BuscarIngresoFechas()
@@ -512,7 +517,7 @@ namespace PosSystem
         {
             this.Top = 0;
             this.Left = 0;
-            //this.Mostrar();
+            this.Mostrar();
             this.Habilitar(false);
             this.Botones();
             this.CrearTabla();
@@ -562,6 +567,7 @@ namespace PosSystem
                         DataRow row = this.dtDetalle.NewRow();
 
                         row["iddetalle_ingreso"] = Convert.ToInt32(this.txtIdarticulo.Text);
+                        row["idventa"] = Convert.ToInt32(this.txtIdventa.Text);
                         row["articulo"] = this.txtArticulo.Text;
                         row["cantidad"] = Convert.ToDecimal(this.txtCantidad.Text);
                         row["precio_venta"] = Convert.ToDecimal(this.txtPrecioVenta.Text);
@@ -635,7 +641,7 @@ namespace PosSystem
                 {
                     if (this.IsNuevo)
                     {
-                        rpta = VentaBL.Insertar(Convert.ToInt32(this.txtIdventa.Text),Convert.ToInt32(this.txtIdcliente.Text),2,
+                        rpta = VentaBL.Insertar(Convert.ToInt32(this.txtIdventa.Text),Convert.ToInt32(this.txtIdcliente.Text),1,
                             this.dtFecha.Value, this.cbTipo_Pago.Text,ncf,ncrefis,this.txtAuttarjeta.Text,
                             Convert.ToDecimal(this.txtIgv.Text), 1, dtDetalle);
 
@@ -705,6 +711,83 @@ namespace PosSystem
         {
             VentaVistaClienteForm frm = new VentaVistaClienteForm();
             frm.ShowDialog();
+        }
+
+        private void iconcerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void iconminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void iconrestaurar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataListado_DoubleClick(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+            this.txtIdventa.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idventa"].Value);
+            this.txtCliente.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["cliente"].Value);
+            this.dtFecha.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["fecha"].Value);
+            this.cbTipo_Pago.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["tipo_pago"].Value);
+            
+            if (Convert.ToString(this.dataListado.CurrentRow.Cells["No_CreFiscal"].Value) == string.Empty)
+            {
+                this.txtNum_comprobante.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["No_comprobante"].Value);
+                this.chkComprobante.Checked = false;
+            }
+            else
+            {
+                this.txtNum_comprobante.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["No_CreFiscal"].Value);
+                this.chkComprobante.Checked = true;
+            }
+
+            this.lblTotalPagado.Text = string.Format("{0:n}", this.dataListado.CurrentRow.Cells["total"].Value);
+            this.MostrarDetalle();
+            this.tabControl1.SelectedIndex = 1;
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkComprobante_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.IsNuevo == true)
+            {
+                if (chkComprobante.Checked == true)
+                {
+                    ncf = string.Empty;
+                    txtNum_comprobante.BackColor = Color.Bisque;
+
+                }
+                else if (chkComprobante.Checked == false)
+                {
+                    ncrefis = string.Empty;
+                    txtNum_comprobante.BackColor = Color.FromArgb(70, 179, 254);
+                }
+            }
         }
     }
 }

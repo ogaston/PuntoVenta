@@ -24,11 +24,14 @@ namespace Data
 
             try
             {
+                if(SqlCon.State == ConnectionState.Closed)
+                {
+                    SqlCon.Open();
+                }
 
-                SqlCon.Open();
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "proc_IngresoInsert";
+                SqlCmd.CommandText = "proc_VentaInsert";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 //En esta parte se envian los parametros al procedimiento almacenado
@@ -59,7 +62,6 @@ namespace Data
                         if (!rpta.Equals("OK"))
                         {
                             break;
-
                         }
                         else
                         {
@@ -98,7 +100,10 @@ namespace Data
             try
             {
                 //Código
-                SqlCon.Open();
+                if (SqlCon.State == ConnectionState.Closed)
+                {
+                    SqlCon.Open();
+                }
                 //Establecer el Comando
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
@@ -140,13 +145,13 @@ namespace Data
         {
             SqlConnection SqlCon = conexion.ConecctionString();
 
-            DataTable DtResultado = new DataTable("ingreso");
+            DataTable DtResultado = new DataTable("venta");
             try
             {
                 if (SqlCon.State == ConnectionState.Closed) SqlCon.Open();
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "proc_IngresoLoadAll";
+                SqlCmd.CommandText = "proc_VentaLoadAll";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
@@ -165,6 +170,45 @@ namespace Data
 
 
         }
+
+        public DataTable MostrarDetalle(string TextoBuscar)
+        {
+            DataTable DtResultado = new DataTable("detalle_venta");
+            SqlConnection SqlCon = conexion.ConecctionString();
+            try
+            {
+
+                if (SqlCon.State == ConnectionState.Closed) SqlCon.Open();
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "proc_Mostrar_detalle_venta";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParTextoBuscar = new SqlParameter();
+                ParTextoBuscar.ParameterName = "@textobuscar";
+                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
+                ParTextoBuscar.Size = 50;
+                ParTextoBuscar.Value = TextoBuscar;
+                SqlCmd.Parameters.Add(ParTextoBuscar);
+
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return DtResultado;
+
+
+        }
+
 
         public DataTable Generaridventa()
         {
@@ -197,43 +241,6 @@ namespace Data
         }
 
 
-        public DataTable MostrarDetalle(string TextoBuscar)
-        {
-            DataTable DtResultado = new DataTable("detalle_ingreso");
-            SqlConnection SqlCon = conexion.ConecctionString();
-            try
-            {
-
-                if (SqlCon.State == ConnectionState.Closed) SqlCon.Open();
-                SqlCommand SqlCmd = new SqlCommand();
-                SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "proc_Mostrar_detalle_ingreso";
-                SqlCmd.CommandType = CommandType.StoredProcedure;
-
-                SqlParameter ParTextoBuscar = new SqlParameter();
-                ParTextoBuscar.ParameterName = "@textobuscar";
-                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
-                ParTextoBuscar.Size = 50;
-                ParTextoBuscar.Value = TextoBuscar;
-                SqlCmd.Parameters.Add(ParTextoBuscar);
-
-
-                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
-                SqlDat.Fill(DtResultado);
-
-            }
-            catch (Exception ex)
-            {
-                DtResultado = null;
-            }
-            finally
-            {
-                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
-            }
-            return DtResultado;
-
-
-        }
 
         #region Articulos
 

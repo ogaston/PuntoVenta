@@ -49,7 +49,7 @@ namespace PosSystem
 
         private void VentaVistaArticuloForm_Load(object sender, EventArgs e)
         {
-
+            MostrarArticulo_Venta_Nombre();
         }
 
 

@@ -27,3 +27,12 @@ D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\BusinessLogic\bin\Debug\En
 D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
 D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.dll
 D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\BusinessLogic\bin\Debug\Data.dll
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\BusinessLogic\bin\Debug\Entity.dll
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\BusinessLogic\bin\Debug\Data.pdb
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\BusinessLogic\bin\Debug\Entity.pdb
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.pdb

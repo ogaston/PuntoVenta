@@ -13,6 +13,10 @@ namespace Data
     public class Detalle_VentaDAL
     {
         private ConectionDAL conexion;
+        public Detalle_VentaDAL()
+        {
+            conexion = new ConectionDAL();
+        }
         public string Insertar(Detalle_Venta dve)
         {
             SqlConnection SqlCon = conexion.ConecctionString();
@@ -26,16 +30,16 @@ namespace Data
                 }
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "proc_Detalle_IngresoInsert";
+                SqlCmd.CommandText = "proc_Detalle_VentaInsert";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 //En esta parte se envian los parametros al procedimiento almacenado
 
-                SqlCmd.Parameters.AddWithValue("@iddetalle_ingreso", dve.IDDetalle_Ingreso);
-                SqlCmd.Parameters.AddWithValue("@idventa", dve.IDVenta);
-                SqlCmd.Parameters.AddWithValue("@cantidad", dve.Cantidad);
-                SqlCmd.Parameters.AddWithValue("@precio_venta", dve.Precio_Venta);
-                SqlCmd.Parameters.AddWithValue("@descuento", dve.Descuento);
+                SqlCmd.Parameters.AddWithValue("@IDDetalleIngreso", dve.IDDetalle_Ingreso);
+                SqlCmd.Parameters.AddWithValue("@IDVenta", dve.IDVenta);
+                SqlCmd.Parameters.AddWithValue("@Cantidad", dve.Cantidad);
+                SqlCmd.Parameters.AddWithValue("@PrecioVenta", dve.Precio_Venta);
+                SqlCmd.Parameters.AddWithValue("@Descuento", dve.Descuento);
 
                 //ejecutamos la consulta, en caso de que retorne 1 será OK
 

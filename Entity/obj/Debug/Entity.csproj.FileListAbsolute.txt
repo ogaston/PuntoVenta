@@ -8,3 +8,8 @@ D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\Entity\bin\Debug\Entity.pd
 D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
 D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\Entity\obj\Debug\Entity.dll
 D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\Entity\obj\Debug\Entity.pdb
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\Entity\obj\Debug\Entity.dll
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\Entity\obj\Debug\Entity.pdb
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\Entity\bin\Debug\Entity.dll
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\Entity\bin\Debug\Entity.pdb

@@ -620,7 +620,7 @@ namespace PosSystem
                 {
                     if (this.IsNuevo)
                     {
-                        rpta = IngresoBL.Insertar(Convert.ToInt32(this.txtIdingreso.Text),1,/* Convert.ToInt32(this.txtIdproveedor.Text)*/4,
+                        rpta = IngresoBL.Insertar(Convert.ToInt32(this.txtIdingreso.Text),/*idtrabajador*/1,/* Convert.ToInt32(this.txtIdproveedor.Text)*/4,
                             this.dtFecha.Value,this.cbTipo_Pago.Text,this.txtNum_comprobante.Text,Convert.ToDecimal(this.txtIgv.Text),1, dtDetalle);
 
                     }
@@ -763,6 +763,16 @@ namespace PosSystem
         private void IngresoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             _instancia = null;
+        }
+
+        private void iconcerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void iconminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

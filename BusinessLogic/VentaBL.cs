@@ -32,10 +32,10 @@ namespace BusinessLogic
             {
                 Detalle_Venta detalle = new Detalle_Venta();
                 detalle.IDDetalle_Ingreso = Convert.ToInt32(row["iddetalle_ingreso"].ToString());
-                detalle.IDVenta = Convert.ToInt32(row["precio_compra"].ToString());
-                detalle.Cantidad = Convert.ToInt32(row["precio_venta"].ToString());
-                detalle.Precio_Venta = Convert.ToDecimal(row["stock_inicial"].ToString());
-                detalle.Descuento = Convert.ToInt32(row["stock_inicial"].ToString());
+                detalle.IDVenta = Convert.ToInt32(row["idventa"].ToString());
+                detalle.Cantidad = Convert.ToInt32(row["cantidad"].ToString());
+                detalle.Precio_Venta = Convert.ToDecimal(row["precio_venta"].ToString());
+                detalle.Descuento = Convert.ToDecimal(row["descuento"].ToString());
                 detalles.Add(detalle);
             }
 
@@ -46,6 +46,12 @@ namespace BusinessLogic
         public static DataTable Mostrar()
         {
             return new VentaDAL().Mostrar();
+        }
+
+        public static DataTable MostrarDetalle(string textobuscar)
+        {
+            VentaDAL Obj = new VentaDAL();
+            return Obj.MostrarDetalle(textobuscar);
         }
 
         public static DataTable Generaridventa()
