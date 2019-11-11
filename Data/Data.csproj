@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="ArticuloDAL.cs" />
     <Compile Include="ConectionDAL.cs" />
+    <Compile Include="Detalle_IngresoDAL.cs" />
+    <Compile Include="Detalle_VentaDAL.cs" />
+    <Compile Include="IngresoDAL.cs" />
     <Compile Include="LoginDAL.cs" />
     <Compile Include="PresentacionDAL.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -54,6 +57,7 @@
     </Compile>
     <Compile Include="TrabajadorDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentaDAL.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>

@@ -14,3 +14,10 @@ C:\Users\test1\Source\Repos\PuntoVenta\Data\obj\Debug\Data.csprojAssemblyReferen
 C:\Users\test1\Source\Repos\PuntoVenta\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\test1\Source\Repos\PuntoVenta\Data\obj\Debug\Data.dll
 C:\Users\test1\Source\Repos\PuntoVenta\Data\obj\Debug\Data.pdb
+D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\Data\bin\Debug\Data.dll
+D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\Data\bin\Debug\Data.pdb
+D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\Data\bin\Debug\Entity.dll
+D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\Data\bin\Debug\Entity.pdb
+D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\Data\obj\Debug\Data.dll
+D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\Data\obj\Debug\Data.pdb

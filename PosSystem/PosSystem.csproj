@@ -63,6 +63,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IngresoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresoForm.Designer.cs">
+      <DependentUpon>IngresoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngresoVistaArticuloForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresoVistaArticuloForm.Designer.cs">
+      <DependentUpon>IngresoVistaArticuloForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngresoVistaProveedorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresoVistaProveedorForm.Designer.cs">
+      <DependentUpon>IngresoVistaProveedorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,8 +106,35 @@
     <Compile Include="TrabajadorForm.Designer.cs">
       <DependentUpon>TrabajadorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentasForm.Designer.cs">
+      <DependentUpon>VentasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentaVistaArticuloForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentaVistaArticuloForm.Designer.cs">
+      <DependentUpon>VentaVistaArticuloForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentaVistaClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentaVistaClienteForm.Designer.cs">
+      <DependentUpon>VentaVistaClienteForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ArticuloForm.resx">
       <DependentUpon>ArticuloForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresoForm.resx">
+      <DependentUpon>IngresoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresoVistaArticuloForm.resx">
+      <DependentUpon>IngresoVistaArticuloForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresoVistaProveedorForm.resx">
+      <DependentUpon>IngresoVistaProveedorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -104,6 +149,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TrabajadorForm.resx">
       <DependentUpon>TrabajadorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentasForm.resx">
+      <DependentUpon>VentasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentaVistaArticuloForm.resx">
+      <DependentUpon>VentaVistaArticuloForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentaVistaClienteForm.resx">
+      <DependentUpon>VentaVistaClienteForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSetCombox.xsc">
       <DependentUpon>DataSetCombox.xsd</DependentUpon>
@@ -170,6 +224,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bloquear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1473317468_flat-style-circle-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1473317539_minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito-vacio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagrama de barras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eject-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\locked-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

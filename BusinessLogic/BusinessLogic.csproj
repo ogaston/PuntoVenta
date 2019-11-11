@@ -43,10 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticuloBL.cs" />
+    <Compile Include="IngresoBL.cs" />
     <Compile Include="LoginBL.cs" />
     <Compile Include="PresentacionBL.cs" />
     <Compile Include="TrabajadorBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentaBL.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>

@@ -251,5 +251,17 @@ namespace PosSystem
         {
             ReturnColor("");
         }
+
+        private void mantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IngresoForm frm = IngresoForm.GetInstancia();
+            AbrirFormEnPanel(frm);
+        }
+
+        private void mantenimientoVentaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            VentasForm frm = VentasForm.GetInstancia();
+            AbrirFormEnPanel(frm);
+        }
     }
 }
