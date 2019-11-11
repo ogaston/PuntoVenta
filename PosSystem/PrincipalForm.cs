@@ -13,6 +13,7 @@ namespace PosSystem
 {
     public partial class PrincipalForm : Form
     {
+        public string OptenerID = Login.guardaID;
         public PrincipalForm()
         {
             InitializeComponent();

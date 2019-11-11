@@ -14,6 +14,7 @@ namespace PosSystem
     public partial class Login : Form
     {
         public static string guardaRango { get; set; }
+        public static string guardaID { get; set; }
         public Login()
         {
             InitializeComponent();
@@ -26,10 +27,11 @@ namespace PosSystem
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-           string validate = LoginBL.ValidatedUsuario(txtUsuario.Text, txtClave.Text);
+           string[] validate = LoginBL.ValidatedUsuario(txtUsuario.Text, txtClave.Text);
             if (validate.Length > 0)
             {
-                guardaRango = validate;
+                guardaRango = validate[0];
+                guardaID = validate[1];
                 this.Hide();
                 PrincipalForm abril = new PrincipalForm();
                 abril.ShowDialog();
