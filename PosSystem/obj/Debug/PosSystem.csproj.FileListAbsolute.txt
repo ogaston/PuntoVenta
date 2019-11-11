@@ -60,3 +60,6 @@ D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSys
 D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.VentasForm.resources
 D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.VentaVistaArticuloForm.resources
 D:\Monografico\Proyecto Final Mono\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.VentaVistaClienteForm.resources
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\PosSystem\bin\Debug\PosSystem.exe.config
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.exe
+C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\PosSystem\obj\Debug\PosSystem.pdb
