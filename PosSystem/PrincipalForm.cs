@@ -264,5 +264,11 @@ namespace PosSystem
             VentasForm frm = VentasForm.GetInstancia();
             AbrirFormEnPanel(frm);
         }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClienteForm frm = ClienteForm.GetInstancia();
+            AbrirFormEnPanel(frm);
+        }
     }
 }
