@@ -270,5 +270,11 @@ namespace PosSystem
             ClienteForm frm = ClienteForm.GetInstancia();
             AbrirFormEnPanel(frm);
         }
+
+        private void ProveedoresMenuItem_Click(object sender, EventArgs e)
+        {
+            ProveedoresForm frm = ProveedoresForm.GetInstancia();
+            AbrirFormEnPanel(frm);
+        }
     }
 }

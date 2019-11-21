@@ -111,3 +111,4 @@ C:\Users\ogaston\source\repos\PuntoVenta1\PosSystem\bin\Debug\Entity.pdb
 C:\Users\ogaston\source\repos\PuntoVenta1\PosSystem\bin\Debug\Data.pdb
 C:\Users\ogaston\source\repos\PuntoVenta1\PosSystem\obj\Debug\PosSystem.ClienteForm.resources
 C:\Users\ogaston\source\repos\PuntoVenta1\PosSystem\obj\Debug\PosSystem.csproj.CopyComplete
+C:\Users\ogaston\source\repos\PuntoVenta1\PosSystem\obj\Debug\PosSystem.ProveedoresForm.resources

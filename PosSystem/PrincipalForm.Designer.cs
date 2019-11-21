@@ -77,9 +77,8 @@
             this.BarraTitulo.Controls.Add(this.btnMenu);
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.BarraTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1392, 55);
+            this.BarraTitulo.Size = new System.Drawing.Size(1044, 45);
             this.BarraTitulo.TabIndex = 1;
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
@@ -87,10 +86,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(42, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 35);
+            this.label1.Size = new System.Drawing.Size(138, 29);
             this.label1.TabIndex = 5;
             this.label1.Text = "PDV SYSTEM";
             // 
@@ -99,10 +97,9 @@
             this.iconminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconminimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconminimizar.Image")));
-            this.iconminimizar.Location = new System.Drawing.Point(1284, 6);
-            this.iconminimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconminimizar.Location = new System.Drawing.Point(963, 5);
             this.iconminimizar.Name = "iconminimizar";
-            this.iconminimizar.Size = new System.Drawing.Size(24, 22);
+            this.iconminimizar.Size = new System.Drawing.Size(18, 18);
             this.iconminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconminimizar.TabIndex = 4;
             this.iconminimizar.TabStop = false;
@@ -113,10 +110,9 @@
             this.iconrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconrestaurar.Image = ((System.Drawing.Image)(resources.GetObject("iconrestaurar.Image")));
-            this.iconrestaurar.Location = new System.Drawing.Point(1319, 6);
-            this.iconrestaurar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconrestaurar.Location = new System.Drawing.Point(989, 5);
             this.iconrestaurar.Name = "iconrestaurar";
-            this.iconrestaurar.Size = new System.Drawing.Size(24, 22);
+            this.iconrestaurar.Size = new System.Drawing.Size(18, 18);
             this.iconrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconrestaurar.TabIndex = 3;
             this.iconrestaurar.TabStop = false;
@@ -128,10 +124,9 @@
             this.iconmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconmaximizar.Image = ((System.Drawing.Image)(resources.GetObject("iconmaximizar.Image")));
-            this.iconmaximizar.Location = new System.Drawing.Point(1319, 6);
-            this.iconmaximizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconmaximizar.Location = new System.Drawing.Point(989, 5);
             this.iconmaximizar.Name = "iconmaximizar";
-            this.iconmaximizar.Size = new System.Drawing.Size(24, 22);
+            this.iconmaximizar.Size = new System.Drawing.Size(18, 18);
             this.iconmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconmaximizar.TabIndex = 2;
             this.iconmaximizar.TabStop = false;
@@ -142,10 +137,9 @@
             this.iconcerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconcerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconcerrar.Image")));
-            this.iconcerrar.Location = new System.Drawing.Point(1353, 6);
-            this.iconcerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconcerrar.Location = new System.Drawing.Point(1015, 5);
             this.iconcerrar.Name = "iconcerrar";
-            this.iconcerrar.Size = new System.Drawing.Size(24, 22);
+            this.iconcerrar.Size = new System.Drawing.Size(18, 18);
             this.iconcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconcerrar.TabIndex = 1;
             this.iconcerrar.TabStop = false;
@@ -155,10 +149,9 @@
             // 
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.Image = global::PosSystem.Properties.Resources.cashier_;
-            this.btnMenu.Location = new System.Drawing.Point(7, 5);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu.Location = new System.Drawing.Point(5, 4);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(47, 43);
+            this.btnMenu.Size = new System.Drawing.Size(35, 35);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMenu.TabIndex = 0;
             this.btnMenu.TabStop = false;
@@ -177,9 +170,10 @@
             this.ayudaMenuItem,
             this.cerrarSesionMenuItem,
             this.salirMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 55);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 45);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(223, 679);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(181, 551);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Click += new System.EventHandler(this.menuStrip1_Click);
@@ -191,7 +185,7 @@
             this.blancoMenuItem.ForeColor = System.Drawing.Color.Transparent;
             this.blancoMenuItem.Name = "blancoMenuItem";
             this.blancoMenuItem.Padding = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.blancoMenuItem.Size = new System.Drawing.Size(206, 16);
+            this.blancoMenuItem.Size = new System.Drawing.Size(172, 16);
             // 
             // almacenMenuItem
             // 
@@ -207,7 +201,7 @@
             this.almacenMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.almacenMenuItem.Name = "almacenMenuItem";
             this.almacenMenuItem.Padding = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.almacenMenuItem.Size = new System.Drawing.Size(206, 48);
+            this.almacenMenuItem.Size = new System.Drawing.Size(172, 48);
             this.almacenMenuItem.Text = "ALMACEN";
             this.almacenMenuItem.Click += new System.EventHandler(this.almacenMenuItem_Click);
             // 
@@ -218,7 +212,7 @@
             this.articuloMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.articuloMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.articuloMenuItem.Name = "articuloMenuItem";
-            this.articuloMenuItem.Size = new System.Drawing.Size(220, 38);
+            this.articuloMenuItem.Size = new System.Drawing.Size(182, 38);
             this.articuloMenuItem.Text = "Articulo";
             this.articuloMenuItem.Click += new System.EventHandler(this.articuloMenuItem_Click);
             // 
@@ -229,7 +223,7 @@
             this.CategoriaMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CategoriaMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.CategoriaMenuItem.Name = "CategoriaMenuItem";
-            this.CategoriaMenuItem.Size = new System.Drawing.Size(220, 38);
+            this.CategoriaMenuItem.Size = new System.Drawing.Size(182, 38);
             this.CategoriaMenuItem.Text = "Categoria";
             // 
             // presentacionMenuItem
@@ -239,7 +233,7 @@
             this.presentacionMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.presentacionMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.presentacionMenuItem.Name = "presentacionMenuItem";
-            this.presentacionMenuItem.Size = new System.Drawing.Size(220, 38);
+            this.presentacionMenuItem.Size = new System.Drawing.Size(182, 38);
             this.presentacionMenuItem.Text = "Presentacion";
             // 
             // ventaMenuItem
@@ -254,7 +248,7 @@
             this.ventaMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ventaMenuItem.Name = "ventaMenuItem";
             this.ventaMenuItem.Padding = new System.Windows.Forms.Padding(4, 6, 6, 6);
-            this.ventaMenuItem.Size = new System.Drawing.Size(206, 48);
+            this.ventaMenuItem.Size = new System.Drawing.Size(172, 48);
             this.ventaMenuItem.Text = "VENTAS";
             this.ventaMenuItem.Click += new System.EventHandler(this.ventaMenuItem_Click);
             // 
@@ -267,13 +261,13 @@
             this.facturacionMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.facturacionMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.facturacionMenuItem.Name = "facturacionMenuItem";
-            this.facturacionMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.facturacionMenuItem.Size = new System.Drawing.Size(173, 38);
             this.facturacionMenuItem.Text = "Facturacion";
             // 
             // mantenimientoVentaToolStripMenuItem1
             // 
             this.mantenimientoVentaToolStripMenuItem1.Name = "mantenimientoVentaToolStripMenuItem1";
-            this.mantenimientoVentaToolStripMenuItem1.Size = new System.Drawing.Size(231, 30);
+            this.mantenimientoVentaToolStripMenuItem1.Size = new System.Drawing.Size(183, 24);
             this.mantenimientoVentaToolStripMenuItem1.Text = "Mantenimiento";
             this.mantenimientoVentaToolStripMenuItem1.Click += new System.EventHandler(this.mantenimientoVentaToolStripMenuItem1_Click);
             // 
@@ -284,7 +278,7 @@
             this.clienteToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clienteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(173, 38);
             this.clienteToolStripMenuItem.Text = "Clientes";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
@@ -300,7 +294,7 @@
             this.comprasMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.comprasMenuItem.Name = "comprasMenuItem";
             this.comprasMenuItem.Padding = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.comprasMenuItem.Size = new System.Drawing.Size(206, 48);
+            this.comprasMenuItem.Size = new System.Drawing.Size(172, 48);
             this.comprasMenuItem.Text = "COMPRAS";
             this.comprasMenuItem.Click += new System.EventHandler(this.comprasMenuItem_Click);
             // 
@@ -314,20 +308,20 @@
             this.ingresosMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ingresosMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ingresosMenuItem.Name = "ingresosMenuItem";
-            this.ingresosMenuItem.Size = new System.Drawing.Size(216, 38);
+            this.ingresosMenuItem.Size = new System.Drawing.Size(196, 38);
             this.ingresosMenuItem.Text = "Ingresos";
             // 
             // mantenimientoIngresoToolStripMenuItem
             // 
             this.mantenimientoIngresoToolStripMenuItem.Name = "mantenimientoIngresoToolStripMenuItem";
-            this.mantenimientoIngresoToolStripMenuItem.Size = new System.Drawing.Size(280, 30);
+            this.mantenimientoIngresoToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
             this.mantenimientoIngresoToolStripMenuItem.Text = "Mantenimiento";
             this.mantenimientoIngresoToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoToolStripMenuItem_Click);
             // 
             // reportesDeIngresosToolStripMenuItem
             // 
             this.reportesDeIngresosToolStripMenuItem.Name = "reportesDeIngresosToolStripMenuItem";
-            this.reportesDeIngresosToolStripMenuItem.Size = new System.Drawing.Size(280, 30);
+            this.reportesDeIngresosToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
             this.reportesDeIngresosToolStripMenuItem.Text = "Reportes De Ingresos";
             // 
             // proveedoresMenuItem
@@ -337,8 +331,9 @@
             this.proveedoresMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.proveedoresMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.proveedoresMenuItem.Name = "proveedoresMenuItem";
-            this.proveedoresMenuItem.Size = new System.Drawing.Size(216, 38);
+            this.proveedoresMenuItem.Size = new System.Drawing.Size(196, 38);
             this.proveedoresMenuItem.Text = "Proveedores";
+            this.proveedoresMenuItem.Click += new System.EventHandler(this.ProveedoresMenuItem_Click);
             // 
             // mantenimientoMenuItem
             // 
@@ -351,7 +346,7 @@
             this.mantenimientoMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mantenimientoMenuItem.Name = "mantenimientoMenuItem";
             this.mantenimientoMenuItem.Padding = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.mantenimientoMenuItem.Size = new System.Drawing.Size(206, 48);
+            this.mantenimientoMenuItem.Size = new System.Drawing.Size(172, 48);
             this.mantenimientoMenuItem.Text = "MANTENIMIENTO";
             this.mantenimientoMenuItem.Click += new System.EventHandler(this.mantenimientoMenuItem_Click);
             // 
@@ -362,7 +357,7 @@
             this.trabajadorMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.trabajadorMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.trabajadorMenuItem.Name = "trabajadorMenuItem";
-            this.trabajadorMenuItem.Size = new System.Drawing.Size(200, 38);
+            this.trabajadorMenuItem.Size = new System.Drawing.Size(168, 38);
             this.trabajadorMenuItem.Text = "Trabajador";
             this.trabajadorMenuItem.Click += new System.EventHandler(this.trabajadorMenuItem_Click);
             // 
@@ -375,7 +370,7 @@
             this.ayudaMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ayudaMenuItem.Name = "ayudaMenuItem";
             this.ayudaMenuItem.Padding = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ayudaMenuItem.Size = new System.Drawing.Size(206, 48);
+            this.ayudaMenuItem.Size = new System.Drawing.Size(172, 48);
             this.ayudaMenuItem.Text = "AYUDA";
             this.ayudaMenuItem.Click += new System.EventHandler(this.ayudaMenuItem_Click);
             // 
@@ -388,7 +383,7 @@
             this.cerrarSesionMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.cerrarSesionMenuItem.Name = "cerrarSesionMenuItem";
             this.cerrarSesionMenuItem.Padding = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.cerrarSesionMenuItem.Size = new System.Drawing.Size(206, 48);
+            this.cerrarSesionMenuItem.Size = new System.Drawing.Size(172, 48);
             this.cerrarSesionMenuItem.Text = "CERRAR SESION";
             this.cerrarSesionMenuItem.Click += new System.EventHandler(this.cerrarSesionMenuItem_Click);
             // 
@@ -402,7 +397,7 @@
             this.salirMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.salirMenuItem.Name = "salirMenuItem";
             this.salirMenuItem.Padding = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.salirMenuItem.Size = new System.Drawing.Size(206, 48);
+            this.salirMenuItem.Size = new System.Drawing.Size(172, 48);
             this.salirMenuItem.Text = "SALIR";
             this.salirMenuItem.Click += new System.EventHandler(this.salirMenuItem_Click);
             // 
@@ -412,25 +407,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelContenedor.Location = new System.Drawing.Point(241, 55);
-            this.panelContenedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelContenedor.Location = new System.Drawing.Point(181, 45);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1151, 678);
+            this.panelContenedor.Size = new System.Drawing.Size(863, 551);
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.Click += new System.EventHandler(this.panelContenedor_Click);
             // 
             // PrincipalForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1392, 734);
+            this.ClientSize = new System.Drawing.Size(1044, 596);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.BarraTitulo);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PrincipalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PDV SYSTEM";

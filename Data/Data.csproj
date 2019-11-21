@@ -55,6 +55,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ProveedoresDAL.cs" />
     <Compile Include="TrabajadorDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VentaDAL.cs" />

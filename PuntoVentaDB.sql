@@ -1289,7 +1289,7 @@ GO
 
 CREATE PROCEDURE [dbo].[proc_ProveedorInsert]
 (
-	@IDProveedor numeric(12,0), 
+	@RazonSocial varchar(50),
 	@SectorComercial varchar(50), 
 	@Identificacion numeric(18,0) = NULL, 
 	@Direccion varchar(100), 
@@ -1307,7 +1307,7 @@ BEGIN
 	INSERT
 	INTO [Proveedor]
 	(
-		[IDProveedor], 
+		[razon_social],
 		[Sector_Comercial], 
 		[Identificacion], 
 		[Direccion], 
@@ -1317,7 +1317,7 @@ BEGIN
 	
 	VALUES
 	(
-		@IDProveedor, 
+		@RazonSocial,
 		@SectorComercial, 
 		@Identificacion, 
 		@Direccion, 
@@ -1405,6 +1405,7 @@ GO
 CREATE PROCEDURE [dbo].[proc_ProveedorUpdate]
 (
 	@IDProveedor numeric(12,0), 
+	@RazonSocial varchar(50), 
 	@SectorComercial varchar(50), 
 	@Identificacion numeric(18,0) = NULL, 
 	@Direccion varchar(100), 
@@ -1422,6 +1423,7 @@ BEGIN
 
 	UPDATE [Proveedor]
 	SET
+		[razon_social] = @RazonSocial,
 		[Sector_Comercial] = @SectorComercial, 
 		[Identificacion] = @Identificacion, 
 		[Direccion] = @Direccion, 

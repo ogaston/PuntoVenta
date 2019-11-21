@@ -46,6 +46,7 @@
     <Compile Include="ClienteBL.cs" />
     <Compile Include="IngresoBL.cs" />
     <Compile Include="LoginBL.cs" />
+    <Compile Include="ProveedoresBL.cs" />
     <Compile Include="TrabajadorBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VentaBL.cs" />
