@@ -183,7 +183,14 @@ namespace PosSystem
         {
             try
             {
-                dataGridView1.DataSource = ClienteBL.SelectById(txtBuscar.Text);
+                if (txtBuscar.Text.Length > 0)
+                {
+                    dataGridView1.DataSource = ClienteBL.SelectById(txtBuscar.Text);
+                } else
+                {
+                    FillGrid();
+                }
+                
             }
             catch (Exception ex)
             {
@@ -215,6 +222,7 @@ namespace PosSystem
                 if (Validate())
                 {
                     Cliente modifica = GetClientFormData();
+                    modifica.IDCliente = ID;
                     ClienteBL.Update(modifica);
                     dataGridView1.Update();
                     FillGrid();
@@ -241,7 +249,7 @@ namespace PosSystem
             try
             {
                 string Msg = "Realmente desea eliminar el Cliente: " + txtNombre.Text + "?";
-                DialogResult resultado = ShowMessage(Msg, "¿Desea eliminar?");
+                DialogResult resultado = MessageBox.Show(Msg, "¿Desea eliminar?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (resultado == DialogResult.Yes)
                 {
                     ClienteBL.Delete(ID);
