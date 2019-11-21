@@ -50,10 +50,10 @@ CREATE TABLE [dbo].[Cliente](
 	[IDCliente] [int] IDENTITY(1,1) NOT NULL,
 	[Nombre] [varchar](20) NOT NULL,
 	[Apellido] [varchar](50) NOT NULL,
-	[Sexo] [varchar](6) NOT NULL,
-	[Fecha_Nacimineto] [date] NULL,
+	[Sexo] [varchar](10) NOT NULL,
+	[Fecha_Nacimiento] [date] NULL,
 	[Tipo_Documento] [varchar](50) NOT NULL,
-	[Num_Documeto] [varchar](50) NOT NULL,
+	[Num_Documento] [varchar](50) NOT NULL,
 	[Telefono] [varchar](50) NOT NULL,
 	[Direccion] [varchar](100) NOT NULL,
 	[Email] [varchar](20) NOT NULL,
@@ -761,8 +761,8 @@ CREATE PROCEDURE [dbo].[proc_ClienteInsert]
 	@IDCliente numeric(12,0) = NULL OUTPUT, 
 	@Nombre varchar(20), 
 	@Apellido varchar(50), 
-	@Sexo varchar(6) = NULL, 
-	@FechaNacimineto date = NULL, 
+	@Sexo varchar(10) = NULL, 
+	@FechaNacimiento date = NULL, 
 	@TipoDocumento varchar(50), 
 	@NumDocumeto varchar(50), 
 	@Telefono numeric(18,0) = NULL, 
@@ -783,9 +783,9 @@ BEGIN
 		[Nombre], 
 		[Apellido], 
 		[Sexo], 
-		[Fecha_Nacimineto], 
+		[Fecha_Nacimiento], 
 		[Tipo_Documento], 
-		[Num_Documeto], 
+		[Num_Documento], 
 		[Telefono], 
 		[Direccion], 
 		[Email]
@@ -796,7 +796,7 @@ BEGIN
 		@Nombre, 
 		@Apellido, 
 		@Sexo, 
-		@FechaNacimineto, 
+		@FechaNacimiento, 
 		@TipoDocumento, 
 		@NumDocumeto, 
 		@Telefono, 
@@ -834,9 +834,9 @@ BEGIN
 		[Nombre], 
 		[Apellido], 
 		[Sexo], 
-		[Fecha_Nacimineto], 
+		[Fecha_Nacimiento], 
 		[Tipo_Documento], 
-		[Num_Documeto], 
+		[Num_Documento], 
 		[Telefono], 
 		[Direccion], 
 		[Email]
@@ -868,9 +868,9 @@ BEGIN
 		[Nombre], 
 		[Apellido], 
 		[Sexo], 
-		[Fecha_Nacimineto], 
+		[Fecha_Nacimiento], 
 		[Tipo_Documento], 
-		[Num_Documeto], 
+		[Num_Documento], 
 		[Telefono], 
 		[Direccion], 
 		[Email]
@@ -895,8 +895,8 @@ CREATE PROCEDURE [dbo].[proc_ClienteUpdate]
 	@IDCliente numeric(12,0), 
 	@Nombre varchar(20), 
 	@Apellido varchar(50), 
-	@Sexo varchar(6) = NULL, 
-	@FechaNacimineto date = NULL, 
+	@Sexo varchar(10) = NULL, 
+	@FechaNacimiento date = NULL, 
 	@TipoDocumento varchar(50), 
 	@NumDocumeto varchar(50), 
 	@Telefono numeric(18,0) = NULL, 
@@ -917,9 +917,9 @@ BEGIN
 		[Nombre] = @Nombre, 
 		[Apellido] = @Apellido, 
 		[Sexo] = @Sexo, 
-		[Fecha_Nacimineto] = @FechaNacimineto, 
+		[Fecha_Nacimiento] = @FechaNacimiento, 
 		[Tipo_Documento] = @TipoDocumento, 
-		[Num_Documeto] = @NumDocumeto, 
+		[Num_Documento] = @NumDocumeto, 
 		[Telefono] = @Telefono, 
 		[Direccion] = @Direccion, 
 		[Email] = @Email
@@ -2169,7 +2169,7 @@ create proc [dbo].[proc_buscar_cliente_documento]
 @textobuscar varchar(50)
 as
 select * from cliente
-where Num_Documeto like @textobuscar + '%'
+where Num_Documento like @textobuscar + '%'
 
 
 GO

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticuloBL.cs" />
+    <Compile Include="ClienteBL.cs" />
     <Compile Include="IngresoBL.cs" />
     <Compile Include="LoginBL.cs" />
     <Compile Include="TrabajadorBL.cs" />

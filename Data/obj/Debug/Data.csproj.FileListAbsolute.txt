@@ -28,3 +28,12 @@ C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\Data\bin\Debug\Entity.pdb
 C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\Data\obj\Debug\Data.dll
 C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\Data\obj\Debug\Data.pdb
+C:\Users\ogaston\source\repos\PuntoVenta1\Data\bin\Debug\Data.dll
+C:\Users\ogaston\source\repos\PuntoVenta1\Data\bin\Debug\Data.pdb
+C:\Users\ogaston\source\repos\PuntoVenta1\Data\bin\Debug\Entity.dll
+C:\Users\ogaston\source\repos\PuntoVenta1\Data\bin\Debug\Entity.pdb
+C:\Users\ogaston\source\repos\PuntoVenta1\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\ogaston\source\repos\PuntoVenta1\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\ogaston\source\repos\PuntoVenta1\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\ogaston\source\repos\PuntoVenta1\Data\obj\Debug\Data.dll
+C:\Users\ogaston\source\repos\PuntoVenta1\Data\obj\Debug\Data.pdb

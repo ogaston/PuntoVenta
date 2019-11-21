@@ -20,54 +20,74 @@ namespace PosSystem
         static ClienteForm _instancia;
         DataSetComboxTableAdapters.CategoriaTableAdapter categoria = new DataSetComboxTableAdapters.CategoriaTableAdapter();
         DataSetComboxTableAdapters.PresentacionTableAdapter presentacion = new DataSetComboxTableAdapters.PresentacionTableAdapter();
-        
+        private int ID;
+
         public ClienteForm()
         {
             InitializeComponent();
+            FillGrid();
         }
-
-        private int ID;
 
         public static ClienteForm GetInstancia()
         {
-
             if (_instancia == null)
             {
                 _instancia = new ClienteForm();
-
             }
             return (_instancia);
-
         }
-
-
-        public bool Validate()
+        
+        private bool Validate()
         {
-            bool valor = false;
-
             if (!string.IsNullOrWhiteSpace(txtNombre.Text) &&
                 !string.IsNullOrWhiteSpace(txtApellido.Text)&&
-                !string.IsNullOrWhiteSpace(txtDireccion.Text)&&
-                !string.IsNullOrWhiteSpace(cbTipoDocumento.Text)//&&
-                //!string.IsNullOrWhiteSpace(cbPresentacion.Text)
-                )
+                !string.IsNullOrWhiteSpace(txtDocumento.Text) &&
+                !string.IsNullOrWhiteSpace(txtDireccion.Text))
             {
-                valor = true;
+                return true;
             }
-            return valor;
+            return false;
         }
 
-        public void Limpiar(params TextBox[] text)
+        public void CleanUp()
         {
-            for (int i = 0; i < text.Length; i++)
+            TextBox[] textArr = { txtApellido, txtDireccion, txtNombre, txtTelefono, txtDocumento, txtEmail };
+
+            for (int i = 0; i < textArr.Length; i++)
             {
-                text[i].Clear();
-
+                textArr[i].Clear();
             }
-            cbTipoDocumento.Text = "";
-            // cbPresentacion.Text = "";
-            // pbImagen.Visible = false;
+        }
 
+        private void FillGrid()
+        {
+            dataGridView1.DataSource = ClienteBL.SelectAll();
+        }
+
+        private DialogResult ShowMessage(string msg, string type = "Informacion")
+        {
+            if (type == "Error")
+            {
+                return MessageBox.Show(msg, type, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return MessageBox.Show(msg, type, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private Cliente GetClientFormData()
+        {
+            Cliente nuevo = new Cliente();
+
+            nuevo.Apellido = txtApellido.Text;
+            nuevo.Nombre = txtNombre.Text;
+            nuevo.Num_Documento = txtDocumento.Text;
+            nuevo.Sexo = radioMasc.Checked ? radioMasc.Text : radioFem.Text;
+            nuevo.Fecha_Nacimiento = dateTpFechaNacimiento.Value;
+            nuevo.Telofono = txtTelefono.Text;
+            nuevo.Tipo_Documento = radCedula.Checked ? radCedula.Text : radPassport.Text;
+            nuevo.Direccion = txtDireccion.Text;
+            nuevo.Email = txtEmail.Text;
+
+            return nuevo;
         }
 
         private void FocusTextBox()
@@ -82,68 +102,32 @@ namespace PosSystem
                 txtBuscar.Focus();
             }
         }
-         private void llenarGrid()
-         {
-            dataGridView1.DataSource = ArticuloBL.SelectAllArticulo();
-         }
-        private void ArticuloForm_Load(object sender, EventArgs e)
-        {
-            btnGuardar.Enabled = false;
-            btnEliminar.Enabled = false;
-            llenarGrid();
-            try
-            {
-                categoria.Fill(dtCombo.Categoria);
-                cbTipoDocumento.DataSource = dtCombo.Categoria;
-                cbTipoDocumento.DisplayMember = "nombre";
-
-                presentacion.Fill(dtCombo.Presentacion);
-                // cbPresentacion.DataSource = dtCombo.Presentacion;
-                // cbPresentacion.DisplayMember = "nombre";
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al llenar el ComboBox Categoria || Presentacion");
-            }
-        }
-
-        private void PaginarTrabajador()
+ 
+        private void EditView()
         {
             int fila = dataGridView1.CurrentRow.Index;
             try 
             { 
-                //Extraer una Imagen al PictureBox desde un DataGridView
-                byte[] datos = new byte[0];
-                datos = (byte[])dataGridView1.Rows[fila].Cells["Imagen"].Value;
-                System.IO.MemoryStream ms = new System.IO.MemoryStream(datos);
-                // pbImagen.Image = System.Drawing.Bitmap.FromStream(ms);
+                ID = Convert.ToInt32(dataGridView1.Rows[fila].Cells["IDCliente"].Value);
 
-                ID = Convert.ToInt32(dataGridView1.Rows[fila].Cells["IDArticulo"].Value);
-                txtApellido.Text = dataGridView1.Rows[fila].Cells["Codigo_Articulo"].Value.ToString();
+                txtApellido.Text = dataGridView1.Rows[fila].Cells["Apellido"].Value.ToString();
                 txtNombre.Text = dataGridView1.Rows[fila].Cells["Nombre"].Value.ToString();
-                cbTipoDocumento.Text = dataGridView1.Rows[fila].Cells["Categoria"].Value.ToString();
-                // cbPresentacion.Text = dataGridView1.Rows[fila].Cells["Presentacion"].Value.ToString();
-                txtDireccion.Text = dataGridView1.Rows[fila].Cells["Descripcion"].Value.ToString();
+                txtDireccion.Text = dataGridView1.Rows[fila].Cells["Direccion"].Value.ToString();
+                txtTelefono.Text = dataGridView1.Rows[fila].Cells["Telefono"].Value.ToString();
+                txtEmail.Text = dataGridView1.Rows[fila].Cells["Email"].Value.ToString();
+                txtDocumento.Text = dataGridView1.Rows[fila].Cells["Num_Documento"].Value.ToString();
+                dateTpFechaNacimiento.Value = DateTime.Parse(dataGridView1.Rows[fila].Cells["Fecha_Nacimiento"].Value.ToString());
 
+                bool isMasc = dataGridView1.Rows[fila].Cells["Sexo"].Value.ToString() == "Masculino";
+                radioMasc.Checked = isMasc;
+                radioFem.Checked = !isMasc;
+
+                bool isCed = dataGridView1.Rows[fila].Cells["Tipo_Documento"].Value.ToString() == "Cédula";
+                radCedula.Checked = isCed;
+                radPassport.Checked = !isCed;
             }
-
-            catch (Exception) { MessageBox.Show("Error al llenar el gridView"); }
-        }
-
-        private void btnImagen_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.openFileDialog1.ShowDialog();
-                if (this.openFileDialog1.FileName.Equals("") == false)
-                {
-                    // pbImagen.Visible = true;
-                    // pbImagen.Load(this.openFileDialog1.FileName);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo cargar la imagen: " + ex.ToString());
+            catch (Exception e) {
+                ShowMessage(e.Message + "| Error al llenar el gridView", "Error");
             }
         }
 
@@ -153,37 +137,30 @@ namespace PosSystem
             {
                 if (Validate())
                 {
-                    Articulo nuevo = new Articulo();
-                    nuevo.Codido_Articulo = txtApellido.Text;
-                    nuevo.IDCategoria = cbTipoDocumento.SelectedIndex+1;
-                    // nuevo.IDPresentacion = cbPresentacion.SelectedIndex+1;
-                    nuevo.Nombre = txtNombre.Text;
-                    nuevo.Descripcion = txtDireccion.Text;
-                    // nuevo.Imagen = pbImagen;
-                    ArticuloBL.InsertArticulo(nuevo);
+                    Cliente newClient = GetClientFormData();
+                    ClienteBL.Create(newClient);
                     dataGridView1.Update();
-                    llenarGrid();
-                    MessageBox.Show("Articulo Agregado Exitosamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar(txtNombre, txtDireccion, txtApellido);
+                    FillGrid();
+                    ShowMessage("Cliente Agregado Exitosamente");
+                    CleanUp();
                 }
                 else
                 {
-                    MessageBox.Show("Debe llenar todos los Campos Requeridos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ShowMessage("Debe llenar todos los Campos Requeridos", "Error");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + " Error Al Agregar el Articulo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowMessage(ex.Message + " Error Al Agregar el Cliente", "Error");
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Limpiar(txtNombre, txtDireccion, txtApellido);
+            CleanUp();
             btnGuardar.Enabled = false;
             btnEliminar.Enabled = false;
             btnAgregar.Enabled = true;
-
         }
 
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
@@ -198,7 +175,7 @@ namespace PosSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "Error Al Consultar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowMessage(ex.Message + "Error Al Consultar", "Error");
             }
         }
 
@@ -206,12 +183,12 @@ namespace PosSystem
         {
             try
             {
-                dataGridView1.DataSource = ArticuloBL.SelectCodigoArticulo(txtBuscar.Text);
+                dataGridView1.DataSource = ClienteBL.SelectById(txtBuscar.Text);
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + "Error Al Consultar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowMessage(ex.Message + "Error Al Consultar", "Error");
             }
         }
 
@@ -219,8 +196,7 @@ namespace PosSystem
         {
             try
             {
-                // pbImagen.Visible = true;
-                PaginarTrabajador();
+                EditView();
                 tabControl1.SelectedIndex = 0;
                 btnGuardar.Enabled = true;
                 btnEliminar.Enabled = true;
@@ -228,7 +204,7 @@ namespace PosSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "Error del DataGrid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowMessage(ex.Message + "Error del DataGrid", "Error");
             }
         }
 
@@ -238,32 +214,25 @@ namespace PosSystem
             {
                 if (Validate())
                 {
-                    Articulo modifica = new Articulo();
-                    modifica.IDArticulo = ID;
-                    modifica.Codido_Articulo = txtApellido.Text;
-                    modifica.IDCategoria = cbTipoDocumento.SelectedIndex + 1;
-                    //modifica.IDPresentacion = cbPresentacion.SelectedIndex + 1;
-                    modifica.Nombre = txtNombre.Text;
-                    modifica.Descripcion = txtDireccion.Text;
-                    // modifica.Imagen = pbImagen;
-                    ArticuloBL.UpdateArticulo(modifica);
+                    Cliente modifica = GetClientFormData();
+                    ClienteBL.Update(modifica);
                     dataGridView1.Update();
-                    llenarGrid();
-                    MessageBox.Show("Articulo Modificado Exitosamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar(txtNombre, txtDireccion, txtApellido);
+                    FillGrid();
+                    ShowMessage("Cliente Modificado Exitosamente");
+                    CleanUp();
                     btnGuardar.Enabled = false;
                     btnEliminar.Enabled = false;
                     btnAgregar.Enabled = true;
                 }
                 else
                 {
-                    MessageBox.Show("Debe llenar todos los Campos Requeridos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ShowMessage("Debe llenar todos los Campos Requeridos", "Error");
 
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + " Error Al Modificar Articulo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowMessage(ex.Message + " Error Al Modificar Cliente", "Error");
             }
         }
 
@@ -271,35 +240,44 @@ namespace PosSystem
         {
             try
             {
-                DialogResult resultado = MessageBox.Show("Realmente desea eliminar el Articulo: " + txtNombre.Text + "?",
-                                   "¿Desea eliminar?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                string Msg = "Realmente desea eliminar el Cliente: " + txtNombre.Text + "?";
+                DialogResult resultado = ShowMessage(Msg, "¿Desea eliminar?");
                 if (resultado == DialogResult.Yes)
                 {
-                    ArticuloBL.DeleteArticulo(ID);
-                    MessageBox.Show("Articulo Eliminado.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar(txtNombre, txtDireccion, txtApellido);
+                    ClienteBL.Delete(ID);
+                    ShowMessage("Cliente Eliminado.");
+                    CleanUp();
                     dataGridView1.Update();
-                    llenarGrid();
+                    FillGrid();
                     btnGuardar.Enabled = false;
                     btnEliminar.Enabled = false;
                     btnAgregar.Enabled = true;
                 }
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + " Error Al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowMessage(ex.Message + " Error Al Eliminar", "Error");
             }
-        }
-
-        private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void TabPageMantenimiento_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }
