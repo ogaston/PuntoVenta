@@ -103,7 +103,7 @@ namespace Data
             using (SqlCommand comando = new SqlCommand("proc_ClienteDelete", conexion.ConecctionString()))
             {
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@IDArticulo", id);
+                comando.Parameters.AddWithValue("@IDCliente", id);
                 comando.ExecuteNonQuery();
             }
             conexion.ConecctionString().Close();
