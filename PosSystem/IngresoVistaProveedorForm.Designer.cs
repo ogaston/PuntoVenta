@@ -189,8 +189,9 @@
             this.ClientSize = new System.Drawing.Size(791, 494);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "IngresoVistaProveedorForm";
-            this.Text = "IngresoVistaProveedorForm";
+            this.Text = "Ingreso Vista Proveedor";
             this.Load += new System.EventHandler(this.IngresoVistaProveedorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             this.tabControl1.ResumeLayout(false);

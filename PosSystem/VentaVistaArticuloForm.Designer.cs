@@ -185,8 +185,9 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "VentaVistaArticuloForm";
-            this.Text = "VentaVistaArticuloForm";
+            this.Text = "Venta Vista Articulo";
             this.Load += new System.EventHandler(this.VentaVistaArticuloForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();

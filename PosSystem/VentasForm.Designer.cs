@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasForm));
             this.dtFechaVencimiento = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
@@ -66,6 +65,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkComprobante = new System.Windows.Forms.CheckBox();
             this.txtAuttarjeta = new System.Windows.Forms.TextBox();
             this.lblTotalDescontado = new System.Windows.Forms.Label();
             this.lblTotalPagado = new System.Windows.Forms.Label();
@@ -89,14 +89,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BarraTitulo = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.iconminimizar = new System.Windows.Forms.PictureBox();
-            this.iconrestaurar = new System.Windows.Forms.PictureBox();
-            this.iconmaximizar = new System.Windows.Forms.PictureBox();
-            this.iconcerrar = new System.Windows.Forms.PictureBox();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
-            this.chkComprobante = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -106,12 +98,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoDetalle)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.BarraTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconminimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconmaximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // dtFechaVencimiento
@@ -278,7 +264,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(154, 79);
+            this.label1.Location = new System.Drawing.Point(154, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 31);
             this.label1.TabIndex = 13;
@@ -329,9 +315,9 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(14, 145);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(24, 143);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(899, 506);
@@ -354,7 +340,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(914, 446);
+            this.tabPage1.Size = new System.Drawing.Size(891, 489);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             // 
@@ -504,6 +490,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingresos Almacén";
+            // 
+            // chkComprobante
+            // 
+            this.chkComprobante.AutoSize = true;
+            this.chkComprobante.BackColor = System.Drawing.Color.Transparent;
+            this.chkComprobante.Location = new System.Drawing.Point(320, 17);
+            this.chkComprobante.Name = "chkComprobante";
+            this.chkComprobante.Size = new System.Drawing.Size(109, 20);
+            this.chkComprobante.TabIndex = 44;
+            this.chkComprobante.Text = "Credito Fiscal";
+            this.chkComprobante.UseVisualStyleBackColor = false;
+            this.chkComprobante.CheckedChanged += new System.EventHandler(this.chkComprobante_CheckedChanged);
             // 
             // txtAuttarjeta
             // 
@@ -753,112 +751,12 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PosSystem.Properties.Resources.carrito_vacio;
-            this.pictureBox1.Location = new System.Drawing.Point(292, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(292, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(140, 116);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
-            // 
-            // BarraTitulo
-            // 
-            this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(179)))), ((int)(((byte)(254)))));
-            this.BarraTitulo.Controls.Add(this.label17);
-            this.BarraTitulo.Controls.Add(this.iconminimizar);
-            this.BarraTitulo.Controls.Add(this.iconrestaurar);
-            this.BarraTitulo.Controls.Add(this.iconmaximizar);
-            this.BarraTitulo.Controls.Add(this.iconcerrar);
-            this.BarraTitulo.Controls.Add(this.btnMenu);
-            this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(950, 28);
-            this.BarraTitulo.TabIndex = 16;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(25, 3);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(51, 20);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "Ventas";
-            // 
-            // iconminimizar
-            // 
-            this.iconminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconminimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconminimizar.Image")));
-            this.iconminimizar.Location = new System.Drawing.Point(869, 5);
-            this.iconminimizar.Name = "iconminimizar";
-            this.iconminimizar.Size = new System.Drawing.Size(18, 18);
-            this.iconminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconminimizar.TabIndex = 4;
-            this.iconminimizar.TabStop = false;
-            this.iconminimizar.Click += new System.EventHandler(this.iconminimizar_Click);
-            // 
-            // iconrestaurar
-            // 
-            this.iconrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconrestaurar.Image = ((System.Drawing.Image)(resources.GetObject("iconrestaurar.Image")));
-            this.iconrestaurar.Location = new System.Drawing.Point(895, 5);
-            this.iconrestaurar.Name = "iconrestaurar";
-            this.iconrestaurar.Size = new System.Drawing.Size(18, 18);
-            this.iconrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconrestaurar.TabIndex = 3;
-            this.iconrestaurar.TabStop = false;
-            this.iconrestaurar.Visible = false;
-            this.iconrestaurar.Click += new System.EventHandler(this.iconrestaurar_Click);
-            // 
-            // iconmaximizar
-            // 
-            this.iconmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconmaximizar.Image = ((System.Drawing.Image)(resources.GetObject("iconmaximizar.Image")));
-            this.iconmaximizar.Location = new System.Drawing.Point(895, 5);
-            this.iconmaximizar.Name = "iconmaximizar";
-            this.iconmaximizar.Size = new System.Drawing.Size(18, 18);
-            this.iconmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconmaximizar.TabIndex = 2;
-            this.iconmaximizar.TabStop = false;
-            // 
-            // iconcerrar
-            // 
-            this.iconcerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconcerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconcerrar.Image")));
-            this.iconcerrar.Location = new System.Drawing.Point(921, 5);
-            this.iconcerrar.Name = "iconcerrar";
-            this.iconcerrar.Size = new System.Drawing.Size(18, 18);
-            this.iconcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconcerrar.TabIndex = 1;
-            this.iconcerrar.TabStop = false;
-            this.iconcerrar.Click += new System.EventHandler(this.iconcerrar_Click);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = global::PosSystem.Properties.Resources.cashier_;
-            this.btnMenu.Location = new System.Drawing.Point(5, 4);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(18, 19);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMenu.TabIndex = 0;
-            this.btnMenu.TabStop = false;
-            // 
-            // chkComprobante
-            // 
-            this.chkComprobante.AutoSize = true;
-            this.chkComprobante.BackColor = System.Drawing.Color.Transparent;
-            this.chkComprobante.Location = new System.Drawing.Point(320, 17);
-            this.chkComprobante.Name = "chkComprobante";
-            this.chkComprobante.Size = new System.Drawing.Size(109, 20);
-            this.chkComprobante.TabIndex = 44;
-            this.chkComprobante.Text = "Credito Fiscal";
-            this.chkComprobante.UseVisualStyleBackColor = false;
-            this.chkComprobante.CheckedChanged += new System.EventHandler(this.chkComprobante_CheckedChanged);
             // 
             // VentasForm
             // 
@@ -866,13 +764,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(950, 674);
-            this.Controls.Add(this.BarraTitulo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "VentasForm";
-            this.Text = "VentasForm";
+            this.Text = "Formulario de Ventas";
             this.Load += new System.EventHandler(this.VentasForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -886,13 +783,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.BarraTitulo.ResumeLayout(false);
-            this.BarraTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconminimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconmaximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -959,13 +849,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTotalDescontado;
         private System.Windows.Forms.TextBox txtAuttarjeta;
-        private System.Windows.Forms.Panel BarraTitulo;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.PictureBox iconminimizar;
-        private System.Windows.Forms.PictureBox iconrestaurar;
-        private System.Windows.Forms.PictureBox iconmaximizar;
-        private System.Windows.Forms.PictureBox iconcerrar;
-        private System.Windows.Forms.PictureBox btnMenu;
         private System.Windows.Forms.CheckBox chkComprobante;
     }
 }

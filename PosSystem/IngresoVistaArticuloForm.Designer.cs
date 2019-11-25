@@ -187,8 +187,9 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "IngresoVistaArticuloForm";
-            this.Text = "IngresoVistaArticuloForm";
+            this.Text = "Ingreso Vista Articulo";
             this.Load += new System.EventHandler(this.IngresoVistaArticuloForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();

@@ -174,6 +174,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "VentaVistaClienteForm";
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.VentaVistaClienteForm_Load);
