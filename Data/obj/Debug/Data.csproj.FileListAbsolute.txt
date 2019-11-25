@@ -45,3 +45,11 @@ C:\Users\user\Desktop\Nueva carpeta\Data\obj\Debug\Data.csprojAssemblyReference.
 C:\Users\user\Desktop\Nueva carpeta\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\user\Desktop\Nueva carpeta\Data\obj\Debug\Data.dll
 C:\Users\user\Desktop\Nueva carpeta\Data\obj\Debug\Data.pdb
+D:\Visual_Studio\williams\PuntoVenta\Data\bin\Debug\Data.dll
+D:\Visual_Studio\williams\PuntoVenta\Data\bin\Debug\Data.pdb
+D:\Visual_Studio\williams\PuntoVenta\Data\bin\Debug\Entity.dll
+D:\Visual_Studio\williams\PuntoVenta\Data\bin\Debug\Entity.pdb
+D:\Visual_Studio\williams\PuntoVenta\Data\obj\Debug\Data.csprojAssemblyReference.cache
+D:\Visual_Studio\williams\PuntoVenta\Data\obj\Debug\Data.csproj.CopyComplete
+D:\Visual_Studio\williams\PuntoVenta\Data\obj\Debug\Data.dll
+D:\Visual_Studio\williams\PuntoVenta\Data\obj\Debug\Data.pdb

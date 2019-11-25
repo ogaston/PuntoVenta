@@ -26,8 +26,8 @@ namespace PosSystem.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-CME4TLL\\SQLEXPRESS;Initial Catalog=PuntoVentaDB;Integrated Se" +
-            "curity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WILLIAMS_DELL\\SQLEXPRESS;Initial Catalog=PuntoVentaDB;Integrated Secu" +
+            "rity=True")]
         public string conexion {
             get {
                 return ((string)(this["conexion"]));
