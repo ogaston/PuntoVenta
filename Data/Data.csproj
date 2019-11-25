@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticuloDAL.cs" />
+    <Compile Include="CategoriaDAL.cs" />
     <Compile Include="ClienteDAL.cs" />
     <Compile Include="ConectionDAL.cs" />
     <Compile Include="Detalle_IngresoDAL.cs" />

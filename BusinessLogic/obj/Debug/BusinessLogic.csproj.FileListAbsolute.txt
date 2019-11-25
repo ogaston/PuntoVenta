@@ -47,3 +47,13 @@ C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\obj\Debug\BusinessLogic.
 C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
 C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\obj\Debug\BusinessLogic.dll
 C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\bin\Debug\Data.dll
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\bin\Debug\Entity.dll
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\bin\Debug\Data.pdb
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\bin\Debug\Entity.pdb
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\obj\Debug\BusinessLogic.pdb

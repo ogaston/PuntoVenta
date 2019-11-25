@@ -255,25 +255,31 @@ namespace PosSystem
 
         private void mantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IngresoForm frm = IngresoForm.GetInstancia();
+            IngresoForm frm = new IngresoForm();
             AbrirFormEnPanel(frm);
         }
 
         private void mantenimientoVentaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            VentasForm frm = VentasForm.GetInstancia();
+            VentasForm frm = new VentasForm();
             AbrirFormEnPanel(frm);
         }
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClienteForm frm = ClienteForm.GetInstancia();
+            ClienteForm frm = new ClienteForm();
             AbrirFormEnPanel(frm);
         }
 
         private void ProveedoresMenuItem_Click(object sender, EventArgs e)
         {
-            ProveedoresForm frm = ProveedoresForm.GetInstancia();
+            ProveedoresForm frm = new ProveedoresForm();
+            AbrirFormEnPanel(frm);
+        }
+
+        private void CategoriaMenuItem_Click(object sender, EventArgs e)
+        {
+            CategoriaForm frm = new CategoriaForm();
             AbrirFormEnPanel(frm);
         }
     }

@@ -37,3 +37,11 @@ C:\Users\ogaston\source\repos\PuntoVenta1\Data\obj\Debug\Data.csproj.CoreCompile
 C:\Users\ogaston\source\repos\PuntoVenta1\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\ogaston\source\repos\PuntoVenta1\Data\obj\Debug\Data.dll
 C:\Users\ogaston\source\repos\PuntoVenta1\Data\obj\Debug\Data.pdb
+C:\Users\user\Desktop\Nueva carpeta\Data\bin\Debug\Data.dll
+C:\Users\user\Desktop\Nueva carpeta\Data\bin\Debug\Data.pdb
+C:\Users\user\Desktop\Nueva carpeta\Data\bin\Debug\Entity.dll
+C:\Users\user\Desktop\Nueva carpeta\Data\bin\Debug\Entity.pdb
+C:\Users\user\Desktop\Nueva carpeta\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Nueva carpeta\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\user\Desktop\Nueva carpeta\Data\obj\Debug\Data.dll
+C:\Users\user\Desktop\Nueva carpeta\Data\obj\Debug\Data.pdb

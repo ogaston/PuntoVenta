@@ -19,3 +19,8 @@ C:\Users\ogaston\source\repos\PuntoVenta1\Entity\obj\Debug\Entity.csprojAssembly
 C:\Users\ogaston\source\repos\PuntoVenta1\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\ogaston\source\repos\PuntoVenta1\Entity\obj\Debug\Entity.dll
 C:\Users\ogaston\source\repos\PuntoVenta1\Entity\obj\Debug\Entity.pdb
+C:\Users\user\Desktop\Nueva carpeta\Entity\bin\Debug\Entity.dll
+C:\Users\user\Desktop\Nueva carpeta\Entity\bin\Debug\Entity.pdb
+C:\Users\user\Desktop\Nueva carpeta\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Nueva carpeta\Entity\obj\Debug\Entity.dll
+C:\Users\user\Desktop\Nueva carpeta\Entity\obj\Debug\Entity.pdb

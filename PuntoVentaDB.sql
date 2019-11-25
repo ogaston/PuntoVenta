@@ -3228,6 +3228,182 @@ GO
 
 
 /***||||||||||||||||||||||||||||||||||||*******END LUIS BILL**************||||||||||||||||||||||||||||||||||||****************/
+/*Estarlin Cambios*/
+
+/****** Object:  StoredProcedure [dbo].[proc_CategoriaLoadById]    Script Date: 25/11/2019 11:35:46 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[proc_CategoriaLoadById]
+(
+	@Nombre Varchar(50)
+)
+AS
+BEGIN
+	SET NOCOUNT ON
+	DECLARE @Err int
+
+	SELECT
+		[IDCategoria], 
+		[Nombre], 
+		[Descripcion]
+	FROM [dbo].[Categoria]
+	WHERE
+		Nombre like '%'+ @Nombre+'%'
+		and Estatus = 1
+
+	SET @Err = @@Error
+
+	RETURN @Err
+END
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[proc_CategoriaLoadAll]    Script Date: 25/11/2019 11:31:40 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[proc_CategoriaLoadAll]
+AS
+BEGIN
+
+	SET NOCOUNT ON
+	DECLARE @Err int
+
+	SELECT
+		[IDCategoria], 
+		[Nombre], 
+		[Descripcion]
+	FROM [dbo].[Categoria]
+	where Estatus = 1
+
+	SET @Err = @@Error
+
+	RETURN @Err
+END
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[proc_CategoriaInsert]    Script Date: 25/11/2019 11:23:35 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[proc_CategoriaInsert]
+(
+	
+	@Nombre varchar(50), 
+	@Descripcion varchar(100),
+	@Estatus int
+)
+AS
+BEGIN
+
+	SET NOCOUNT OFF
+	DECLARE @Err int
+
+	
+	
+	INSERT
+	INTO [Categoria]
+	(
+		
+		[Nombre], 
+		[Descripcion],
+		Estatus
+	)
+	
+	VALUES
+	(
+		
+		@Nombre, 
+		@Descripcion,
+		@Estatus
+	)
+
+
+	SET @Err = @@Error
+
+
+
+	
+
+	RETURN @Err
+END
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[proc_CategoriaDelete]    Script Date: 25/11/2019 11:13:28 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[proc_CategoriaDelete]
+(
+	@IDCategoria int
+)
+AS
+BEGIN
+
+	SET NOCOUNT OFF
+	DECLARE @Err int
+
+	UPDATE [Categoria]
+	SET
+		Estatus = 0
+	WHERE
+		([IDCategoria] = @IDCategoria)
+
+	SET @Err = @@Error
+
+	RETURN @Err
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[proc_CategoriaUpdate]    Script Date: 25/11/2019 11:57:30 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[proc_CategoriaUpdate]
+(
+	@IDCategoria numeric(12,0), 
+	@Nombre varchar(50), 
+	@Descripcion varchar(100)
+)
+AS
+BEGIN
+
+	SET NOCOUNT OFF
+	DECLARE @Err int
+	
+	
+	
+
+	UPDATE [Categoria]
+	SET
+		[Nombre] = @Nombre, 
+		[Descripcion] = @Descripcion
+	WHERE
+		([IDCategoria] = @IDCategoria)
+
+	SET @Err = @@Error
+
+
+	RETURN @Err
+END
+
+
+GO
+/*Termino Estarlin*/
+
 USE [master]
 GO
 ALTER DATABASE [PuntoVentaDB] SET  READ_WRITE 
