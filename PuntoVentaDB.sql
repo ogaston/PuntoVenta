@@ -3404,6 +3404,180 @@ END
 GO
 /*Termino Estarlin*/
 
+/*Roman Cambios*/
+
+/****** Object:  StoredProcedure [dbo].[proc_PresentacionDelete]    Script Date: 11/28/2019 7:23:39 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[proc_PresentacionDelete]
+(
+	@IDPresentacion int
+)
+AS
+BEGIN
+
+	SET NOCOUNT OFF
+	DECLARE @Err int
+
+Update Presentacion set Estatus = 0
+	
+	WHERE
+		([IDPresentacion] = @IDPresentacion)
+		
+
+	SET @Err = @@Error
+
+	RETURN @Err
+END
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[proc_PresentacionInsert]    Script Date: 11/28/2019 7:24:45 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[proc_PresentacionInsert]
+(
+	@Nombre varchar(50), 
+	@Descripcion varchar(100),
+	@Estatus int
+)
+AS
+BEGIN
+
+	SET NOCOUNT OFF
+	DECLARE @Err int
+
+	
+	
+	INSERT
+	INTO [Presentacion]
+	(
+		[Nombre], 
+		[Descripcion],
+		[Estatus]
+	)
+	
+	VALUES
+	(
+		@Nombre, 
+		@Descripcion,
+		@Estatus
+	)
+
+
+	SET @Err = @@Error
+
+
+
+	
+
+	RETURN @Err
+END
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[proc_PresentacionLoadAll]    Script Date: 11/28/2019 7:25:00 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[proc_PresentacionLoadAll]
+AS
+BEGIN
+
+	SET NOCOUNT ON
+	DECLARE @Err int
+
+	SELECT
+		[IDPresentacion], 
+		[Nombre], 
+		[Descripcion]
+	FROM [dbo].[Presentacion]
+
+	Where Estatus = 1
+
+	SET @Err = @@Error
+
+	RETURN @Err
+END
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[proc_PresentacionLoadById]    Script Date: 11/28/2019 7:25:15 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[proc_PresentacionLoadById]
+(
+	@Nombre varchar(50)
+)
+AS
+BEGIN
+	SET NOCOUNT ON
+	DECLARE @Err int
+
+	SELECT
+		[IDPresentacion], 
+		[Nombre], 
+		[Descripcion]
+	FROM [dbo].[Presentacion]
+	WHERE
+		([Nombre] like '%'+@Nombre+'%') 
+		and Estatus = 1
+
+	SET @Err = @@Error
+
+	RETURN @Err
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[proc_PresentacionUpdate]    Script Date: 11/28/2019 7:25:38 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[proc_PresentacionUpdate]
+(
+	@IDPresentacion int, 
+	@Nombre varchar(50), 
+	@Descripcion varchar(100)
+)
+AS
+BEGIN
+
+	SET NOCOUNT OFF
+	DECLARE @Err int
+	
+	
+	
+
+	UPDATE [Presentacion]
+	SET
+		[Nombre] = @Nombre, 
+		[Descripcion] = @Descripcion
+	WHERE
+		([IDPresentacion] = @IDPresentacion)
+
+	SET @Err = @@Error
+
+
+	RETURN @Err
+END
+
+
+
+/*Fin Roman*/
+
 USE [master]
 GO
 ALTER DATABASE [PuntoVentaDB] SET  READ_WRITE 

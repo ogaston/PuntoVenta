@@ -236,6 +236,7 @@
             this.presentacionMenuItem.Name = "presentacionMenuItem";
             this.presentacionMenuItem.Size = new System.Drawing.Size(196, 38);
             this.presentacionMenuItem.Text = "Presentacion";
+            this.presentacionMenuItem.Click += new System.EventHandler(this.presentacionMenuItem_Click);
             // 
             // ventaMenuItem
             // 

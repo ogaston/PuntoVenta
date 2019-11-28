@@ -282,5 +282,12 @@ namespace PosSystem
             CategoriaForm frm = new CategoriaForm();
             AbrirFormEnPanel(frm);
         }
+
+        private void presentacionMenuItem_Click(object sender, EventArgs e)
+        {
+            PresentacionForm frm = new PresentacionForm();
+            AbrirFormEnPanel(frm);
+
+        }
     }
 }

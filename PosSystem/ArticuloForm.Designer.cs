@@ -134,6 +134,7 @@
             this.btnPresentacion.Size = new System.Drawing.Size(50, 28);
             this.btnPresentacion.TabIndex = 28;
             this.btnPresentacion.UseVisualStyleBackColor = true;
+            this.btnPresentacion.Click += new System.EventHandler(this.btnPresentacion_Click);
             // 
             // btnImagen
             // 
