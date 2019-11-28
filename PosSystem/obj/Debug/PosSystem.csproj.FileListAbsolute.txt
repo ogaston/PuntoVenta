@@ -168,3 +168,4 @@ D:\Visual_Studio\williams\PuntoVenta\PosSystem\obj\Debug\PosSystem.csproj.Genera
 D:\Visual_Studio\williams\PuntoVenta\PosSystem\obj\Debug\PosSystem.csproj.CopyComplete
 D:\Visual_Studio\williams\PuntoVenta\PosSystem\obj\Debug\PosSystem.exe
 D:\Visual_Studio\williams\PuntoVenta\PosSystem\obj\Debug\PosSystem.pdb
+D:\Visual_Studio\williams\PuntoVenta\PosSystem\obj\Debug\PosSystem.PresentacionForm.resources
