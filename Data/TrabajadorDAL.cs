@@ -19,6 +19,7 @@ namespace Data
         }
         public void InsertTrabajador(Trabajador nuevo)
         {
+            EncryptDecrypt encryp = new EncryptDecrypt();
             conexion.ConecctionString().Open();
             using (SqlCommand comando = new SqlCommand("proc_TrabajadorInsert", conexion.ConecctionString()))
             {
@@ -33,7 +34,7 @@ namespace Data
                 comando.Parameters.AddWithValue("@Email", nuevo.Email);
                 comando.Parameters.AddWithValue("@Salario", nuevo.Salario);
                 comando.Parameters.AddWithValue("@Usuario", nuevo.Usuario);
-                comando.Parameters.AddWithValue("@Password",nuevo.Password);
+                comando.Parameters.AddWithValue("@Password",encryp.Encrypt(nuevo.Password));
                 comando.Parameters.AddWithValue("@Rango", nuevo.Rango);
                 comando.Parameters.AddWithValue("@Cargo", nuevo.Cargo);
                 comando.Parameters.AddWithValue("@Estatus", 1);

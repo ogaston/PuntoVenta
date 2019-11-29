@@ -1,4 +1,5 @@
 ﻿using BusinessLogic;
+using Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,8 +28,9 @@ namespace PosSystem
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-           string[] validate = LoginBL.ValidatedUsuario(txtUsuario.Text, txtClave.Text);
-            if (validate.Length > 0)
+            string[] validate = LoginBL.ValidatedUsuario(txtUsuario.Text,txtClave.Text);
+            string valida = LoginBL.ValidarUsuario(txtUsuario.Text, txtClave.Text);
+            if (valida.Length > 0)
             {
                 guardaRango = validate[0];
                 guardaID = validate[1];

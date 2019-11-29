@@ -19,6 +19,8 @@ namespace Data
 
         public string[] ValidatedUsuario(string usuario, string clave)
         {
+            EncryptDecrypt encryp = new EncryptDecrypt();
+
             string[] existe=new string[2];
             
             
@@ -29,7 +31,7 @@ namespace Data
 
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Usuario", usuario);
-                comando.Parameters.AddWithValue("@Password", clave);
+                comando.Parameters.AddWithValue("@Password",encryp.Encrypt(clave));
 
                 using (SqlDataReader reader = comando.ExecuteReader())
                 {
@@ -37,6 +39,37 @@ namespace Data
                     {
                         existe[0] = reader["Rango"].ToString();
                         existe[1] = reader["IDTrabajador"].ToString();
+                    }
+
+                }
+
+                conexion.ConecctionString().Close();
+
+                return existe;
+            }
+        }
+
+        public string ValidarUsuario(string usuario, string clave)
+        {
+            EncryptDecrypt encryp = new EncryptDecrypt();
+
+            string existe = "";
+
+
+
+            conexion.ConecctionString().Open();
+            using (SqlCommand comando = new SqlCommand("proc_ValidarUsuario", conexion.ConecctionString()))
+            {
+
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Usuario", usuario);
+                comando.Parameters.AddWithValue("@Password",encryp.Encrypt(clave));
+
+                using (SqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        existe = reader["Rango"].ToString();
                     }
 
                 }

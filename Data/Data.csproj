@@ -49,6 +49,7 @@
     <Compile Include="ConectionDAL.cs" />
     <Compile Include="Detalle_IngresoDAL.cs" />
     <Compile Include="Detalle_VentaDAL.cs" />
+    <Compile Include="EncryptDecrypt.cs" />
     <Compile Include="IngresoDAL.cs" />
     <Compile Include="LoginDAL.cs" />
     <Compile Include="PresentacionDAL.cs" />

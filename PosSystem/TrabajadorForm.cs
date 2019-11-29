@@ -156,17 +156,7 @@ namespace PosSystem
 
         private void txtSalario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsPunctuation(e.KeyChar)
-             || char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Este campo solo puede aceptar números. Intente colocando algún valor", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            
         }
 
 
@@ -338,6 +328,19 @@ namespace PosSystem
             FocusTextBox();
         }
 
-        
+        private void txtSalario_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsPunctuation(e.KeyChar)
+             || char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo solo puede aceptar números. Intente colocando algún valor", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
     }
 }
