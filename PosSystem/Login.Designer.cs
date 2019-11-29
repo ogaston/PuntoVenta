@@ -91,7 +91,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::PosSystem.Properties.Resources.warning;
+            this.pictureBox1.Image = global::PosSystem.Properties.Resources.bloquear;
             this.pictureBox1.Location = new System.Drawing.Point(144, 135);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
