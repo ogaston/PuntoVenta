@@ -14,5 +14,11 @@ namespace BusinessLogic
             LoginDAL validate = new LoginDAL();
             return validate.ValidatedUsuario(usuario,clave);
         }
+
+        public static string ValidarUsuario(string usuario, string clave)
+        {
+            LoginDAL validate = new LoginDAL();
+            return validate.ValidarUsuario(usuario, clave);
+        }
     }
 }

@@ -36,3 +36,34 @@ C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\BusinessLogic\bin\Debug\Entit
 C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
 C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.dll
 C:\Users\Asistente\Source\Repos\ogaston\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\bin\Debug\Data.dll
+C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\bin\Debug\Entity.dll
+C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\bin\Debug\Data.pdb
+C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\bin\Debug\Entity.pdb
+C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyReference.cache
+C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\ogaston\source\repos\PuntoVenta1\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\bin\Debug\Data.dll
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\bin\Debug\Entity.dll
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\bin\Debug\Data.pdb
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\bin\Debug\Entity.pdb
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\user\Desktop\Nueva carpeta\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\bin\Debug\BusinessLogic.dll
+D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\bin\Debug\BusinessLogic.pdb
+D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\bin\Debug\Data.dll
+D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\bin\Debug\Entity.dll
+D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\bin\Debug\Data.pdb
+D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\bin\Debug\Entity.pdb
+D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyReference.cache
+D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.pdb

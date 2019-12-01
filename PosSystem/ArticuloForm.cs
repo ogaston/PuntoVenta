@@ -288,5 +288,16 @@ namespace PosSystem
             }
         }
 
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            CategoriaForm abril = new CategoriaForm();
+            abril.ShowDialog();
+        }
+
+        private void btnPresentacion_Click(object sender, EventArgs e)
+        {
+            PresentacionForm abril = new PresentacionForm();
+            abril.ShowDialog();
+        }
     }
 }

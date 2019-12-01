@@ -2,7 +2,7 @@ USE
 [master]
 /****** Object:  Database [PuntoVentaDB]    Script Date: 11/2/2019 4:20:32 PM ******/
 CREATE DATABASE [PuntoVentaDB]
-
+GO
 USE [PuntoVentaDB]
 GO
 /****** Object:  Table [dbo].[Articulo]    Script Date: 11/2/2019 4:20:33 PM ******/
@@ -50,10 +50,10 @@ CREATE TABLE [dbo].[Cliente](
 	[IDCliente] [int] IDENTITY(1,1) NOT NULL,
 	[Nombre] [varchar](20) NOT NULL,
 	[Apellido] [varchar](50) NOT NULL,
-	[Sexo] [varchar](6) NOT NULL,
-	[Fecha_Nacimineto] [date] NULL,
+	[Sexo] [varchar](10) NOT NULL,
+	[Fecha_Nacimiento] [date] NULL,
 	[Tipo_Documento] [varchar](50) NOT NULL,
-	[Num_Documeto] [varchar](50) NOT NULL,
+	[Num_Documento] [varchar](50) NOT NULL,
 	[Telefono] [varchar](50) NOT NULL,
 	[Direccion] [varchar](100) NOT NULL,
 	[Email] [varchar](20) NOT NULL,
@@ -168,8 +168,8 @@ CREATE TABLE [dbo].[Trabajador](
 	[Telefono] [numeric](18, 0) NOT NULL,
 	[Email] [varchar](20) NULL,
 	[Salario] [numeric](14, 2) NOT NULL,
-	[Usuario] [varchar](10) NULL,
-	[Password] [varchar](10) NULL,
+	[Usuario] [varchar](50) NULL,
+	[Password] [varchar](200) NULL,
 	[Rango] [varchar](20) NULL,
 	[Cargo] [varchar](50) NOT NULL,
 	[Estatus] [int] NOT NULL,
@@ -207,6 +207,27 @@ CREATE TABLE [dbo].[Usuario](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+/****** Object:  Table [dbo].[Venta]    Script Date: 11/2/2019 4:20:33 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Venta](
+	[IDVenta] [int] NOT NULL,
+	[IDCliente] [int] NOT NULL,
+	[IDTrabajador] [int] NOT NULL,
+	[fecha] [datetime] NOT NULL,
+	[Tipo_Pago] [varchar](50) NOT NULL,
+	[No_Comprobante] [varchar](50) NULL,
+	[No_CreFiscal] [varchar](50) NULL,
+	[IGV] [numeric](11, 2) NULL,
+	[No_AutTarjeta] [varchar](30) NULL,
+	[Estado] [int] NOT NULL,
+ CONSTRAINT [PK_Venta] PRIMARY KEY CLUSTERED 
+(
+	[IDVenta] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
 ALTER TABLE [dbo].[Articulo] ADD  CONSTRAINT [DF_Articulo_Estatus]  DEFAULT ((1)) FOR [Estatus]
 GO
@@ -617,8 +638,8 @@ CREATE PROCEDURE [dbo].[proc_ClienteInsert]
 	@IDCliente numeric(12,0) = NULL OUTPUT, 
 	@Nombre varchar(20), 
 	@Apellido varchar(50), 
-	@Sexo varchar(6) = NULL, 
-	@FechaNacimineto date = NULL, 
+	@Sexo varchar(10) = NULL, 
+	@FechaNacimiento date = NULL, 
 	@TipoDocumento varchar(50), 
 	@NumDocumeto varchar(50), 
 	@Telefono numeric(18,0) = NULL, 
@@ -639,9 +660,9 @@ BEGIN
 		[Nombre], 
 		[Apellido], 
 		[Sexo], 
-		[Fecha_Nacimineto], 
+		[Fecha_Nacimiento], 
 		[Tipo_Documento], 
-		[Num_Documeto], 
+		[Num_Documento], 
 		[Telefono], 
 		[Direccion], 
 		[Email]
@@ -652,7 +673,7 @@ BEGIN
 		@Nombre, 
 		@Apellido, 
 		@Sexo, 
-		@FechaNacimineto, 
+		@FechaNacimiento, 
 		@TipoDocumento, 
 		@NumDocumeto, 
 		@Telefono, 
@@ -690,9 +711,9 @@ BEGIN
 		[Nombre], 
 		[Apellido], 
 		[Sexo], 
-		[Fecha_Nacimineto], 
+		[Fecha_Nacimiento], 
 		[Tipo_Documento], 
-		[Num_Documeto], 
+		[Num_Documento], 
 		[Telefono], 
 		[Direccion], 
 		[Email]
@@ -724,9 +745,9 @@ BEGIN
 		[Nombre], 
 		[Apellido], 
 		[Sexo], 
-		[Fecha_Nacimineto], 
+		[Fecha_Nacimiento], 
 		[Tipo_Documento], 
-		[Num_Documeto], 
+		[Num_Documento], 
 		[Telefono], 
 		[Direccion], 
 		[Email]
@@ -751,8 +772,8 @@ CREATE PROCEDURE [dbo].[proc_ClienteUpdate]
 	@IDCliente numeric(12,0), 
 	@Nombre varchar(20), 
 	@Apellido varchar(50), 
-	@Sexo varchar(6) = NULL, 
-	@FechaNacimineto date = NULL, 
+	@Sexo varchar(10) = NULL, 
+	@FechaNacimiento date = NULL, 
 	@TipoDocumento varchar(50), 
 	@NumDocumeto varchar(50), 
 	@Telefono numeric(18,0) = NULL, 
@@ -773,9 +794,9 @@ BEGIN
 		[Nombre] = @Nombre, 
 		[Apellido] = @Apellido, 
 		[Sexo] = @Sexo, 
-		[Fecha_Nacimineto] = @FechaNacimineto, 
+		[Fecha_Nacimiento] = @FechaNacimiento, 
 		[Tipo_Documento] = @TipoDocumento, 
-		[Num_Documeto] = @NumDocumeto, 
+		[Num_Documento] = @NumDocumeto, 
 		[Telefono] = @Telefono, 
 		[Direccion] = @Direccion, 
 		[Email] = @Email
@@ -1145,7 +1166,7 @@ GO
 
 CREATE PROCEDURE [dbo].[proc_ProveedorInsert]
 (
-	@IDProveedor numeric(12,0), 
+	@RazonSocial varchar(50),
 	@SectorComercial varchar(50), 
 	@Identificacion numeric(18,0) = NULL, 
 	@Direccion varchar(100), 
@@ -1163,7 +1184,7 @@ BEGIN
 	INSERT
 	INTO [Proveedor]
 	(
-		[IDProveedor], 
+		[razon_social],
 		[Sector_Comercial], 
 		[Identificacion], 
 		[Direccion], 
@@ -1173,7 +1194,7 @@ BEGIN
 	
 	VALUES
 	(
-		@IDProveedor, 
+		@RazonSocial,
 		@SectorComercial, 
 		@Identificacion, 
 		@Direccion, 
@@ -1261,6 +1282,7 @@ GO
 CREATE PROCEDURE [dbo].[proc_ProveedorUpdate]
 (
 	@IDProveedor numeric(12,0), 
+	@RazonSocial varchar(50), 
 	@SectorComercial varchar(50), 
 	@Identificacion numeric(18,0) = NULL, 
 	@Direccion varchar(100), 
@@ -1278,6 +1300,7 @@ BEGIN
 
 	UPDATE [Proveedor]
 	SET
+		[razon_social] = @RazonSocial,
 		[Sector_Comercial] = @SectorComercial, 
 		[Identificacion] = @Identificacion, 
 		[Direccion] = @Direccion, 
@@ -1798,147 +1821,138 @@ GO
 
 
 /*||||||||||||||||||||||||||||||||||||||||||||************LUIS BILL************||||||||||||||||||||||||||||||||||||||||||||||||||||**/
-
 USE [PuntoVentaDB]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_VentaMostrarDetalle]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_VentaMostrarDetalle]
+/****** Object:  StoredProcedure [dbo].[proc_VentaUpdate]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_VentaUpdate]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_VentaLoadAll]    Script Date: 12/11/2019 14:34:50 ******/
+/****** Object:  StoredProcedure [dbo].[proc_VentaLoadAll]    Script Date: 11/11/2019 15:26:26 ******/
 DROP PROCEDURE [dbo].[proc_VentaLoadAll]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_VentaInsert]    Script Date: 12/11/2019 14:34:50 ******/
+/****** Object:  StoredProcedure [dbo].[proc_VentaInsert]    Script Date: 11/11/2019 15:26:26 ******/
 DROP PROCEDURE [dbo].[proc_VentaInsert]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_VentaGenerarId]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_VentaGenerarId]
-GO
-/****** Object:  StoredProcedure [dbo].[proc_VentaDisminuirstock]    Script Date: 12/11/2019 14:34:50 ******/
+/****** Object:  StoredProcedure [dbo].[proc_VentaDisminuirstock]    Script Date: 11/11/2019 15:26:26 ******/
 DROP PROCEDURE [dbo].[proc_VentaDisminuirstock]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_VentaBuscarFechaAnulado]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_VentaBuscarFechaAnulado]
+/****** Object:  StoredProcedure [dbo].[proc_VentaDelete]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_VentaDelete]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_VentaBuscarFecha]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_VentaBuscarFecha]
+/****** Object:  StoredProcedure [dbo].[proc_Mostrar_detalle_venta]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_Mostrar_detalle_venta]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_VentaBuscarClienteNombre]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_VentaBuscarClienteNombre]
+/****** Object:  StoredProcedure [dbo].[proc_Mostrar_detalle_ingreso]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_Mostrar_detalle_ingreso]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_VentaBuscarClienteDocumento]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_VentaBuscarClienteDocumento]
-GO
-/****** Object:  StoredProcedure [dbo].[proc_VentaBuscarArticuloNombre]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_VentaBuscarArticuloNombre]
-GO
-/****** Object:  StoredProcedure [dbo].[proc_VentaBuscarArticuloId]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_VentaBuscarArticuloId]
-GO
-/****** Object:  StoredProcedure [dbo].[proc_VentaBuscarArticuloCodigo]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_VentaBuscarArticuloCodigo]
-GO
-/****** Object:  StoredProcedure [dbo].[proc_VentaAnular]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_VentaAnular]
-GO
-/****** Object:  StoredProcedure [dbo].[proc_IngresoUpdate]    Script Date: 12/11/2019 14:34:50 ******/
+/****** Object:  StoredProcedure [dbo].[proc_IngresoUpdate]    Script Date: 11/11/2019 15:26:26 ******/
 DROP PROCEDURE [dbo].[proc_IngresoUpdate]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_IngresoMostrarDetalle]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_IngresoMostrarDetalle]
-GO
-/****** Object:  StoredProcedure [dbo].[proc_IngresoLoadAll]    Script Date: 12/11/2019 14:34:50 ******/
+/****** Object:  StoredProcedure [dbo].[proc_IngresoLoadAll]    Script Date: 11/11/2019 15:26:26 ******/
 DROP PROCEDURE [dbo].[proc_IngresoLoadAll]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_IngresoInsert]    Script Date: 12/11/2019 14:34:50 ******/
+/****** Object:  StoredProcedure [dbo].[proc_IngresoInsert]    Script Date: 11/11/2019 15:26:26 ******/
 DROP PROCEDURE [dbo].[proc_IngresoInsert]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_IngresoGenerarId]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_IngresoGenerarId]
-GO
-/****** Object:  StoredProcedure [dbo].[proc_IngresoDelete]    Script Date: 12/11/2019 14:34:50 ******/
+/****** Object:  StoredProcedure [dbo].[proc_IngresoDelete]    Script Date: 11/11/2019 15:26:26 ******/
 DROP PROCEDURE [dbo].[proc_IngresoDelete]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_IngresoBuscarProveedorRnc]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_IngresoBuscarProveedorRnc]
+/****** Object:  StoredProcedure [dbo].[proc_Generaridventa]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_Generaridventa]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_IngresoBuscarProveedorRazon]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_IngresoBuscarProveedorRazon]
+/****** Object:  StoredProcedure [dbo].[proc_Generaridingreso]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_Generaridingreso]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_IngresoBuscarFecha]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_IngresoBuscarFecha]
+/****** Object:  StoredProcedure [dbo].[proc_DetalleVentaLoadById]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_DetalleVentaLoadById]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_IngresoBuscarArticuloNombre]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_IngresoBuscarArticuloNombre]
+/****** Object:  StoredProcedure [dbo].[proc_DetalleVentaInsert]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_DetalleVentaInsert]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_IngresoBuscarArticuloId]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_IngresoBuscarArticuloId]
+/****** Object:  StoredProcedure [dbo].[proc_DetalleIngresoLoadById]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_DetalleIngresoLoadById]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_IngresoBuscarArticuloCodigo]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_IngresoBuscarArticuloCodigo]
+/****** Object:  StoredProcedure [dbo].[proc_Detalle_VentaUpdate]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_Detalle_VentaUpdate]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_IngresoAnular]    Script Date: 12/11/2019 14:34:50 ******/
-DROP PROCEDURE [dbo].[proc_IngresoAnular]
+/****** Object:  StoredProcedure [dbo].[proc_Detalle_VentaLoadByPrimaryKey]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_Detalle_VentaLoadByPrimaryKey]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_Detalle_VentaLoadAll]    Script Date: 12/11/2019 14:34:50 ******/
+/****** Object:  StoredProcedure [dbo].[proc_Detalle_VentaLoadAll]    Script Date: 11/11/2019 15:26:26 ******/
 DROP PROCEDURE [dbo].[proc_Detalle_VentaLoadAll]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_Detalle_VentaInsert]    Script Date: 12/11/2019 14:34:50 ******/
+/****** Object:  StoredProcedure [dbo].[proc_Detalle_VentaInsert]    Script Date: 11/11/2019 15:26:26 ******/
 DROP PROCEDURE [dbo].[proc_Detalle_VentaInsert]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_Detalle_IngresoLoadAll]    Script Date: 12/11/2019 14:34:50 ******/
+/****** Object:  StoredProcedure [dbo].[proc_Detalle_VentaDelete]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_Detalle_VentaDelete]
+GO
+/****** Object:  StoredProcedure [dbo].[proc_Detalle_IngresoUpdate]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_Detalle_IngresoUpdate]
+GO
+/****** Object:  StoredProcedure [dbo].[proc_Detalle_IngresoLoadByPrimaryKey]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_Detalle_IngresoLoadByPrimaryKey]
+GO
+/****** Object:  StoredProcedure [dbo].[proc_Detalle_IngresoLoadAll]    Script Date: 11/11/2019 15:26:26 ******/
 DROP PROCEDURE [dbo].[proc_Detalle_IngresoLoadAll]
 GO
-/****** Object:  StoredProcedure [dbo].[proc_Detalle_IngresoInsert]    Script Date: 12/11/2019 14:34:50 ******/
+/****** Object:  StoredProcedure [dbo].[proc_Detalle_IngresoInsert]    Script Date: 11/11/2019 15:26:26 ******/
 DROP PROCEDURE [dbo].[proc_Detalle_IngresoInsert]
 GO
-ALTER TABLE [dbo].[Venta] DROP CONSTRAINT [FK_Venta_Trabajador]
+/****** Object:  StoredProcedure [dbo].[proc_Detalle_IngresoDelete]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_Detalle_IngresoDelete]
 GO
-ALTER TABLE [dbo].[Venta] DROP CONSTRAINT [FK_Venta_Clientes]
+/****** Object:  StoredProcedure [dbo].[proc_BuscarVentaFechaAnulado]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_BuscarVentaFechaAnulado]
 GO
-ALTER TABLE [dbo].[Ingreso] DROP CONSTRAINT [FK_Ingreso_Trabajador]
+/****** Object:  StoredProcedure [dbo].[proc_BuscarVentaFecha]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_BuscarVentaFecha]
 GO
-ALTER TABLE [dbo].[Ingreso] DROP CONSTRAINT [FK_Ingreso_Provedor]
+/****** Object:  StoredProcedure [dbo].[proc_BuscarArticuloVentaNombre]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_BuscarArticuloVentaNombre]
 GO
-ALTER TABLE [dbo].[Detalle_Venta] DROP CONSTRAINT [FK_Detalle_Venta_Venta]
+/****** Object:  StoredProcedure [dbo].[proc_BuscarArticuloVentaId]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_BuscarArticuloVentaId]
 GO
-ALTER TABLE [dbo].[Detalle_Venta] DROP CONSTRAINT [FK_Detalle_Venta_Ingreso]
+/****** Object:  StoredProcedure [dbo].[proc_BuscarArticuloVentaCodigo]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_BuscarArticuloVentaCodigo]
 GO
-ALTER TABLE [dbo].[Detalle_Ingreso] DROP CONSTRAINT [FK_Detalle_Ingreso_Ingreso]
+/****** Object:  StoredProcedure [dbo].[proc_buscar_proveedor_rnc]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_buscar_proveedor_rnc]
 GO
-ALTER TABLE [dbo].[Detalle_Ingreso] DROP CONSTRAINT [FK_Detalle_Ingreso_Articulo]
+/****** Object:  StoredProcedure [dbo].[proc_buscar_proveedor_razon_social]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_buscar_proveedor_razon_social]
 GO
-/****** Object:  Table [dbo].[Venta]    Script Date: 12/11/2019 14:34:50 ******/
-DROP TABLE [dbo].[Venta]
+/****** Object:  StoredProcedure [dbo].[proc_buscar_cliente_nombre]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_buscar_cliente_nombre]
 GO
-/****** Object:  Table [dbo].[Ingreso]    Script Date: 12/11/2019 14:34:50 ******/
-DROP TABLE [dbo].[Ingreso]
+/****** Object:  StoredProcedure [dbo].[proc_buscar_cliente_documento]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_buscar_cliente_documento]
 GO
-/****** Object:  Table [dbo].[Detalle_Venta]    Script Date: 12/11/2019 14:34:50 ******/
-DROP TABLE [dbo].[Detalle_Venta]
+/****** Object:  StoredProcedure [dbo].[proc_buscar_articulo_ingreso_nombre]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_buscar_articulo_ingreso_nombre]
 GO
-/****** Object:  Table [dbo].[Detalle_Ingreso]    Script Date: 12/11/2019 14:34:50 ******/
-DROP TABLE [dbo].[Detalle_Ingreso]
+/****** Object:  StoredProcedure [dbo].[proc_buscar_articulo_ingreso_id]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_buscar_articulo_ingreso_id]
 GO
-/****** Object:  Table [dbo].[Detalle_Ingreso]    Script Date: 12/11/2019 14:34:50 ******/
+/****** Object:  StoredProcedure [dbo].[proc_buscar_articulo_ingreso_codigo]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_buscar_articulo_ingreso_codigo]
+GO
+/****** Object:  StoredProcedure [dbo].[proc_AnularVenta]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_AnularVenta]
+GO
+/****** Object:  StoredProcedure [dbo].[proc_AnularIngreso]    Script Date: 11/11/2019 15:26:26 ******/
+DROP PROCEDURE [dbo].[proc_AnularIngreso]
+GO
+/****** Object:  StoredProcedure [dbo].[proc_AnularIngreso]    Script Date: 11/11/2019 15:26:26 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Detalle_Ingreso](
-	[IDDetalle_Ingreso] [int] IDENTITY(1,1) NOT NULL,
-	[IDIngreso] [int] NOT NULL,
-	[IDArticulo] [int] NOT NULL,
-	[Precio_compra] [numeric](18, 2) NULL,
-	[Precio_Venta] [numeric](18, 2) NULL,
-	[Stock_Inicial] [numeric](18, 0) NULL,
-	[Stock_Actual] [numeric](18, 0) NULL,
-	[Fecha_produccion] [date] NULL,
-	[Fecha_vencimiento] [date] NULL,
- CONSTRAINT [PK_Detalle_Ingreso] PRIMARY KEY CLUSTERED 
-(
-	[IDDetalle_Ingreso] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+CREATE proc [dbo].[proc_AnularIngreso]
+@idingreso int
+as
+update ingreso set estado = 0
+WHERE idingreso = @idingreso
 
 GO
 /****** Object:  Table [dbo].[Detalle_Venta]    Script Date: 12/11/2019 14:34:51 ******/
@@ -1946,18 +1960,36 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Detalle_Venta](
-	[IDDetalle_Venta] [int] IDENTITY(1,1) NOT NULL,
-	[IDDetalle_Ingreso] [int] NOT NULL,
-	[IDVenta] [int] NOT NULL,
-	[Cantidad] [int] NOT NULL,
-	[Precio_Venta] [numeric](18, 2) NOT NULL,
-	[Descuento] [numeric](18, 2) NOT NULL,
- CONSTRAINT [PK_Detalle] PRIMARY KEY CLUSTERED 
-(
-	[IDDetalle_Venta] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+CREATE proc [dbo].[proc_AnularVenta]
+@idventa int
+as
+update Venta set estado = 0
+WHERE IDVenta = @idventa
+
+
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[proc_buscar_articulo_ingreso_codigo]    Script Date: 11/11/2019 15:26:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [dbo].[proc_buscar_articulo_ingreso_codigo]
+@textobuscar varchar (50)
+as
+SELECT dbo.articulo.idarticulo, dbo.articulo.Codigo_Articulo, dbo.articulo.nombre,
+dbo.articulo.descripcion, dbo.articulo.imagen, dbo.articulo.idcategoria, 
+dbo.categoria.nombre AS Categoria, dbo.articulo.idpresentacion,
+dbo.presentacion.nombre AS Presentacion
+FROM dbo.articulo INNER JOIN dbo.categoria 
+ON dbo.articulo.idcategoria = dbo.categoria.idcategoria 
+INNER JOIN dbo.presentacion 
+ON dbo.articulo.idpresentacion = dbo.presentacion.idpresentacion
+where dbo.articulo.Codigo_Articulo like @textobuscar + '%'
+order by dbo.articulo.idarticulo desc
+
+
 
 GO
 /****** Object:  Table [dbo].[Ingreso]    Script Date: 12/11/2019 14:34:51 ******/
@@ -1983,7 +2015,19 @@ CREATE TABLE [dbo].[Ingreso](
 ) ON [PRIMARY]
 
 GO
-SET ANSI_PADDING OFF
+/****** Object:  StoredProcedure [dbo].[proc_buscar_cliente_documento]    Script Date: 11/11/2019 15:26:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create proc [dbo].[proc_buscar_cliente_documento]
+@textobuscar varchar(50)
+as
+select * from cliente
+where Num_Documeto like @textobuscar + '%'
+
+
 GO
 /****** Object:  Table [dbo].[Venta]    Script Date: 12/11/2019 14:34:51 ******/
 SET ANSI_NULLS ON
@@ -2285,7 +2329,7 @@ where dbo.articulo.Codigo_Articulo like @textobuscar + '%'
 order by dbo.articulo.idarticulo desc
 
 
-
+	
 GO
 /****** Object:  StoredProcedure [dbo].[proc_IngresoBuscarArticuloId]    Script Date: 12/11/2019 14:34:51 ******/
 SET ANSI_NULLS ON
@@ -2508,9 +2552,9 @@ as
 update Venta set estado = 0
 WHERE IDVenta = @idventa
 
-
-
-
+	
+	
+	
 GO
 /****** Object:  StoredProcedure [dbo].[proc_VentaBuscarArticuloCodigo]    Script Date: 12/11/2019 14:34:51 ******/
 SET ANSI_NULLS ON
@@ -2822,3 +2866,7 @@ GO
 
 
 /***||||||||||||||||||||||||||||||||||||*******END LUIS BILL**************||||||||||||||||||||||||||||||||||||****************/
+USE [master]
+GO
+ALTER DATABASE [PuntoVentaDB] SET  READ_WRITE 
+GO

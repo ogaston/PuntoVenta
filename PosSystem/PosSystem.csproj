@@ -52,6 +52,30 @@
     <Compile Include="ArticuloForm.Designer.cs">
       <DependentUpon>ArticuloForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoriaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriaForm.Designer.cs">
+      <DependentUpon>CategoriaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentacionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentacionForm.designer.cs">
+      <DependentUpon>PresentacionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProveedoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProveedoresForm.Designer.cs">
+      <DependentUpon>ProveedoresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClienteForm.Designer.cs">
+      <DependentUpon>ClienteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSetCombox.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,6 +150,18 @@
     </Compile>
     <EmbeddedResource Include="ArticuloForm.resx">
       <DependentUpon>ArticuloForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoriaForm.resx">
+      <DependentUpon>CategoriaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentacionForm.resx">
+      <DependentUpon>PresentacionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProveedoresForm.resx">
+      <DependentUpon>ProveedoresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClienteForm.resx">
+      <DependentUpon>ClienteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IngresoForm.resx">
       <DependentUpon>IngresoForm.cs</DependentUpon>
