@@ -67,3 +67,12 @@ D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.cspro
 D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
 D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.dll
 D:\Visual_Studio\williams\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\Monografico\POS Ventas Final\PuntoVenta\BusinessLogic\bin\Debug\BusinessLogic.dll
+D:\Monografico\POS Ventas Final\PuntoVenta\BusinessLogic\bin\Debug\BusinessLogic.pdb
+D:\Monografico\POS Ventas Final\PuntoVenta\BusinessLogic\bin\Debug\Data.dll
+D:\Monografico\POS Ventas Final\PuntoVenta\BusinessLogic\bin\Debug\Entity.dll
+D:\Monografico\POS Ventas Final\PuntoVenta\BusinessLogic\bin\Debug\Data.pdb
+D:\Monografico\POS Ventas Final\PuntoVenta\BusinessLogic\bin\Debug\Entity.pdb
+D:\Monografico\POS Ventas Final\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Monografico\POS Ventas Final\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\Monografico\POS Ventas Final\PuntoVenta\BusinessLogic\obj\Debug\BusinessLogic.pdb

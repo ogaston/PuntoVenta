@@ -29,3 +29,8 @@ D:\Visual_Studio\williams\PuntoVenta\Entity\bin\Debug\Entity.pdb
 D:\Visual_Studio\williams\PuntoVenta\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
 D:\Visual_Studio\williams\PuntoVenta\Entity\obj\Debug\Entity.dll
 D:\Visual_Studio\williams\PuntoVenta\Entity\obj\Debug\Entity.pdb
+D:\Monografico\POS Ventas Final\PuntoVenta\Entity\bin\Debug\Entity.dll
+D:\Monografico\POS Ventas Final\PuntoVenta\Entity\bin\Debug\Entity.pdb
+D:\Monografico\POS Ventas Final\PuntoVenta\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+D:\Monografico\POS Ventas Final\PuntoVenta\Entity\obj\Debug\Entity.dll
+D:\Monografico\POS Ventas Final\PuntoVenta\Entity\obj\Debug\Entity.pdb

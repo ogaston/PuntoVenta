@@ -97,6 +97,7 @@
             this.iconmaximizar = new System.Windows.Forms.PictureBox();
             this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.btnReprint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -478,6 +479,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnReprint);
             this.groupBox1.Controls.Add(this.chkComprobante);
             this.groupBox1.Controls.Add(this.txtAuttarjeta);
             this.groupBox1.Controls.Add(this.lblTotalDescontado);
@@ -865,6 +867,17 @@
             this.btnMenu.TabIndex = 0;
             this.btnMenu.TabStop = false;
             // 
+            // btnReprint
+            // 
+            this.btnReprint.Location = new System.Drawing.Point(777, 38);
+            this.btnReprint.Name = "btnReprint";
+            this.btnReprint.Size = new System.Drawing.Size(63, 44);
+            this.btnReprint.TabIndex = 45;
+            this.btnReprint.Text = "RePrint";
+            this.btnReprint.UseVisualStyleBackColor = true;
+            this.btnReprint.Visible = false;
+            this.btnReprint.Click += new System.EventHandler(this.btnReprint_Click);
+            // 
             // VentasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -972,5 +985,6 @@
         private System.Windows.Forms.PictureBox iconcerrar;
         private System.Windows.Forms.PictureBox btnMenu;
         private System.Windows.Forms.CheckBox chkComprobante;
+        private System.Windows.Forms.Button btnReprint;
     }
 }

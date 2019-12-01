@@ -41,26 +41,8 @@ namespace PosSystem
 
         }
 
-        public void setCliente(string idcliente, string nombre, string documento)
-        {
-            this.txtIdcliente.Text = idcliente;
-            this.txtCliente.Text = nombre;
-            
+        #region Factura
 
-        }
-
-        public void setArticulo(string iddetalle_ingreso, string nombre, decimal precio_compra,
-            decimal precio_venta, int stock, DateTime fecha_vencimiento)
-        {
-            this.txtIdarticulo.Text = iddetalle_ingreso;
-            this.txtArticulo.Text = nombre;
-            this.txtPrecioCompra.Text = precio_compra.ToString();
-            this.txtPrecioVenta.Text = precio_venta.ToString();
-            this.txtStock_Actual.Text = stock.ToString();
-            this.dtFechaVencimiento.Value = fecha_vencimiento;
-        }
-
-        #region Impresiones
         public static string GetImpresoraDefecto()
         {
             for (int i = 0; i < PrinterSettings.InstalledPrinters.Count; i++)
@@ -123,7 +105,7 @@ namespace PosSystem
             }
             public void EncabezadoVenta()
             {
-                ticket = "Articulo             ITBIS      VALOR\n";   // agrega lineas de  encabezados
+                ticket = "Articulo               ITBIS      VALOR\n";   // agrega lineas de  encabezados
                 RawPrinterHelper.SendStringToPrinter(impresora, ticket); // imprime texto
             }
             public void TextoIzquierda(string par1)                          // agrega texto a la izquierda
@@ -199,7 +181,7 @@ namespace PosSystem
                 ticket += parte2 + "\n";                     // agrega el segundo parametro al final
                 RawPrinterHelper.SendStringToPrinter(impresora, ticket); // imprime texto
             }
-            public void AgregaTotales(string par1, double total)
+            public void AgregaTotales(string par1, string total)
             {
                 max = par1.Length;
                 if (max > 25)                                 // **********
@@ -209,7 +191,7 @@ namespace PosSystem
                 }
                 else { parte1 = par1; }                      // **********
                 ticket = parte1;
-                parte2 = total.ToString("c");
+                parte2 = total; //.ToString("c"); Modificado
                 max = 40 - (parte1.Length + parte2.Length);
                 for (int i = 0; i < max; i++)                // **********
                 {
@@ -218,10 +200,10 @@ namespace PosSystem
                 ticket += parte2 + "\n";
                 RawPrinterHelper.SendStringToPrinter(impresora, ticket); // imprime texto
             }
-            public void AgregaArticulo(string par1, string cant, double precio, double total)
+            public void AgregaArticulo(string par1, string cant, string precio, string total)
             {
 
-                if (cant.ToString().Length <= 3 && precio.ToString("c").Length <= 10 && total.ToString("c").Length <= 11) // valida que cant precio y total esten dentro de rango
+                if (cant.ToString().Length <= 3 && precio/*.ToString("c")*/.Length <= 10 && total/*.ToString("c")*/.Length <= 11) // valida que cant precio y total esten dentro de rango
                 {
                     max = par1.Length;
                     if (max > 16)                                 // **********
@@ -237,18 +219,18 @@ namespace PosSystem
                         ticket += " ";                           // Agrega espacios para poner el valor de cantidad
                     }
                     ticket += cant.ToString();                   // agrega cantidad 
-                    max = 10 - (precio.ToString("c").Length);
+                    max = 10 - (precio/*.ToString("c")*/.Length);
                     for (int i = 0; i < max; i++)                // **********
                     {
                         ticket += " ";                           // Agrega espacios
                     }                                            // **********
-                    ticket += precio.ToString("c"); // agrega precio
+                    ticket += precio/*.ToString("c")*/; // agrega precio
                     max = 11 - (total.ToString().Length);
                     for (int i = 0; i < max; i++)                // **********
                     {
                         ticket += " ";                           // Agrega espacios
                     }                                            // **********
-                    ticket += total.ToString("c") + "\n"; // agrega precio
+                    ticket += total/*.ToString("c")*/ + "\n"; // agrega precio
                     RawPrinterHelper.SendStringToPrinter(impresora, ticket); // imprime texto
                 }
                 else
@@ -274,7 +256,6 @@ namespace PosSystem
             }
         }
         #endregion
-
         #region Clase para enviar a imprsora texto plano
         public class RawPrinterHelper
         {
@@ -367,7 +348,95 @@ namespace PosSystem
         }
         #endregion
 
+
+        private void FacturaConsumidorFinal()
+        {
+            VentaBL id = new VentaBL();
+
+            decimal puni = 0, ptotal = 0, itb = 0, puniac = 0, itbac = 0;
+            string artic;
+            int cantidad = 0;
+
+            CreaTicket Ticket1 = new CreaTicket();
+            //Ticket1.AbreCajon();  //abre el cajon
+            Ticket1.TextoCentro("Pos Vents"); // imprime en el centro "Venta mostrador"
+            Ticket1.TextoCentro("Grupo 3");
+            Ticket1.TextoCentro("RNC: 0000000000"); // imprime en el centro "Venta mostrador"
+            Ticket1.TextoCentro(" ");
+
+            Ticket1.TextoIzquierda("Factura # " + txtIdventa.Text); // imprime en el centro "Venta mostrador"
+            Ticket1.TextoIzquierda("Fecha: " + dtFecha.Value.ToShortDateString());
+            Ticket1.TextoIzquierda("Metodo de Pago: " + cbTipo_Pago.Text);
+            Ticket1.TextoIzquierda("Cliente: " + this.txtCliente.Text);
+            Ticket1.TextoIzquierda("RNC/Cedula: " + "000000000");
+            Ticket1.TextoCentro("COMPROBANTE AUTORIZADO POR LA DGII");
+            Ticket1.TextoIzquierda(dtFecha.Value.ToShortDateString());
+            Ticket1.TextoIzquierda("NCF: " + ncf);
+            Ticket1.LineasGuion(); // imprime una linea de guiones
+            Ticket1.TextoCentro("Factura Para Consumidor Final");
+            Ticket1.LineasGuion();
+            Ticket1.EncabezadoVenta(); // imprime encabezados
+            Ticket1.LineasGuion();
+            //Ticket1.AgregaArticulo(descripcion, cantidad, precio, total); //imprime una linea de descripcion
+            foreach (DataGridViewRow row in dataListadoDetalle.Rows)
+            {
+
+                artic = row.Cells[1].Value.ToString();
+                cantidad = Convert.ToInt32(row.Cells[2].Value.ToString());
+                puni = Convert.ToDecimal(row.Cells[3].Value.ToString());
+
+                ptotal = cantidad * puni;
+                //itb = ptotal * 18 / 100;
+                itb = ptotal / Convert.ToDecimal(1.18) * 18 / 100;
+                //ptotal = Convert.ToDouble(row.Cells[5].Value.ToString());
+                Ticket1.TextoIzquierda(cantidad.ToString() + " x " + string.Format("{0:n}", puni));
+
+                Ticket1.AgregaArticulo(artic, " ", string.Format("{0:n}", itb), string.Format("{0:n}", ptotal));
+            }
+            Ticket1.LineasGuion(); // imprime linea 
+
+            decimal descuento = Convert.ToDecimal(lblTotalDescontado.Text);
+            decimal itbis = (Convert.ToDecimal(lblTotalPagado.Text) - descuento) / Convert.ToDecimal(1.18) * 18 / 100; // hacemos una conversion para sacar el monto base
+            decimal subtotal = Math.Round(Convert.ToDecimal(lblTotalPagado.Text) + Convert.ToDecimal(lblTotalDescontado.Text), 2);
+            decimal total = Convert.ToDecimal(lblTotalPagado.Text);
+            //-Ticket1.AgregaTotales("Subtotal:", string.Format("{0:n}", subtotal));
+            //Ticket1.AgregaTotales("Descuento: ", string.Format("{0:n}", descuento));
+            //Ticket1.AgregaTotales("Itbis 18%:", Math.Round( itbis,2).ToString());
+            //Ticket1.AgregaTotales("Total: ", string.Format("{0:n}", total));  // imprime linea con total
+
+            Ticket1.AgregaArticulo("Subtotal", " ", string.Format("{0:n}", itbis), string.Format("{0:n}", subtotal));//imprime linea con el Subtotal
+            Ticket1.AgregaArticulo("Total", " ", string.Format("{0:n}", itbis), string.Format("{0:n}", total));//imprime linea con total
+
+            Ticket1.TextoCentro("");
+            Ticket1.LineasGuion();
+            Ticket1.TextoCentro("Gracias por Preferirnos");
+            Ticket1.LineasGuion();
+
+            Ticket1.CortaTicket(); // corta el ticket
+        }
+
+
         #endregion
+
+
+        public void setCliente(string idcliente, string nombre, string documento)
+        {
+            this.txtIdcliente.Text = idcliente;
+            this.txtCliente.Text = nombre;
+        }
+
+        public void setArticulo(string iddetalle_ingreso, string nombre, decimal precio_compra,
+            decimal precio_venta, int stock, DateTime fecha_vencimiento)
+        {
+            this.txtIdarticulo.Text = iddetalle_ingreso;
+            this.txtArticulo.Text = nombre;
+            this.txtPrecioCompra.Text = precio_compra.ToString();
+            this.txtPrecioVenta.Text = precio_venta.ToString();
+            this.txtStock_Actual.Text = stock.ToString();
+            this.dtFechaVencimiento.Value = fecha_vencimiento;
+        }
+
+       
         // Aqui se generara el listado para los articulos ingresados
 
         private void MensajeOk(string mensaje)
@@ -511,7 +580,10 @@ namespace PosSystem
             InitializeComponent();
         }
 
-
+        void factura()
+        {
+           
+        }
         private void VentasForm_Load(object sender, EventArgs e)
         {
             this.Top = 0;
@@ -616,6 +688,7 @@ namespace PosSystem
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            this.btnReprint.Visible = false;
             this.IsNuevo = true;
             this.Botones();
             this.Limpiar();
@@ -651,6 +724,7 @@ namespace PosSystem
                         if (this.IsNuevo)
                         {
                             this.MensajeOk("Se Insertó de forma correcta el registro");
+                            this.FacturaConsumidorFinal();
                             totalPagado = 0;
                         }
                     }
@@ -748,6 +822,7 @@ namespace PosSystem
 
             this.lblTotalPagado.Text = string.Format("{0:n}", this.dataListado.CurrentRow.Cells["total"].Value);
             this.MostrarDetalle();
+            this.btnReprint.Visible = true;
             this.tabControl1.SelectedIndex = 1;
         }
 
@@ -847,6 +922,14 @@ namespace PosSystem
             else
             {
                 this.dataListado.Columns[0].Visible = false;
+            }
+        }
+
+        private void btnReprint_Click(object sender, EventArgs e)
+        {
+            if(this.txtIdventa.Text != string.Empty)
+            {
+                this.FacturaConsumidorFinal();
             }
         }
     }

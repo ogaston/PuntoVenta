@@ -15,6 +15,7 @@ namespace PosSystem
     public partial class PresentacionForm : Form
     {
         public int ID;
+
         public PresentacionForm()
         {
             InitializeComponent();
@@ -127,15 +128,7 @@ namespace PosSystem
             {
                 Limpiar(txtNombreProducto, txtDescripcionProducto);
             }
-            void Limpiar(params TextBox[] text)
-            {
-                for (int i = 0; i < text.Length; i++)
-                {
-                    text[i].Clear();
-
-                }
-
-            }
+          
                      
            
             

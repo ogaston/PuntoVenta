@@ -225,7 +225,7 @@
             this.CategoriaMenuItem.Name = "CategoriaMenuItem";
             this.CategoriaMenuItem.Size = new System.Drawing.Size(196, 38);
             this.CategoriaMenuItem.Text = "Categoria";
-            this.CategoriaMenuItem.Click += new System.EventHandler(this.CategoriaMenuItem_Click);
+           // this.CategoriaMenuItem.Click += new System.EventHandler(this.CategoriaMenuItem_Click);
             // 
             // presentacionMenuItem
             // 
@@ -236,7 +236,7 @@
             this.presentacionMenuItem.Name = "presentacionMenuItem";
             this.presentacionMenuItem.Size = new System.Drawing.Size(196, 38);
             this.presentacionMenuItem.Text = "Presentacion";
-            this.presentacionMenuItem.Click += new System.EventHandler(this.presentacionMenuItem_Click);
+           // this.presentacionMenuItem.Click += new System.EventHandler(this.presentacionMenuItem_Click);
             // 
             // ventaMenuItem
             // 
@@ -282,7 +282,7 @@
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(173, 38);
             this.clienteToolStripMenuItem.Text = "Clientes";
-            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
+           // this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // comprasMenuItem
             // 
@@ -335,7 +335,7 @@
             this.proveedoresMenuItem.Name = "proveedoresMenuItem";
             this.proveedoresMenuItem.Size = new System.Drawing.Size(180, 38);
             this.proveedoresMenuItem.Text = "Proveedores";
-            this.proveedoresMenuItem.Click += new System.EventHandler(this.ProveedoresMenuItem_Click);
+          //  this.proveedoresMenuItem.Click += new System.EventHandler(this.ProveedoresMenuItem_Click);
             // 
             // mantenimientoMenuItem
             // 
