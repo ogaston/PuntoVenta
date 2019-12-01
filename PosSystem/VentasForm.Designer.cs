@@ -66,6 +66,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkComprobante = new System.Windows.Forms.CheckBox();
             this.txtAuttarjeta = new System.Windows.Forms.TextBox();
             this.lblTotalDescontado = new System.Windows.Forms.Label();
             this.lblTotalPagado = new System.Windows.Forms.Label();
@@ -96,7 +97,6 @@
             this.iconmaximizar = new System.Windows.Forms.PictureBox();
             this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
-            this.chkComprobante = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -354,7 +354,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(914, 446);
+            this.tabPage1.Size = new System.Drawing.Size(891, 480);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             // 
@@ -374,6 +374,7 @@
             this.dtFecha2.Name = "dtFecha2";
             this.dtFecha2.Size = new System.Drawing.Size(109, 22);
             this.dtFecha2.TabIndex = 9;
+            this.dtFecha2.ValueChanged += new System.EventHandler(this.dtFecha2_ValueChanged);
             // 
             // dtFecha1
             // 
@@ -382,6 +383,7 @@
             this.dtFecha1.Name = "dtFecha1";
             this.dtFecha1.Size = new System.Drawing.Size(109, 22);
             this.dtFecha1.TabIndex = 8;
+            this.dtFecha1.ValueChanged += new System.EventHandler(this.dtFecha1_ValueChanged);
             // 
             // dataListado
             // 
@@ -416,6 +418,7 @@
             this.chkEliminar.TabIndex = 5;
             this.chkEliminar.Text = "Anular";
             this.chkEliminar.UseVisualStyleBackColor = true;
+            this.chkEliminar.CheckedChanged += new System.EventHandler(this.chkEliminar_CheckedChanged);
             // 
             // btnImprimir
             // 
@@ -438,6 +441,7 @@
             this.btnAnular.TabIndex = 3;
             this.btnAnular.Text = "&Anular";
             this.btnAnular.UseVisualStyleBackColor = false;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // btnBuscar
             // 
@@ -449,6 +453,7 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Visible = false;
             // 
             // label2
             // 
@@ -504,6 +509,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingresos Almacén";
+            // 
+            // chkComprobante
+            // 
+            this.chkComprobante.AutoSize = true;
+            this.chkComprobante.BackColor = System.Drawing.Color.Transparent;
+            this.chkComprobante.Location = new System.Drawing.Point(320, 17);
+            this.chkComprobante.Name = "chkComprobante";
+            this.chkComprobante.Size = new System.Drawing.Size(109, 20);
+            this.chkComprobante.TabIndex = 44;
+            this.chkComprobante.Text = "Credito Fiscal";
+            this.chkComprobante.UseVisualStyleBackColor = false;
+            this.chkComprobante.CheckedChanged += new System.EventHandler(this.chkComprobante_CheckedChanged);
             // 
             // txtAuttarjeta
             // 
@@ -847,18 +864,6 @@
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMenu.TabIndex = 0;
             this.btnMenu.TabStop = false;
-            // 
-            // chkComprobante
-            // 
-            this.chkComprobante.AutoSize = true;
-            this.chkComprobante.BackColor = System.Drawing.Color.Transparent;
-            this.chkComprobante.Location = new System.Drawing.Point(320, 17);
-            this.chkComprobante.Name = "chkComprobante";
-            this.chkComprobante.Size = new System.Drawing.Size(109, 20);
-            this.chkComprobante.TabIndex = 44;
-            this.chkComprobante.Text = "Credito Fiscal";
-            this.chkComprobante.UseVisualStyleBackColor = false;
-            this.chkComprobante.CheckedChanged += new System.EventHandler(this.chkComprobante_CheckedChanged);
             // 
             // VentasForm
             // 

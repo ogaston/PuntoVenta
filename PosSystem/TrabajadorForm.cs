@@ -44,7 +44,7 @@ namespace PosSystem
                   !string.IsNullOrWhiteSpace(txtCargo.Text) &&
                    !string.IsNullOrWhiteSpace(txtDocumento.Text) &&
                     !string.IsNullOrWhiteSpace(txtEmail.Text) &&
-                     !string.IsNullOrWhiteSpace(txtSalario.Text) &&
+                     //!string.IsNullOrWhiteSpace(txtSalario.Text) &&
                       !string.IsNullOrWhiteSpace(txtTelefono.Text) &&
                        !string.IsNullOrWhiteSpace(cbSexo.Text))
             {
@@ -80,7 +80,7 @@ namespace PosSystem
                     nuevo.Direccion = txtDireccion.Text;
                     nuevo.Telefono = double.Parse(txtTelefono.Text);
                     nuevo.Email = txtEmail.Text;
-                    nuevo.Salario = double.Parse(txtSalario.Text);
+                    nuevo.Salario = 500; //double.Parse(txtSalario.Text);
                     nuevo.Usuario = txtUsuario.Text;
                     nuevo.Password = txtPaswword.Text;
                     nuevo.Cargo = txtCargo.Text;

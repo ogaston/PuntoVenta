@@ -40,7 +40,6 @@
             this.dtFecha2 = new System.Windows.Forms.DateTimePicker();
             this.dtFecha1 = new System.Windows.Forms.DateTimePicker();
             this.dataListado = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.chkEliminar = new System.Windows.Forms.CheckBox();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
@@ -93,6 +92,7 @@
             this.iconmaximizar = new System.Windows.Forms.PictureBox();
             this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -199,6 +199,7 @@
             this.dtFecha2.Name = "dtFecha2";
             this.dtFecha2.Size = new System.Drawing.Size(109, 22);
             this.dtFecha2.TabIndex = 9;
+            this.dtFecha2.ValueChanged += new System.EventHandler(this.dtFecha2_ValueChanged);
             // 
             // dtFecha1
             // 
@@ -207,6 +208,7 @@
             this.dtFecha1.Name = "dtFecha1";
             this.dtFecha1.Size = new System.Drawing.Size(109, 22);
             this.dtFecha1.TabIndex = 8;
+            this.dtFecha1.ValueChanged += new System.EventHandler(this.dtFecha1_ValueChanged);
             // 
             // dataListado
             // 
@@ -220,17 +222,10 @@
             this.dataListado.Location = new System.Drawing.Point(28, 109);
             this.dataListado.MultiSelect = false;
             this.dataListado.Name = "dataListado";
-            this.dataListado.ReadOnly = true;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataListado.Size = new System.Drawing.Size(841, 302);
             this.dataListado.TabIndex = 7;
             this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
             // 
             // chkEliminar
             // 
@@ -241,6 +236,7 @@
             this.chkEliminar.TabIndex = 5;
             this.chkEliminar.Text = "Anular";
             this.chkEliminar.UseVisualStyleBackColor = true;
+            this.chkEliminar.CheckedChanged += new System.EventHandler(this.chkEliminar_CheckedChanged);
             // 
             // btnImprimir
             // 
@@ -276,6 +272,7 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Visible = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label2
@@ -356,6 +353,7 @@
             this.dataListadoDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListadoDetalle.Location = new System.Drawing.Point(24, 206);
             this.dataListadoDetalle.Name = "dataListadoDetalle";
+            this.dataListadoDetalle.ReadOnly = true;
             this.dataListadoDetalle.Size = new System.Drawing.Size(806, 155);
             this.dataListadoDetalle.TabIndex = 34;
             // 
@@ -800,6 +798,11 @@
             this.btnMenu.TabIndex = 0;
             this.btnMenu.TabStop = false;
             // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            // 
             // IngresoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -852,7 +855,6 @@
         private System.Windows.Forms.DateTimePicker dtFecha2;
         private System.Windows.Forms.DateTimePicker dtFecha1;
         private System.Windows.Forms.DataGridView dataListado;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.CheckBox chkEliminar;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnAnular;
@@ -905,5 +907,6 @@
         private System.Windows.Forms.PictureBox iconmaximizar;
         private System.Windows.Forms.PictureBox iconcerrar;
         private System.Windows.Forms.PictureBox btnMenu;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
     }
 }

@@ -490,14 +490,13 @@ namespace PosSystem
         {
             this.dataListadoDetalle.DataSource = VentaBL.MostrarDetalle(this.txtIdventa.Text);
         }
-        // Metodo BuscarFechas
-        //private void BuscarIngresoFechas()
-        //{
-        //    this.dataListado.DataSource = IngresoBL.BuscarIngresoFechas(this.dtFecha1.Value.ToString("dd/MM/yyyy"),
-        //        this.dtFecha2.Value.ToString("dd/MM/yyyy"));
-        //    this.OcultarColumnas();
-        //    lblTotal.Text = "Total De Registros: " + Convert.ToString(dataListado.Rows.Count);
-        //}
+        private void BuscarVentaFechas()
+        {
+            this.dataListado.DataSource = VentaBL.VentaBuscarFecha(this.dtFecha1.Value.ToString("dd/MM/yyyy"),
+            this.dtFecha2.Value.ToString("dd/MM/yyyy"));
+            this.OcultarColumnas();
+            lblTotal.Text = "Total De Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
         #endregion
 
         private int GenerarID()
@@ -641,9 +640,9 @@ namespace PosSystem
                 {
                     if (this.IsNuevo)
                     {
-                        rpta = VentaBL.Insertar(Convert.ToInt32(this.txtIdventa.Text),Convert.ToInt32(this.txtIdcliente.Text),1,
+                        rpta = VentaBL.Insertar(Convert.ToInt32(this.txtIdventa.Text),Convert.ToInt32(this.txtIdcliente.Text),Idtrabajador,
                             this.dtFecha.Value, this.cbTipo_Pago.Text,ncf,ncrefis,this.txtAuttarjeta.Text,
-                            Convert.ToDecimal(this.txtIgv.Text), 1, dtDetalle);
+                            Convert.ToDecimal(this.txtIgv.Text),1, dtDetalle);
 
                     }
 
@@ -787,6 +786,67 @@ namespace PosSystem
                     ncrefis = string.Empty;
                     txtNum_comprobante.BackColor = Color.FromArgb(70, 179, 254);
                 }
+            }
+        }
+
+        private void dtFecha1_ValueChanged(object sender, EventArgs e)
+        {
+            this.BuscarVentaFechas();
+        }
+
+        private void dtFecha2_ValueChanged(object sender, EventArgs e)
+        {
+            this.BuscarVentaFechas();
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Realmente Desea Anular los Registros", "Sistema de Ventas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string Codigo;
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow row in dataListado.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            Codigo = Convert.ToString(row.Cells[1].Value);
+                            Rpta = VentaBL.Anular(Convert.ToInt32(Codigo));
+                        }
+                        //Se evalua si se anuló el registro
+                        if (Rpta.Equals("OK"))
+                        {
+                            this.MensajeOk("Se Anuló Correctamente el registro");
+                        }
+                        else
+                        {
+                            this.MensajeError(Rpta);
+                        }
+
+                    }
+                    //this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void chkEliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEliminar.Checked)
+            {
+                this.dataListado.Columns[0].Visible = true;
+            }
+            else
+            {
+                this.dataListado.Columns[0].Visible = false;
             }
         }
     }

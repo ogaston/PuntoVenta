@@ -27,7 +27,7 @@ namespace PosSystem
         private void Mostrar()
         {
             this.dataListado.DataSource = IngresoBL.MostrarProveedor();
-            this.OcultarColumnas();
+           // this.OcultarColumnas();
             lblTotal.Text = "Total De Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
@@ -35,7 +35,7 @@ namespace PosSystem
         private void BuscarRazon_Social()
         {
             this.dataListado.DataSource = IngresoBL.Buscar_Proveedor_Ingreso_Nombre(this.txtBuscar.Text);
-           // this.OcultarColumnas();
+            this.OcultarColumnas();
             lblTotal.Text = "Total De Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
@@ -43,12 +43,12 @@ namespace PosSystem
         private void BuscarNum_Documento()
         {
             this.dataListado.DataSource = IngresoBL.Buscar_Proveedor_Ingreso_RNC(this.txtBuscar.Text);
-           // this.OcultarColumnas();
+            this.OcultarColumnas();
             lblTotal.Text = "Total De Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
         private void IngresoVistaProveedorForm_Load(object sender, EventArgs e)
         {
-            this.Mostrar();
+            BuscarRazon_Social();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -65,12 +65,15 @@ namespace PosSystem
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
-            IngresoForm form = IngresoForm.GetInstancia();
-            string par1, par2;
-            par1 = Convert.ToString(dataListado.CurrentRow.Cells["idproveedor"].Value);
-            par2 = Convert.ToString(dataListado.CurrentRow.Cells["razon_social"].Value);
-            form.setProveedor(par1, par2);
-            this.Hide();
+            if (dataListado.Rows.Count >= 1)
+            {
+                IngresoForm form = IngresoForm.GetInstancia();
+                string par1, par2;
+                par1 = Convert.ToString(dataListado.CurrentRow.Cells["idproveedor"].Value);
+                par2 = Convert.ToString(dataListado.CurrentRow.Cells["razon_social"].Value);
+                form.setProveedor(par1, par2);
+                this.Hide();
+            }
         }
     }
 }

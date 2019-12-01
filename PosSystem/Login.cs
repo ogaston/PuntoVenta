@@ -15,6 +15,7 @@ namespace PosSystem
     {
         public static string guardaRango { get; set; }
         public static string guardaID { get; set; }
+        public static string guardaNombre { get; set; }
         public Login()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace PosSystem
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-                Application.Exit();
+           Application.Exit();
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)

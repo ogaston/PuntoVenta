@@ -44,6 +44,23 @@ namespace BusinessLogic
             return proc.Insertar(entidad, detalles);
         }
 
+
+        public static string Anular(int idingreso)
+        {
+            try
+            {
+                Ingreso entidad = new Ingreso();
+                IngresoDAL proc = new IngresoDAL();
+                entidad.IDIngreso = idingreso;
+                return proc.Anular(entidad);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
+        }
         public static DataTable Mostrar()
         {
             return new IngresoDAL().Mostrar();
@@ -51,6 +68,10 @@ namespace BusinessLogic
         public static DataTable GenerarIdingreso()
         {
             return new IngresoDAL().GenerarIdIngreso();
+        }
+        public static DataTable IngresoBuscarFecha(string textobuscar1, string textobuscar2)
+        {
+            return new IngresoDAL().IngresoBuscarFecha(textobuscar1,textobuscar2);
         }
         public static DataTable MostrarDetalle(string textobuscar)
         {

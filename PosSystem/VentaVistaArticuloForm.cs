@@ -71,20 +71,23 @@ namespace PosSystem
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
-            VentasForm form = VentasForm.GetInstancia();
-            string par1, par2;
-            decimal par3, par4;
-            int par5;
-            DateTime par6;
-            par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["iddetalle_ingreso"].Value);
-            par2 = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
-            par3 = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["precio_compra"].Value);
-            par4 = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["precio_venta"].Value);
-            par5 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["stock_actual"].Value);
-            par6 = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["fecha_vencimiento"].Value);
+            if (dataListado.Rows.Count >= 1)
+            {
+                VentasForm form = VentasForm.GetInstancia();
+                string par1, par2;
+                decimal par3, par4;
+                int par5;
+                DateTime par6;
+                par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["iddetalle_ingreso"].Value);
+                par2 = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
+                par3 = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["precio_compra"].Value);
+                par4 = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["precio_venta"].Value);
+                par5 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["stock_actual"].Value);
+                par6 = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["fecha_vencimiento"].Value);
 
-            form.setArticulo(par1, par2, par3, par4, par5, par6);
-            this.Close();
+                form.setArticulo(par1, par2, par3, par4, par5, par6);
+                this.Close();
+            }
 
         }
     }

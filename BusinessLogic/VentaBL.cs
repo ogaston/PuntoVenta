@@ -43,6 +43,23 @@ namespace BusinessLogic
             return proc.Insertar(entidad, detalles);
         }
 
+
+        public static string Anular(int idventa)
+        {
+            try
+            {
+                Venta entidad = new Venta();
+                VentaDAL proc = new VentaDAL();
+                entidad.IDventa = idventa;
+                return proc.Anular(entidad);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+        }
         public static DataTable Mostrar()
         {
             return new VentaDAL().Mostrar();
@@ -59,6 +76,10 @@ namespace BusinessLogic
             return new VentaDAL().Generaridventa();
         }
 
+        public static DataTable VentaBuscarFecha(string textobuscar1, string textobuscar2)
+        {
+            return new VentaDAL().VentaBuscarFecha(textobuscar1, textobuscar2);
+        }
 
         #region Articulos
         public static DataTable BuscarArticuloVentaNombre(string textobuscar)

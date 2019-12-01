@@ -525,29 +525,30 @@ namespace PosSystem
         {
             this.dataListadoDetalle.DataSource = IngresoBL.MostrarDetalle(this.txtIdingreso.Text);
         }
-        // Metodo BuscarFechas
-        //private void BuscarIngresoFechas()
-        //{
-        //    this.dataListado.DataSource = IngresoBL.BuscarIngresoFechas(this.dtFecha1.Value.ToString("dd/MM/yyyy"),
-        //        this.dtFecha2.Value.ToString("dd/MM/yyyy"));
-        //    this.OcultarColumnas();
-        //    lblTotal.Text = "Total De Registros: " + Convert.ToString(dataListado.Rows.Count);
-        //}
+
+       // Metodo BuscarFechas
+        private void BuscarIngresoFechas()
+        {
+            this.dataListado.DataSource = IngresoBL.IngresoBuscarFecha(this.dtFecha1.Value.ToString("dd/MM/yyyy"),
+            this.dtFecha2.Value.ToString("dd/MM/yyyy"));
+            this.OcultarColumnas();
+            lblTotal.Text = "Total De Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
 
         private void IngresoForm_Load(object sender, EventArgs e)
         {
-            
             this.Top = 0;
             this.Left = 0;
             this.Mostrar();
             this.Habilitar(false);
             this.Botones();
             this.CrearTabla();
+            this.txtIdingreso.Text = Idtrabajador.ToString();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            BuscarIngresoFechas();
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
@@ -567,7 +568,7 @@ namespace PosSystem
                         if (Convert.ToBoolean(row.Cells[0].Value))
                         {
                             Codigo = Convert.ToString(row.Cells[1].Value);
-                            //Rpta = IngresoBL.Anular(Convert.ToInt32(Codigo));
+                            Rpta = IngresoBL.Anular(Convert.ToInt32(Codigo));
                         }
                         //Se evalua si se anuló el registro
                         if (Rpta.Equals("OK"))
@@ -620,8 +621,8 @@ namespace PosSystem
                 {
                     if (this.IsNuevo)
                     {
-                        rpta = IngresoBL.Insertar(Convert.ToInt32(this.txtIdingreso.Text),/*idtrabajador*/1,/* Convert.ToInt32(this.txtIdproveedor.Text)*/4,
-                            this.dtFecha.Value,this.cbTipo_Pago.Text,this.txtNum_comprobante.Text,Convert.ToDecimal(this.txtIgv.Text),1, dtDetalle);
+                        rpta = IngresoBL.Insertar(Convert.ToInt32(this.txtIdingreso.Text),Convert.ToInt32(this.txtIdarticulo.Text),Convert.ToInt32(this.txtIdproveedor.Text),
+                            this.dtFecha.Value,this.cbTipo_Pago.Text,this.txtNum_comprobante.Text,Convert.ToDecimal(this.txtIgv.Text),Idtrabajador, dtDetalle);
 
                     }
 
@@ -773,6 +774,28 @@ namespace PosSystem
         private void iconminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dtFecha1_ValueChanged(object sender, EventArgs e)
+        {
+            BuscarIngresoFechas();
+        }
+
+        private void dtFecha2_ValueChanged(object sender, EventArgs e)
+        {
+            BuscarIngresoFechas();
+        }
+
+        private void chkEliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEliminar.Checked)
+            {
+                this.dataListado.Columns[0].Visible = true;
+            }
+            else
+            {
+                this.dataListado.Columns[0].Visible = false;
+            }
         }
     }
 }

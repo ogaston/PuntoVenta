@@ -93,6 +93,47 @@ namespace Data
             return rpta;
         }
 
+        public string Anular(Venta Venta)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = conexion.ConecctionString();
+            try
+            {
+                if (SqlCon.State == ConnectionState.Closed)
+                {
+                    SqlCon.Open();
+                }
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "proc_VentaAnular";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdingreso = new SqlParameter();
+                ParIdingreso.ParameterName = "@idventa";
+                ParIdingreso.SqlDbType = SqlDbType.Int;
+                ParIdingreso.Value = Venta.IDventa;
+                SqlCmd.Parameters.Add(ParIdingreso);
+
+
+                //Ejecutamos nuestro comando
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Anuló el Registro";
+
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+
+
+        }
         public string DisminuirStock(int iddetalle_ingreso, int cantidad)
         {
             string rpta = "";
@@ -181,7 +222,7 @@ namespace Data
                 if (SqlCon.State == ConnectionState.Closed) SqlCon.Open();
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "proc_Mostrar_detalle_venta";
+                SqlCmd.CommandText = "proc_VentaMostrarDetalle";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParTextoBuscar = new SqlParameter();
@@ -220,7 +261,7 @@ namespace Data
                 if (SqlCon.State == ConnectionState.Closed) SqlCon.Open();
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "proc_Generaridventa";
+                SqlCmd.CommandText = "proc_VentaGenerarId";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
@@ -240,6 +281,48 @@ namespace Data
 
         }
 
+        public DataTable VentaBuscarFecha(string TextoBuscar, string TextoBuscar2)
+        {
+            DataTable DtResultado = new DataTable("venta");
+            SqlConnection SqlCon = conexion.ConecctionString();
+            try
+            {
+                if (SqlCon.State == ConnectionState.Closed) SqlCon.Open();
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "proc_VentaBuscarFecha";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParTextoBuscar = new SqlParameter();
+                ParTextoBuscar.ParameterName = "@textobuscar";
+                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
+                ParTextoBuscar.Size = 50;
+                ParTextoBuscar.Value = TextoBuscar;
+                SqlCmd.Parameters.Add(ParTextoBuscar);
+
+                SqlParameter ParTextoBuscar2 = new SqlParameter();
+                ParTextoBuscar2.ParameterName = "@textobuscar2";
+                ParTextoBuscar2.SqlDbType = SqlDbType.VarChar;
+                ParTextoBuscar2.Size = 50;
+                ParTextoBuscar2.Value = TextoBuscar2;
+                SqlCmd.Parameters.Add(ParTextoBuscar2);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return DtResultado;
+
+
+        }
 
 
         #region Articulos
@@ -256,7 +339,7 @@ namespace Data
                 if (SqlCon.State == ConnectionState.Closed) SqlCon.Open();
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "proc_BuscarArticuloVentaNombre";
+                SqlCmd.CommandText = "proc_VentaBuscarArticuloNombre";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParTextoBuscar = new SqlParameter();
@@ -294,7 +377,7 @@ namespace Data
                 if (SqlCon.State == ConnectionState.Closed) SqlCon.Open();
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "proc_BuscarArticuloVentaCodigo";
+                SqlCmd.CommandText = "proc_VentaBuscarArticuloCodigo";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParTextoBuscar = new SqlParameter();
@@ -406,7 +489,7 @@ namespace Data
                 if (SqlCon.State == ConnectionState.Closed) SqlCon.Open();
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "proc_buscar_cliente_nombre";
+                SqlCmd.CommandText = "proc_VentaBuscarClienteNombre";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlCmd.Parameters.AddWithValue("@textobuscar", TextoBuscar);
@@ -432,14 +515,14 @@ namespace Data
         public DataTable Buscar_Cliente_Venta_Documento(string TextoBuscar)
         {
             SqlConnection SqlCon = conexion.ConecctionString();
-            DataTable DtResultado = new DataTable("Proveedor");
+            DataTable DtResultado = new DataTable("Cliente");
 
             try
             {
                 if (SqlCon.State == ConnectionState.Closed) SqlCon.Open();
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "proc_buscar_cliente_documento";
+                SqlCmd.CommandText = "proc_VentaBuscarClienteDocumento";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlCmd.Parameters.AddWithValue("@textobuscar", TextoBuscar);

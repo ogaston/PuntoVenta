@@ -88,12 +88,15 @@ namespace PosSystem
 
         private void dataListado_DoubleClick_1(object sender, EventArgs e)
         {
-            IngresoForm form = IngresoForm.GetInstancia();
-            string par1, par2;
-            par1 = Convert.ToString(dataListado.CurrentRow.Cells["idarticulo"].Value);
-            par2 = Convert.ToString(dataListado.CurrentRow.Cells["nombre"].Value);
-            form.setArticulo(par1, par2);
-            this.Hide();
+            if (dataListado.Rows.Count >= 1)
+            {
+                IngresoForm form = IngresoForm.GetInstancia();
+                string par1, par2;
+                par1 = Convert.ToString(dataListado.CurrentRow.Cells["idarticulo"].Value);
+                par2 = Convert.ToString(dataListado.CurrentRow.Cells["nombre"].Value);
+                form.setArticulo(par1, par2);
+                this.Hide();
+            }
         }
 
         private void btnBuscar_Click_1(object sender, EventArgs e)

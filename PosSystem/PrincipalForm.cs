@@ -13,11 +13,14 @@ namespace PosSystem
 {
     public partial class PrincipalForm : Form
     {
-        public string OptenerID = Login.guardaID;
+        public string ObtenerID = Login.guardaID;
+
+        public string ObtenerTrabajador;
         public PrincipalForm()
         {
             InitializeComponent();
             UserAccess();
+           
         }
         
         private void UserAccess()
@@ -256,12 +259,14 @@ namespace PosSystem
         private void mantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             IngresoForm frm = IngresoForm.GetInstancia();
+            frm.Idtrabajador = Convert.ToInt32(this.ObtenerID);
             AbrirFormEnPanel(frm);
         }
 
         private void mantenimientoVentaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             VentasForm frm = VentasForm.GetInstancia();
+            frm.Idtrabajador = Convert.ToInt32(this.ObtenerID);
             AbrirFormEnPanel(frm);
         }
     }

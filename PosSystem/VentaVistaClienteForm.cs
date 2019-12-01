@@ -59,14 +59,17 @@ namespace PosSystem
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
-            VentasForm form = VentasForm.GetInstancia();
-            string par1, par2, par3;
-            par1 = Convert.ToString(dataListado.CurrentRow.Cells["IDCliente"].Value);
-            par2 = Convert.ToString(dataListado.CurrentRow.Cells["Nombre"].Value) + " " +
-                   Convert.ToString(dataListado.CurrentRow.Cells["Apellido"].Value);
-            par3 = Convert.ToString(dataListado.CurrentRow.Cells["Num_Documento"].Value);
-            form.setCliente(par1, par2, par3);
-            this.Hide();
+            if (dataListado.Rows.Count >= 1)
+            {
+                VentasForm form = VentasForm.GetInstancia();
+                string par1, par2, par3;
+                par1 = Convert.ToString(dataListado.CurrentRow.Cells["IDCliente"].Value);
+                par2 = Convert.ToString(dataListado.CurrentRow.Cells["Nombre"].Value) + " " +
+                       Convert.ToString(dataListado.CurrentRow.Cells["Apellido"].Value);
+                par3 = Convert.ToString(dataListado.CurrentRow.Cells["Num_Documeto"].Value);
+                form.setCliente(par1, par2, par3);
+                this.Close();
+            }
         }
     }
 }
